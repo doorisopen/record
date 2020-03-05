@@ -28,16 +28,23 @@
            demun-025.jpg
 ```
 -->
-## 바로가기 링크
-* [Algorithm]()
-* [CS]()
-  + [컴퓨터 구조(Computer Architecture)]()
-  + [자료 구조(Data Structure)]()
-  + [데이터베이스(Database)]()
-  + [네트워크(Network)]()
-  + [운영체제(Operation System)]()
-  + [소프트웨어 공학(Software Engineering)]()
-
+## 목차 (바로가기)
+* [Algorithm](https://github.com/doorisopen/developers-library#-algorithm)
+* [CS](https://github.com/doorisopen/developers-library#-cscomputer-science)
+  + 컴퓨터 구조(Computer Architecture)
+  + 자료 구조(Data Structure)
+  + 데이터베이스(Database)
+  + 네트워크(Network)
+  + 운영체제(Operation System)
+  + 소프트웨어 공학(Software Engineering)
+* [Language](https://github.com/doorisopen/developers-library#-Language)
+  + C++
+  + Java
+* [Web](https://github.com/doorisopen/developers-library#-Web)
+* [Design Pattern](https://github.com/doorisopen/developers-library#-Design-Pattern)
+* [Interview](https://github.com/doorisopen/developers-library#-Interview)
+* [Dev blog](https://github.com/doorisopen/developers-library#-dev-blog)
+* [ETC](https://github.com/doorisopen/developers-library#-ETC)
 <hr />
 
 ## 📍 Algorithm
