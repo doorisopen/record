@@ -1,6 +1,13 @@
-# developers-library
-👨🏻‍💻신입 개발자를 위한 전공 지식 & 유용한 정보 수집 저장소📒
+# 취준생에서 가치 있는 개발자가 되기까지 💪
+👨🏻‍💻신입 개발자를 위한 전공 지식 & 유용한 정보 수집 저장소📚
 
+* __Commit convention rule :__ [상태] 날짜 주제-내용
+  + __상태 :__ Add/Update/Delete
+  + __날짜 :__ 2020-02-15
+  + __주제 :__ Web/Algorithm...
+  + __ex) [Add] 2020-02-15 Web-server-vs-was__
+
+  
 📢잘못된 내용은 [Issues](https://github.com/doorisopen/developers-library/issues)와 [PR](https://github.com/doorisopen/developers-library/pulls)로 알려주세요
 
 <!-- 디렉토리 구조 예시
@@ -69,6 +76,9 @@
 * ### Java
 
 ## 📍 Web
+* ### Spring
+  
+* ### SpringBoot
 
 ## 📍 Design Pattern
 
