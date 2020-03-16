@@ -1,6 +1,14 @@
 # 취준생에서 가치 있는 개발자가 되기까지 💪
 👨🏻‍💻신입 개발자를 위한 전공 지식 & 유용한 정보 수집 저장소📚
 
+<div align=center>
+
+[![author](https://img.shields.io/badge/author-doorisopen-007ec6.svg?style=flat-square)](https://github.com/doorisopen/developers-library)
+<!-- HitCount: http://hits.dwyl.io/ -->
+[![HitCount](http://hits.dwyl.com/doorisopen/https://githubcom/doorisopen/developers-library.svg)](http://hits.dwyl.com/doorisopen/https://githubcom/doorisopen/developers-library)
+
+</div>
+
 * __Commit convention rule :__ [상태] 날짜 주제-내용
   + __상태 :__ Add/Update/Delete
   + __날짜 :__ 2020-02-15
@@ -35,7 +43,7 @@
            demun-025.jpg
 ```
 -->
-## 목차 (바로가기)
+## 목차
 * [Algorithm](https://github.com/doorisopen/developers-library#-algorithm)
 * [CS](https://github.com/doorisopen/developers-library#-cscomputer-science)
   + 컴퓨터 구조(Computer Architecture)
