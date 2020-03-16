@@ -1,10 +1,11 @@
 # 취준생에서 가치 있는 개발자가 되기까지 💪
 👨🏻‍💻신입 개발자를 위한 전공 지식 & 유용한 정보 수집 저장소📚
 
+
 <div align=center>
+<!-- HitCount: http://hits.dwyl.io/ -->
 
 [![author](https://img.shields.io/badge/author-doorisopen-007ec6.svg?style=flat-square)](https://github.com/doorisopen/developers-library)
-<!-- HitCount: http://hits.dwyl.io/ -->
 [![HitCount](http://hits.dwyl.com/doorisopen/https://githubcom/doorisopen/developers-library.svg)](http://hits.dwyl.com/doorisopen/https://githubcom/doorisopen/developers-library)
 
 </div>
