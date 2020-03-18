@@ -67,17 +67,17 @@
 * [문제풀이에 활용할 수 있는 주요 Data Structure, Algorithm Reference code](https://swexpertacademy.com/main/code/referenceCode/referenceCodeList.do?)
 
 ## 📍 CS(Computer Science)
-- ### 컴퓨터 구조(Computer Architecture)
+* ### 컴퓨터 구조(Computer Architecture)
 
-- ### 자료 구조(Data Structure)
+* ### 자료 구조(Data Structure)
 
-- ### 데이터베이스(Database)
+* ### 데이터베이스(Database)
 
-- ### 네트워크(Network)
+* ### 네트워크(Network)
 
-- ### 운영체제(Operation System)
+* ### 운영체제(Operation System)
 
-- ### 소프트웨어 공학(Software Engineering)
+* ### 소프트웨어 공학(Software Engineering)
 
 ## 📍 Language
 * ### C++
