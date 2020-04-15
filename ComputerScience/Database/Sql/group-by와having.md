@@ -17,7 +17,7 @@ SELECT *
 FROM member;
 ```
 
-![db_sql_groupby_having_1](/images/ComputerScience/Database/sql/db_sql_groupby_having_1.JPG)
+![db_sql_groupby_having_1](/images/ComputerScience/Database/Sql/db_sql_groupby_having_1.JPG)
 
 ## GROUP BY
 
@@ -45,7 +45,7 @@ GROUP BY team;
 
 결과는 다음과 같습니다.
 
-![db_sql_groupby_having_2](/images/ComputerScience/Database/sql/db_sql_groupby_having_2.JPG)
+![db_sql_groupby_having_2](/images/ComputerScience/Database/Sql/db_sql_groupby_having_2.JPG)
 
 ## HAVING
 * HAVING은 간단하게 생각해서 GROUP BY한 결과에 조건을 붙이고 싶을때, 즉 GROUP BY의 WHERE 절과도 같다고 볼 수 있습니다.
@@ -62,7 +62,7 @@ HAVING count(*) > 2;
 
 결과는 다음과 같습니다.
 
-![db_sql_groupby_having_3](/images/ComputerScience/Database/sql/db_sql_groupby_having_3.JPG)
+![db_sql_groupby_having_3](/images/ComputerScience/Database/Sql/db_sql_groupby_having_3.JPG)
 
 ## 참고
 [SQL 테스트 해보기](https://sqltest.net/#988473)
