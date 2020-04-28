@@ -63,6 +63,7 @@
 * [ETC](https://github.com/doorisopen/developers-library#-ETC)
 <hr />
 
+<!-- 
 ## 📍 Algorithm
 * [문제풀이에 활용할 수 있는 주요 Data Structure, Algorithm Reference code](https://swexpertacademy.com/main/code/referenceCode/referenceCodeList.do?)
 
@@ -96,3 +97,4 @@
 ## 📍 Dev blog
 
 ## 📍 ETC
+-->
