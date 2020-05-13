@@ -11,7 +11,7 @@
   3. __무한 그래프(infinite graph)의__ 경우에는 결코 해를 찾지도 못하고, 끝내지도 못한다.
 
 
-![alogorithm_animated_bfs](/images/algorithm/alogorithm_animated_bfs.gif)
+![alogorithm_animated_bfs](/images/Algorithm/alogorithm_animated_bfs.gif)
 
 
 # BFS 예시 코드
