@@ -74,3 +74,10 @@ public class MemberDAOImpl implements MemberDAO {
 트랜잭션에 할당된 SqlSession이 존재하지 않는 경우 SqlSessionFactory 메서드를 호출하여 표준 MyBatis의 SqlSession을 가져옵니다.
 6. SqlSessionFactory는 MyBatis 표준 SqlSession을 반환합니다. 반환된 MyBatis 표준 SqlSession이 트랜잭션에 할당되기 때문에 동일한 트랜잭션 내에 있는 경우 새 SqlSession을 생성하지 않고 동일한 SqlSession을 사용합니다. on 메서드를 호출하고 SQL 실행을 요청합니다.
 7. MyBatis 표준 SqlSession은 매핑 파일에서 실행할 SQL을 가져와 실행합니다.
+
+# Question
+## MyBatis란 무엇인가요?
+
+
+## MyBatis의 동작 흐름을 설명해 주세요
+
