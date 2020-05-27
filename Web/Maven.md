@@ -18,7 +18,7 @@
   + java/src와 java/resource 디렉토리는 Maven 기본 디렉토리를 유지하고 __웹 자원을 관리하는 별도의 src/main/webapp 디렉토리를 사용__ 한다.
   + 이 값은 maven-war-plugin의 warSourceDirectory에 설정되어 있음.
 
-![web_maven_1](/images/Web/web_maven_1.JPG)
+![web-maven_1](/images/Web/web-maven_1.JPG)
 
 
 ### 기능2: 의존성 관리기능(pom.xml): 편리한 라이브러리 관리 기능
@@ -65,7 +65,8 @@
   + Super POM은 기본 설정 정보를 포함한다.
   + Super POM을 수정하려면 POM에서 오버라이드한다.
 * __참고: Pom.xml scope__
-![web_maven_2](/images/Web/web_maven_2.JPG)
+
+![web-maven_2](/images/Web/web-maven_2.JPG)
 
 * __Maven Repositorty__
   + 중앙 저장소
@@ -90,7 +91,7 @@
 * 각 빌드 단계에서 수행되는 작업을 __골(Goal)__ 이라고 한다.
 * 실제 골은 그 단계에 연결된 __플러그인(Plugin)__ 에 의해 실행된다
 
-![web_maven_3](/images/Web/web_maven_3.JPG)
+![web-maven_3](/images/Web/web-maven_3.JPG)
 
 ### Maven 빌드 라이프사이클(lifecycle)
 * Maven은 __기본, clean, site__ 3개의 라이프사이클이 있다.
@@ -106,7 +107,7 @@
   + 예) maven-compiler-plugin, maven-clean-plugin, maven-surefire-plugin
   + 플러그인: clean, compiler, surefire, jar, war, javadoc, antrun
 
-![web_maven_4](/images/Web/web_maven_4.JPG)
+![web-maven_4](/images/Web/web-maven_4.JPG)
 
 # References
 * 학부 강의 자료
