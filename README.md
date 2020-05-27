@@ -4,8 +4,8 @@
 <!-- HitCount: http://hits.dwyl.io/ -->
 
 [![author](https://img.shields.io/badge/author-doorisopen-007ec6.svg?style=flat-square)](https://github.com/doorisopen/developers-library)
-<!-- [![HitCount](http://hits.dwyl.com/doorisopen/https://githubcom/doorisopen/developers-library.svg)](http://hits.dwyl.com/doorisopen/https://githubcom/doorisopen/developers-library) -->
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdoorisopen%2Fdevelopers-library)](https://hits.seeyoufarm.com)
+[![HitCount](http://hits.dwyl.com/doorisopen/https://githubcom/doorisopen/developers-library.svg)](http://hits.dwyl.com/doorisopen/https://githubcom/doorisopen/developers-library)
+<!-- [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdoorisopen%2Fdevelopers-library)](https://hits.seeyoufarm.com) -->
 
 </div>
 
