@@ -1,5 +1,6 @@
 ---
 title: 취준생에서 가치 있는 개발자가 되기까지 💪
+comments: true
 ---
 
 <!-- HitCount: http://hits.dwyl.io/ -->
