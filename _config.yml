@@ -4,7 +4,7 @@
 title: dev-library
 url: "https://doorisopen.github.io/developers-library"
 baseurl:
-# google_analytics_key: "UA-********-*"
+google_analytics_key: "UA-165000136-2"
 show_full_navigation: true
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
