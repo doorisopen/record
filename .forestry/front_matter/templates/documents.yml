@@ -1,0 +1,16 @@
+---
+label: Documents
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: category
+  label: category
+- type: boolean
+  name: comments
+  label: comments
+- type: number
+  name: order
+  label: order

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    {% include head.html %}
+    <body>
+        <header>
+            <h1>
+                <a href="{{ site.baseurl }}/" style="color: #fff;">
+                    <img
+                    src="{{ site.baseurl }}/images/emblem.svg"
+                    width="40"
+                    height="40"
+                    alt="{{ site.title }} logo">
+                    <!-- <i class="fas fa-plus fa-spin" aria-hidden="true"></i> -->
+                    {{ site.title }}
+                </a>
+                <button type="button" class="open-nav" id="open-nav"></button>
+            </h1>
+
+            <form action="{{ site.baseurl }}/search/" method="get">
+                <input
+                    type="text"
+                    name="q"
+                    id="search-input"
+                    placeholder="Search"
+                    autofocus="autofocus">
+                <input type="submit" value="Search" style="display: none;">
+            </form>
+
+            <nav {% if site.show_full_navigation %} class="full-navigation" {% endif %}>
+                <!-- <ul>
+                    <li class="nav-item top-level {% if page.url == '/' %}current{% endif %}">
+                        {% assign home = site.html_pages | where : 'url',
+                        '/' | first %}
+                        <a href="{{ site.baseurl }}/">{{ home.title }}</a>
+                    </li>
+                </ul> -->
+
+                <ul>
+                    {% assign grouped = site.docs | group_by : 'category' %}
+                    {% for group in grouped %}
+                        <li
+                            class="nav-item top-level {% if group.name == page.category %}current{% endif %}">
+                            {% assign items = group.items | sort : 'order' %}
+                            
+                            <!-- <a href="{{ site.baseurl }}{{ items.first.url }}"><i class="far fa-folder-open" aria-hidden="true"></i>&nbsp;{{ group.name }}</a> 
+                            <ul>
+                                {% for item in items %}
+                                    <li class="nav-item {% if item.url == page.url %}current{% endif %}">
+                                        <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul> -->
+                            <!-- https://www.w3schools.com/icons/fontawesome5_icons_spinners.asp -->
+                            <a href="#{{ site.baseurl }}{{ group.name }}" data-toggle="collapse"><i class="fas fa-plus fa-spin" aria-hidden="true"></i>&nbsp;{{ group.name }}</a>
+							<div id="{{ site.baseurl }}{{ group.name }}" class="collapse">
+								<ul>
+									{% for item in items %}
+										<li class="nav-item{% if item.url == page.url %} current{% endif %}">
+                                            <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+                                        </li>
+									{% endfor %}
+								</ul>	
+							</div>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <ul>
+                    <li
+                        class="nav-item top-level {% if page.url == '/changelog/' %}current{% endif %}">
+                        {% assign changelog = site.html_pages | where : 'url',
+                        '/changelog/' | first %}
+                        <a href="{{ site.baseurl }}/changelog/">{{ changelog.title }}</a>
+                    </li>
+                </ul>
+
+                <!-- <div class="nav-footer">
+                    Copyrights
+                    {{site.time | date: '%Y'}}. All Rights Reserved by
+                    {{site.title}}
+                </div> -->
+            </nav>
+        </header>
+
+        <section class="main">
+            <div class="page-header">
+                <h2>
+                    {% if page.category %}{{ page.category }}
+                    {% else %}{{ site.title }}
+                    {% endif %}
+                </h2>
+                <h3>{{ page.title }}</h3>
+            </div>
+            <article class="content">
+                <h5>{{ content }}</h5>
+
+                {% if page.comments %}
+                    {% include livere.html %}
+                {% endif %}
+                {% if page.comments %} {% include disqus.html %} {% endif %}
+            </article>
+        </section>
+
+        <footer>
+            <div class="footer">
+                <strong>
+                    Copyrights
+                    {{site.time | date: '%Y'}}. All Rights Reserved by
+                    {{site.title}}
+                </strong>
+            </div>
+        </footer>
+
+        <script>
+            document
+                .getElementById("open-nav")
+                .addEventListener("click", function () {
+                    document
+                        .body
+                        .classList
+                        .toggle("nav-open");
+                });
+        </script>
+        {% include analytics.html %}
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>
