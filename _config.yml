@@ -3,7 +3,7 @@
 
 title: dev-library
 url: "#"
-baseurl:
+baseurl: https://doorisopen.github.io/developers-library/
 # google_analytics_key: "UA-********-*"
 show_full_navigation: true
 
