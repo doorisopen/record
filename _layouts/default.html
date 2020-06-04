@@ -52,12 +52,12 @@
                                 {% endfor %}
                             </ul> -->
                             <!-- https://www.w3schools.com/icons/fontawesome5_icons_spinners.asp -->
-                            <a href="#{{ site.baseurl }}{{ group.name }}" data-toggle="collapse"><i class="fas fa-plus fa-spin" aria-hidden="true"></i>&nbsp;{{ group.name }}</a>
-							<div id="{{ site.baseurl }}{{ group.name }}" class="collapse">
+                            <a href="#{{ group.name }}" data-toggle="collapse"><i class="fas fa-plus fa-spin" aria-hidden="true"></i>&nbsp;{{ group.name }}</a>
+							<div id="{{ group.name }}" class="collapse">
 								<ul>
 									{% for item in items %}
 										<li class="nav-item{% if item.url == page.url %} current{% endif %}">
-                                            <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+                                            <a href="{{ item.url }}">{{ item.title }}</a>
                                         </li>
 									{% endfor %}
 								</ul>	
