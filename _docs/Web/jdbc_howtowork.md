@@ -6,7 +6,7 @@ order: 3
 ---
 
 ## JDBC
-![web-jdbc](/images/Web/web-jdbc.JPG)
+![web-jdbc]({{ site.baseurl }}/images/Web/web-jdbc.JPG)
 
 ### 1단계 : JDBC 드라이버 로딩
 * JDBC API 사용을 위해서는 먼저 JDBC 규격에 따른 실제 구현된 각 JDBC 드라이버 클래스를 로딩해야 한다.

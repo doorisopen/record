@@ -44,4 +44,4 @@ public class Factorial {
 * 재귀는 스택을 사용한다.
 * 꼬리 재귀는 스택을 사용하지 않는다.
 
-![algorithm-recursive_tailrecursive_1](/images/Algorithm/algorithm-recursive_tailrecursive_1.JPG)
+![algorithm-recursive_tailrecursive_1]({{ site.baseurl }}/images/Algorithm/algorithm-recursive_tailrecursive_1.JPG)

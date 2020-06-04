@@ -67,7 +67,7 @@ int main(void){
 
 # DFS와 BFS 방문순서 차이
 
-![algorithm-dfs_bfs_move](/images/Algorithm/algorithm-dfs_bfs_move.JPG)
+![algorithm-dfs_bfs_move]({{ site.baseurl }}/images/Algorithm/algorithm-dfs_bfs_move.JPG)
 
 # Reference
 * [[바킹독의 실전 알고리즘] 0x0A강 - DFS](https://www.youtube.com/watch?v=93jy2yUYfVE)

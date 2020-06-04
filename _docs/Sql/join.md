@@ -20,7 +20,7 @@ order: 2
 * __RIGHT (OUTER) JOIN :__ 오른쪽 테이블의 모든 레코드와 왼쪽 테이블의 일치하는 레코드를 반환합니다
 * __FULL (OUTER) JOIN :__ 왼쪽 또는 오른쪽 테이블에 일치하는 모든 레코드를 반환합니다
 
-![db-sql-join_1](/images/ComputerScience/Database/Sql/db-sql-join_1.JPG)
+![db-sql-join_1]({{ site.baseurl }}/images/ComputerScience/Database/Sql/db-sql-join_1.JPG)
 
 ## Demo DataBase
 다음과 같은 테이블이 있다고 해보자.
@@ -51,7 +51,7 @@ INSERT INTO `animal_B` (`id`, `name`, `type`, `reg_date`) VALUES ('A352715', 'Ro
 INSERT INTO `animal_B` (`id`, `name`, `type`, `reg_date`) VALUES ('A358711', 'Fall', 'cat', '2010-01-28 12:31:00');
 ```
 
-![db-sql-join_2](/images/ComputerScience/Database/Sql/db-sql-join_2.JPG)
+![db-sql-join_2]({{ site.baseurl }}/images/ComputerScience/Database/Sql/db-sql-join_2.JPG)
 
 
 ## INNER 조인
@@ -76,7 +76,7 @@ from
 on a.id = b.id;
 ```
 
-![db-sql-join_innerjoin](/images/ComputerScience/Database/Sql/db-sql-join_innerjoin.JPG)
+![db-sql-join_innerjoin]({{ site.baseurl }}/images/ComputerScience/Database/Sql/db-sql-join_innerjoin.JPG)
 
 ## LEFT OUTER 조인
 
@@ -100,7 +100,7 @@ from
 on a.id = b.id;
 ```
 
-![db-sql-join_leftjoin](/images/ComputerScience/Database/Sql/db-sql-join_leftjoin.JPG)
+![db-sql-join_leftjoin]({{ site.baseurl }}/images/ComputerScience/Database/Sql/db-sql-join_leftjoin.JPG)
 
 ## RIGHT OUTER 조인
 
@@ -124,7 +124,7 @@ from
 on a.id = b.id;
 ```
 
-![db-sql-join_rightjoin](/images/ComputerScience/Database/Sql/db-sql-join_rightjoin.JPG)
+![db-sql-join_rightjoin]({{ site.baseurl }}/images/ComputerScience/Database/Sql/db-sql-join_rightjoin.JPG)
 
 
 ## FULL OUTER JOIN
@@ -190,7 +190,7 @@ INSERT INTO `test2` (`id`, `name`) VALUES ('1', 'd');
 INSERT INTO `test2` (`id`, `name`) VALUES ('2', 'e');
 ```
 
-![db-sql-join_on_where_1](/images/ComputerScience/Database/Sql/db-sql-join_on_where_1.JPG)
+![db-sql-join_on_where_1]({{ site.baseurl }}/images/ComputerScience/Database/Sql/db-sql-join_on_where_1.JPG)
 
 
 ```
@@ -200,7 +200,7 @@ FROM test1 as a left join test2 b
 on a.id = b.id and b.name = 'd';
 ```
 
-![db-sql-join_on_where_test_a](/images/ComputerScience/Database/Sql/db-sql-join_on_where_test_a.JPG)
+![db-sql-join_on_where_test_a]({{ site.baseurl }}/images/ComputerScience/Database/Sql/db-sql-join_on_where_test_a.JPG)
 
 ```
 -- TEST B
@@ -210,7 +210,7 @@ on a.id = b.id
 where b.name = 'd';
 ```
 
-![db-sql-join_on_where_test_b](/images/ComputerScience/Database/Sql/db-sql-join_on_where_test_b.JPG)
+![db-sql-join_on_where_test_b]({{ site.baseurl }}/images/ComputerScience/Database/Sql/db-sql-join_on_where_test_b.JPG)
 
 * __TEST A__ 경우는 __a 테이블과 b 테이블 중 b.name = 'd'인 경우__ 를 OUTER JOIN 한 결과가 나온다.
 * __TEST B__ 경우는 __a와 b 테이블의 OUTER JOIN을 수행한 후__ 에 b.name = 'd'인 데이터들을 추출한다.
@@ -231,7 +231,7 @@ on a.id = b.id
 where b.id is null;
 ```
 
-![db-sql-join_on_where_test_c](/images/ComputerScience/Database/Sql/db-sql-join_on_where_test_c.JPG)
+![db-sql-join_on_where_test_c]({{ site.baseurl }}/images/ComputerScience/Database/Sql/db-sql-join_on_where_test_c.JPG)
 
 ## 조인 활용 예시
 * [JOIN 문제 풀어보기](https://programmers.co.kr/learn/courses/30/parts/17046)

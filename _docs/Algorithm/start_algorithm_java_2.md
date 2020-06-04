@@ -26,7 +26,7 @@ Java로 PS(Problem Solving)을 시작할때 필수로 알아야할 기본기를 
 * 리스트는 데이터를 저장하는 형태에 따라 __배열 리스트(array list)와 연결 리스트(linked list)로 세분화__ 합니다.
 
 ### ArrayList와 LinkedList
-![algorithm-start_algorithm_java_2_1](/images/Algorithm/algorithm-start_algorithm_java_2_1.JPG)
+![algorithm-start_algorithm_java_2_1]({{ site.baseurl }}/images/Algorithm/algorithm-start_algorithm_java_2_1.JPG)
 
 |  <center>종류</center> |  <center>추가/삭제</center> |  <center>인덱스 조회</center> |
 |:--------:|:--------:|:--------:|

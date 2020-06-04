@@ -58,10 +58,10 @@ public class MemberDAOImpl implements MemberDAO {
 ## Spring과 MyBatis의 의존 관계 흐름과 내부 동작 원리
 
 ### Spring과 MyBatis의 의존 관계 흐름
-![web-spring-mybatis_flow](/images/Web/Spring/web-spring-mybatis_flow.JPG)
+![web-spring-mybatis_flow]({{ site.baseurl }}/images/Web/Spring/web-spring-mybatis_flow.JPG)
 
 ### 응용 프로그램 시작시 수행 흐름
-![web-spring-mybatis_flow1](/images/Web/Spring/web-spring-mybatis_flow1.JPG)
+![web-spring-mybatis_flow1]({{ site.baseurl }}/images/Web/Spring/web-spring-mybatis_flow1.JPG)
 
 1. SqlSessionFactoryBean은 SqlSessionFactoryBuilder를 위해 SqlSessionFactory를 빌드하도록 요청합니다.
 2. 응용 프로그램은 SqlSessionFactoryBuilder를 사용하여 빌드된 SqlSessionFactory에서 SqlSession을 가져옵니다.
@@ -71,7 +71,7 @@ public class MemberDAOImpl implements MemberDAO {
 (SqlSessionTemplate)을 사용하여 스레드 안전 구현을 제공합니다.
 
 ### 클라이언트 요청시 수행 흐름
-![web-spring-mybatis_flow2](/images/Web/Spring/web-spring-mybatis_flow2.JPG)
+![web-spring-mybatis_flow2]({{ site.baseurl }}/images/Web/Spring/web-spring-mybatis_flow2.JPG)
 
 1. 클라이언트가 응용 프로그램에 대한 프로세스를 요청합니다.
 2. 애플리케이션(서비스)은 DI 컨테이너에서 주입한 매퍼 개체(매퍼 인터페이스를 구현하는 프록시 개체)의 방법을 호출합니다.

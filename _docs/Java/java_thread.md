@@ -86,7 +86,7 @@ public class Thread1 {
 }
 ```
 
-![java-thread_start_run](/images/Language/Java/java-thread_start_run.JPG)
+![java-thread_start_run]({{ site.baseurl }}/images/Language/Java/java-thread_start_run.JPG)
 
 ### Runable 클래스 이용하기
 * 현재의 클래스가 이미 다른 클래스로부터 상속 받고 있다면 Runnable 인터페이스를 이용하여 스레드를 생성할 수 있습니다.
@@ -137,7 +137,7 @@ public class Thread2 {
 
 ## 스레드(Thread) 생성주기
 
-![java-thread_make_cycle](/images/Language/Java/java-thread_make_cycle.JPG)
+![java-thread_make_cycle]({{ site.baseurl }}/images/Language/Java/java-thread_make_cycle.JPG)
 
 * Runnable 상태: 쓰레드가 실행되기위한 준비 단계
 * Running 상태: 스케줄러에 의해 선택된 쓰레드가 실행되는 단계
@@ -165,7 +165,7 @@ public class Thread2 {
 
 ## 스레드 생명주기 (더 자세한 그림)
 
-![java-thread_make_cycle_detail](/images/Language/Java/java-thread_make_cycle_detail.JPG)
+![java-thread_make_cycle_detail]({{ site.baseurl }}/images/Language/Java/java-thread_make_cycle_detail.JPG)
 
 [출처](https://raccoonjy.tistory.com/15)
 

@@ -20,7 +20,7 @@ order: 4
   3. __무한 그래프(infinite graph)의__ 경우에는 결코 해를 찾지도 못하고, 끝내지도 못한다.
 
 
-![algorithm-animated_bfs](/images/Algorithm/algorithm-animated_bfs.gif)
+![algorithm-animated_bfs]({{ site.baseurl }}/images/Algorithm/algorithm-animated_bfs.gif)
 
 
 # BFS 예시 코드

@@ -36,7 +36,7 @@ order: 1
 
 ## 운영체제 계층구조
 
-![os-hierarchy_structure](/images/ComputerScience/OperatingSystem/os-hierarchy_structure.JPG)
+![os-hierarchy_structure]({{ site.baseurl }}/images/ComputerScience/OperatingSystem/os-hierarchy_structure.JPG)
 
 * __커널 (kernel)__
   + 운영체제 = 커널 + 기타
