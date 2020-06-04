@@ -2,8 +2,8 @@
 # Site
 
 title: dev-library
-url: "#"
-baseurl: "https://doorisopen.github.io/developers-library/"
+url: "https://doorisopen.github.io/developers-library"
+baseurl: 
 # google_analytics_key: "UA-********-*"
 show_full_navigation: true
 
