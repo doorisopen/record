@@ -26,6 +26,12 @@ highlighter: rouge
 encoding: utf-8
 permalink: pretty
 
+# image url settings
+algorithm_img: /images/algorithm
+datastructure_img: /images/datastructure
+spring_img: /images/Spring
+
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
