@@ -2,10 +2,9 @@
 title: 연결 리스트(Linked List)
 category: DataStructure
 comments: true
-order: 2
+order: 5
 ---
 
-# 연결 리스트
 ## 연결 리스트의 성질
 * k번째 원소를 확인/변경 : O(k)
 * 임의의 위치에 원소를 추가/제거 : O(1)
@@ -26,7 +25,7 @@ order: 2
 |추가적으로 필요한 공간<br/>(Overhead)| - | O(N) |
 
 
-## 연결 리스트 야매 방법
+## 연결 리스트 구현(꼼수)
 
 ```
 #include <bits/stdc++.h>

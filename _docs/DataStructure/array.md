@@ -5,7 +5,7 @@ comments: true
 order: 1
 ---
 
-# 배열
+## 배열
 1. O(1)에 k번째 __원소를 확인/변경 가능__
 2. 추가적으로 소모되는 __메모리의 양(=overhead)__ 가 거의 없음
 3. __Cache hit rate__ 가 높음
@@ -94,7 +94,7 @@ int main() {
 }
 ```
 
-# 사용 팁(초기화)
+## 사용 팁(초기화)
 
 ```
 int a[21];
@@ -123,7 +123,7 @@ char flags[26][80];
 std::fill( &flags[0][0], &flags[0][0] + sizeof(flags) /* / sizeof(flags[0][0]) */, 0 );
 ```
 
-# vector
+## vector
 
 * vector 순회
 

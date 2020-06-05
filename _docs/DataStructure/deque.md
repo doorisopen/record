@@ -2,10 +2,10 @@
 title: 덱(deque)
 category: DataStructure
 comments: true
-order: 5
+order: 4
 ---
 
-# 덱(deque)의 성질
+## 덱(deque)의 성질
 * 앞과 뒤에서 삽입/삭제가 가능한 자료구조이다.
 * 원소의 추가가 O(1)
 * 원소의 제거가 O(1)
