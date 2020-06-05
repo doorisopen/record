@@ -12,8 +12,8 @@ order: 6
 * 연결 리스트의 각각의 데이터는 `노드`라고 부르고 각 노드는 `data 필드`와 다음 data를 바라보는 `주소값(next) 필드`로 이뤄져있다  
 * 연결 리스트는 `단 방향/양 방향` 연결리스트가 있다.
 
-<a href="{{ site.datastructure_img }}/linkedlist1.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
-  <img src="{{ site.datastructure_img }}/linkedlist1.JPG" title="Check out the image">
+<a href="{{ site.baseurl }}{{ site.datastructure_img }}/linkedlist1.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.datastructure_img }}/linkedlist1.JPG" title="Check out the image">
 </a>
 
 ## 배열(Array)과 연결 리스트(Linked List)
@@ -105,8 +105,8 @@ int main(void) {
 
 ## 정렬되지 않은 연결 리스트 중복 값 없애기
 #### 버퍼(HashSet) 사용 예시
-<a href="{{ site.datastructure_img }}/linkedlist2_duplicate_buffer.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
-  <img src="{{ site.datastructure_img }}/linkedlist2_duplicate_buffer.JPG" title="Check out the image">
+<a href="{{ site.baseurl }}{{ site.datastructure_img }}/linkedlist2_duplicate_buffer.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.datastructure_img }}/linkedlist2_duplicate_buffer.JPG" title="Check out the image">
 </a>
 
 `HashSet`을 사용한 이유는 `HashSet` 이라는 데이터 구조는 키 값을 가지고 찾는데 O(1) 밖에 안걸리기 때문이다
@@ -115,8 +115,8 @@ int main(void) {
 * Time: O(n)
 
 #### 포인터(Pointer) 사용 예시
-<a href="{{ site.datastructure_img }}/linkedlist3_duplicate_pointer.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
-  <img src="{{ site.datastructure_img }}/linkedlist3_duplicate_pointer.JPG" title="Check out the image">
+<a href="{{ site.baseurl }}{{ site.datastructure_img }}/linkedlist3_duplicate_pointer.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.datastructure_img }}/linkedlist3_duplicate_pointer.JPG" title="Check out the image">
 </a>
 
 N = 0 일때 R이 List Size - n 만큼 반복하기 때문에 __시간은 O(n^2)이__ 소요된다 
