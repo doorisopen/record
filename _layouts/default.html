@@ -94,7 +94,11 @@
             </div>
             <article class="content">
                 <h5>{{ content }}</h5>
-
+                <div class="content-footer">
+                    {% if page.date %}
+                    update: {{ page.date | date_to_long_string }}
+                    {% endif %}
+                </div>
                 {% if page.comments %}
                     {% include livere.html %}
                 {% endif %}

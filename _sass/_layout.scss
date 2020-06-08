@@ -211,6 +211,12 @@ $nav-image: $baseurl + "/images/menu.svg";
 	}
 }
 
+.content-footer {
+	padding: 10px;
+    text-align: right;
+    font-weight: 100;
+}
+
 nav,
 header > form {
 	display: none;

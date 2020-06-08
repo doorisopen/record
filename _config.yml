@@ -27,7 +27,7 @@ encoding: utf-8
 permalink: pretty
 
 # image url settings
-algorithm_img: /images/algorithm
+algorithm_img: /images/Algorithm
 datastructure_img: /images/Datastructure
 spring_img: /images/Spring
 
