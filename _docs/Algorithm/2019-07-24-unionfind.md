@@ -62,9 +62,6 @@ order: 14
 * 이러한 과정은 __재귀적으로__ 수행될 때 가장 효과적이고 직관적으로 작성할 수 있다. 
 
 
-<hr/>
-
-
 ## C++ STL Library를 사용한 합집합 찾기(Union-Find) 구현
 
 {% highlight javascript %}
@@ -112,13 +109,9 @@ int main(void){
 }
 {% endhighlight %}
 
-
-<hr/>
-
-
 ## Union-Find 최악의 경우 & 최적화한 방법
 
-## 최악의 상황
+#### 최악의 상황
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/unionfindworstcase.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/unionfindworstcase.JPG" title="Check out the image">
 </a>
@@ -129,20 +122,10 @@ int main(void){
 >> 원소의 개수가 N일 때, 트리의 높이가 N-1이므로 union과 find(x)의 시간 복잡도가 모두 O(N)이 된다.
 >> 배열로 구현하는 것보다 비효율적이다.
 
-## find 연산 최적화
+#### find 연산 최적화
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/unionfindpathcompressionnew.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/unionfindpathcompressionnew.JPG" title="Check out the image">
 </a>
-
-
-<hr/>
-
-
-## 관련된 Post
-
-
-
-<hr/>
 
 
 ## References

@@ -50,17 +50,20 @@ order: 20
 
 
 * 초기 상태
+
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/topologysort_init.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/topologysort_init.JPG" title="Check out the image">
 </a>
 위와 같이 처음에는 진입차수가 0인 1번 노드가 큐에 들어가 있다.
 
 * 진입 차수가 0인 노드를 큐에 삽입하고 큐에서 원소를 꺼내 해당 원소와 연결된 모든 간선을 제거한다. 그리고 간선 제거 이후에 새롭게 진입차수가 0이 된 정점을 큐에 삽입한다.
+
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/topologysort_1.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/topologysort_1.JPG" title="Check out the image">
 </a>
 
 * 이와 같은 과정을 큐가 빌 때 까지 반복한다.
+
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/topologysort_2.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/topologysort_2.JPG" title="Check out the image">
 </a>
@@ -134,23 +137,9 @@ int main(void) {
 {% endhighlight %}
 
 
-
-
-
-
 ## 위상 정렬(Topology Sort)의 시간복잡도
 > _위상 정렬_ 은 __정점의 갯수 + 간선의 갯수__ 만큼 소요되므로 매우 빠른 알고리즘 중 하나이다.
 >> 따라서, 시간 복잡도는 __O(V + E)__ 이다.
-
-
-
-
-
-
-## 관련된 Post
-
-
-
 
 
 ## References

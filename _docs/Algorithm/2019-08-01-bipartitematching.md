@@ -17,6 +17,7 @@ order: 21
 
 ## 이분 매칭(Bipartite Matching)의 알고리즘 예시
 * 이분 그래프의 이분 매칭 과정.
+
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/bipartitematching.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/bipartitematching.JPG" title="Check out the image">
 </a>

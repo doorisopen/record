@@ -7,26 +7,15 @@ order: 24
 ---
 
 ## 목차
->> __1. 단순 문자열 매칭__ <br>
->> __2. KMP(Knuth-Morris-Pratt)__
+> __1. 단순 문자열 매칭__ <br>
+> __2. KMP(Knuth-Morris-Pratt)__
 
-
-
-
-<br>
-<br>
-
-## 단순 문자열 매칭 알고리즘
 ## 단순 문자열 매칭 알고리즘 이란?
 * 특정한 글이 있을 때 그 글 안에서 하나의 __문자열을 찾는 알고리즘__ 이다.
 
 
-
-
 ## 단순 문자열 매칭 알고리즘의 특징
 * __KMP 문자열 매칭 알고리즘__ 을 배우기 전에 먼저 단순 비교 문자열 매칭 알고리즘을 알고가는것이 좋다. 
-
-
 
 
 ## 단순 문자열 매칭 알고리즘 예시
@@ -38,8 +27,6 @@ order: 24
 
 
 > * 이러한 방식을 이용하면 O(N * M)의 시간 복잡도를 가진다.
-
-
 
 
 {% highlight javascript %}
@@ -80,15 +67,9 @@ int main(void) {
 {% endhighlight %}
 
 
-
-
-
-## KMP(Knuth-Morris-Pratt)
 ## KMP(Knuth-Morris-Pratt) 이란?
 * 특정한 글이 있을 때 그 글 안에서 하나의 __문자열을 찾는 알고리즘__ 이다.
 * 단순 문자열 매칭 경우 모든 경우를 비교하는 방법이고 KMP 알고리즘의 경우 __모든 경우를 다 비교하지 않아도 부분 문자열을 찾을 수 있는__ 알고리즘이다.
-
-
 
 
 ## KMP(Knuth-Morris-Pratt) 알고리즘의 특징
@@ -97,8 +78,6 @@ int main(void) {
   + __aab__ bc __baa__ 문자열을 예시로 들면 아래와 같다.
   	- __접두사 :__ aab
   	- __접미사 :__ baa
-
-
 
 
 
@@ -159,21 +138,25 @@ int main(void) {
 
 * parent와 pattern의 문자열을 하나씩 비교한다.
 * Step 4에서 __parent[3] != pattern[3]: b != c__ 서로 다른 문자가 발견되면 일치하는 접두사 크기에 한해서만 부분 문자열의 인덱스를 Step 5와 같이 이동시킨다. 이후 계속적으로 하나씩 비교한다.
+
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/kmp_1.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/kmp_1.JPG" title="Check out the image">
 </a>
 
 * Step 9에서도 마찬가지로 서로 다른 문자가 발견되면 해당 최대 일치 길이에 맞게 이동시킨다.
+
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/kmp_2.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/kmp_2.JPG" title="Check out the image">
 </a>
 
 * Step 16과 같이 패턴과 일치하는 문자열을 발견했다. 아직 모든 문자열을 검사한것이 아니기 때문에 계속적으로 비교한다.
+
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/kmp_3.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/kmp_3.JPG" title="Check out the image">
 </a>
 
 * 하나의 패턴을 찾은(Step 16) 이후 접두사가 일치하는 한 최대 일치 길이만큼 이동시키고 계속적으로 비교한다.__(Step 18. parent[14]:c vs pattern[3]:c)__
+
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/kmp_4.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/kmp_4.JPG" title="Check out the image">
 </a>

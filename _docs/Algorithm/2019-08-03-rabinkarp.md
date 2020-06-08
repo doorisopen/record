@@ -24,8 +24,8 @@ order: 23
 * __라빈 카프 알고리즘이 속도가 빠른 이유__
   + parent 문자열 해시를 구하는 연속적인 과정이 연결된 수학적 수식에 의해 반복되기 때문이다.
 
-
 * __참고__
+
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/rabinkarp_hash.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/rabinkarp_hash.JPG" title="Check out the image">
 </a>
@@ -38,14 +38,14 @@ order: 23
 
 
 ## 라빈 카프(Rabin-Karp) 알고리즘 예시
-
 * __핵심__
+
 Step 1에서 2로 한칸 이동하면서 가장 바로 앞의 'a'만큼의 수치를 빼 준 뒤에 2를 곱하고 새롭게 뒤에 들어온 'a'의 수치를 더해준다. 
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/rabinkarp_1.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/rabinkarp_1.JPG" title="Check out the image">
 </a>
 
->> 따라서, __parent 해시 값 = 2 * ( parent 해시 값 - 가장 앞에 있는 문자의 수치) + 새롭게 들어온 문자의 수치__
+> 따라서, __parent 해시 값 = 2 * ( parent 해시 값 - 가장 앞에 있는 문자의 수치) + 새롭게 들어온 문자의 수치__
 
 ## Source Code
 {% highlight javascript %}
@@ -93,15 +93,6 @@ int main(void) {
 {% endhighlight %}
 
 * 정확하게 __해시 값의 일치 여부를 검증__ 하기 위해서 __나머지 연산(MOD)__ 를 사용하는 경우가 많다. 하지만 일반적으로 __오버 플로우(Over Flow)__ 가 발생해도 해시 값 자체는 동일하기 때문에 나머지 연산을 굳이 사용해주지 않아도 된다. 그러나 더 안정적인 프로그램을 작성하고자 할 때는 __나머지 연산__ 을 해주는 것이 좋다.
-
-
-
-
-
-## 관련된 Post
-
-
-
 
 
 ## References

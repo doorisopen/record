@@ -28,8 +28,8 @@ order: 4
 * 배열에 1 10 5 7 3 2 9 8 6 4가 저장되어 있다고 가정하고 오름차순으로 정렬해 보자.
 
 
-<a href="{{ site.baseurl }}{{ site.algorithm_img }}/sort/selectionsort.jpg" data-lightbox="falcon9-large" data-title="Check out the image">
-  <img src="{{ site.baseurl }}{{ site.algorithm_img }}/sort/selectionsort.jpg" title="Check out the image">
+<a href="{{ site.baseurl }}{{ site.algorithm_img }}/sort/selectionsort.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.algorithm_img }}/sort/selectionsort.JPG" title="Check out the image">
 </a>
 
 

@@ -20,12 +20,14 @@ order: 7
 
 ## 합병 정렬(Merge Sort)의 알고리즘 예시
 * 합병 정렬은 퀵 정렬과 다르게 피벗 값이 없고 항상 반으로 나눈다는 특징이 있고 합치는 순간에 정렬을 한다.
-바 로 이 특징이 단계의 크기가 logN이 되도록 만들어준다.
+바로 이 특징이 단계의 크기가 logN이 되도록 만들어준다.
+
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/sort/mergesort1.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/sort/mergesort1.JPG" title="Check out the image">
 </a>
 
 * 단계가 logN이라는 것을 이해했다. 근데 왜 정렬에 필요한 수행시간이 N밖에 되지 않는가? 이유는 다음과 같다.
+
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/sort/mergesort2.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/sort/mergesort2.JPG" title="Check out the image">
 </a>

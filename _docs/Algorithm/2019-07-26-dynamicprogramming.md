@@ -13,15 +13,12 @@ order: 16
 * __다이나믹 프로그래밍(Dynamic Programming)__ 은 '동적 프로그래밍', '동적 계획법' 이라고도 한다. 
 
 
-<hr/>
-
 ## 다이나믹 프로그래밍(Dynamic Programming)의 특징
 * 다이나밍 프로그래밍은 다음의 가정 하에 사용할 수 있다.
   1. 큰 문제를 작은 문제로 나눌 수 있다.
   2. 작은 문제에서 구한 정답은 그것을 포함하는 큰 문제에서도 동일하다. 
 * D[i] = D[i - 1]  + D[i - 2] 처럼 인접한 수의 관계를 이용해 문제를 푸는것을 점화식을 이용한 풀이 라고도 한다. 많은 동적 계획법 문제가 이 점화식을 구하면 답을 구할 수 있다. 
 
-<hr/>
 
 ## 다이나믹 프로그래밍(Dynamic Programming)의 알고리즘 예시
 
@@ -33,13 +30,9 @@ order: 16
 </a>
 
 * __피보나치 수열의 점화식 :__ D[i] = D[i - 1]  + D[i - 2]
-<br>
-<br>
 * 위의 사진처럼 7을 피보나치 함수에 넣으면 사진과 같이 호출되어진다. 그러나 특정 부분에서 동일한 값의 피보나치 함수가 호출 됨을 볼 수 가있다. 이것을 불필요하게 한 번 푼 것을 여러 번 다시 푸는 비효율적인 방법이라고 할 수 있다. 
 * 이것을 해결하기 위해서 __'메모이제이션'__ 이라는 방법을 이용하면 엄청난 시간 단축 효과를 볼 수 있다.
   + __메모이제이션 이란,__ 한 번 구한 값을 다시 구하는 일이 없도록 하기 위한 방법이다.
-
-<hr/>
 
 ## 1. Dynamic Programming 기본 형태 구현
 {% highlight javascript %}
@@ -58,7 +51,6 @@ int main(void){
 }
 {% endhighlight %}
 
-<hr/>
 
 ## 2. Dynamic Programming 메모이제이션(Memoization)이용하여 구현
 {% highlight javascript %}
@@ -82,8 +74,7 @@ int main(void){
 {% endhighlight %}
 
 
-
-## 관련된 Post
+## 관련 문제
 > * <a href="https://github.com/doorisopen/ProblemSolving/blob/master/BOJ/boj11726.cpp">[BOJ]11726 - 2*n 타일링<a>
 > * <a href="https://github.com/doorisopen/ProblemSolving/blob/master/BOJ/boj11727.cpp">[BOJ]11727 - 2*n 타일링2<a>
 > * <a href="https://github.com/doorisopen/ProblemSolving/blob/master/BOJ/boj2133.cpp">[BOJ]2133 - 타일 채우기<a>
