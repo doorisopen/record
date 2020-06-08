@@ -2,7 +2,7 @@
 title: 재귀와 꼬리재귀
 category: Algorithm
 comments: true
-order: 6
+order: 36
 ---
 
 ## 재귀란?

@@ -34,7 +34,7 @@ System.out.print("world"+num); // 개행 미포함
 ```
 
 ## Java의 입력(Input, Scanner & BufferReader)
-### Scanner 사용법
+## Scanner 사용법
 
 ```
 import java.util.Scanner;
@@ -227,7 +227,7 @@ System.out.println(num3.length); // 2
 System.out.println(num3[0].length); // 5
 ```
 
-### Arrays.fill()
+## Arrays.fill()
 
 ```
 import java.util.Arrays;
@@ -265,7 +265,7 @@ for (int i = 0; i < arr2.length; i++) {
 
 
 ## 문자열 처리(StringTokenizer)
-### StringTokenizer
+## StringTokenizer
 * 문자열을 토큰으로 잘라야 할 때 사용하면 편하다.
 
 ```
@@ -304,7 +304,7 @@ public class Main {
 }
 ```
 
-### StringBuilder
+## StringBuilder
 * 출력해야 하는 것이 많은 경우에는, 매번 출력하는 것 보다
 * StringBuilder를 이용해 문자열을 만들고, 한번에 출력하는 것이 속도면에서 좋다.
 

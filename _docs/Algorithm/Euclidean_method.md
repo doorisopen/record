@@ -2,7 +2,7 @@
 title: 유클리드 호제법
 category: Algorithm
 comments: true
-order: 7
+order: 38
 ---
 
 ## 목차

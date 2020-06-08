@@ -1,14 +1,21 @@
 ---
 title: 너비 우선 탐색(BFS, Breadth First Search)
 category: Algorithm
+date: 2019-07-22 16:32:30
 comments: true
-order: 4
+order: 11
 ---
 
-# 너비 우선 탐색(BFS, Breadth First Search)
+## 너비 우선 탐색(BFS, Breadth First Search)
 * 다차원 배열에서 각 칸을 방문할 때 __너비를 우선으로 방문하는 알고리즘__
 * BFS는 방문한 노드들을 차례로 저장하고 꺼낼 수 있는 __자료구조인 큐(Queue)를 사용__ 한다.
 * BFS는 __다차원 배열의 거리 계산 및 순회하는데 사용된다.__
+* 너비 우선 탐색(Breadth-first search, BFS)은 __'맹목적 탐색방법'__ 의 하나이다.<br>
+  + __맹목적 탐색__ 이란, 이미 정해진 순서에 따라 상태 공간 그래프를 점차 형성해 가면서 해를 탐색하는 방법을 말한다.
+* __루트 노드 (혹은 다른 임의의 노드)__ 에서 시작해 __인접한 노드를__ 먼저 탐색하는 방법.
+* 더 이상 방문하지 않은 정점이 없을 때까지 방문하지 않은 모든 정점들에 대해서도 너비 우선 검색을 적용한다.
+
+> __두 노드 사이의 최단 경로__ 혹은 __임의의 경로를__ 찾고 싶을 때 이 방법을 선택한다.
 
 * __재귀적으로__ 동작하지 않는다.
 * 'Prim', 'Dijkstra' 알고리즘과 유사하다.
@@ -22,8 +29,103 @@ order: 4
 
 ![algorithm-animated_bfs]({{ site.baseurl }}/images/Algorithm/algorithm-animated_bfs.gif)
 
+## 너비 우선 탐색(Breath First Search)의 알고리즘 예시
 
-# BFS 예시 코드
+<a href="{{ site.baseurl }}{{ site.algorithm_img }}/bfs1.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.algorithm_img }}/bfs1.JPG" title="Check out the image">
+</a>
+
+<a href="{{ site.baseurl }}{{ site.algorithm_img }}/bfs2.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.algorithm_img }}/bfs2.JPG" title="Check out the image">
+</a>
+
+<a href="{{ site.baseurl }}{{ site.algorithm_img }}/bfs3.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.algorithm_img }}/bfs3.JPG" title="Check out the image">
+</a>
+
+<a href="{{ site.baseurl }}{{ site.algorithm_img }}/bfs4.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.algorithm_img }}/bfs4.JPG" title="Check out the image">
+</a>
+
+<a href="{{ site.baseurl }}{{ site.algorithm_img }}/bfs5.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.algorithm_img }}/bfs5.JPG" title="Check out the image">
+</a>
+
+<a href="{{ site.baseurl }}{{ site.algorithm_img }}/bfs6.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.algorithm_img }}/bfs6.JPG" title="Check out the image">
+</a>
+
+
+## C++ STL Library를 사용한 BFS 구현
+
+
+{% highlight javascript %}
+
+#include <iostream>
+#include <queue>
+#include <vector>
+
+using namespace std;
+
+int	num = 7;
+// 방문 처리 하기 위한 배열 
+int c[7];
+vector<int> a[8];
+void bfs(int start){
+	queue<int> q;
+	q.push(start);
+	c[start] = true;
+	while(!q.empty()){
+		int x = q.front();
+		q.pop();
+		printf("%d ", x);
+		for(int i = 0; i < a[x].size(); i++){
+			int y = a[x][i];
+			// 방문한 상태가 아니라면 큐에 넣어준다.
+			if(!c[y]){
+				q.push(y);
+				c[y] = true; 
+			}
+		}
+		
+	}
+	
+}
+int main(void){
+	a[1].push_back(2);
+	a[2].push_back(1);
+	
+	a[1].push_back(3);
+	a[3].push_back(1);
+	
+	a[2].push_back(3);
+	a[3].push_back(2);
+	
+	a[2].push_back(5);
+	a[5].push_back(2);
+	
+	a[2].push_back(4);
+	a[4].push_back(2);
+	
+	a[3].push_back(6);
+	a[6].push_back(3);
+	
+	a[3].push_back(7);
+	a[7].push_back(3);
+	
+	a[4].push_back(5);
+	a[5].push_back(4);
+	
+	a[6].push_back(7);
+	a[7].push_back(6);
+	
+	bfs(1);
+	
+	return 0;
+}
+{% endhighlight %}
+
+## BFS 예시 코드
 
 ```
 #include <bits/stdc++.h>
@@ -86,3 +188,6 @@ int main(void){
 # Reference
 * [[바킹독의 실전 알고리즘] 0x09강 - BFS](https://www.youtube.com/watch?v=ftOmGdm95XI)
 * [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Animated_BFS.gif)
+* [[알고리즘] 너비 우선 탐색(BFS)이란](https://gmlwjd9405.github.io/2018/08/15/algorithm-bfs.html)
+* [15. 너비 우선 탐색(BFS)](https://blog.naver.com/ndb796/221230944971)
+* [위키 - 너비 우선 탐색](https://ko.wikipedia.org/wiki/%EB%84%88%EB%B9%84_%EC%9A%B0%EC%84%A0_%ED%83%90%EC%83%89)
