@@ -37,8 +37,8 @@ order: 2
 
 ## 스택(Stack)의 알고리즘 예시
 
-<a href="{{ site.datastructure_img }}/stack.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
-  <img src="{{ site.datastructure_img }}/stack.JPG" title="Check out the image">
+<a href="{{ site.baseurl }}{{ site.datastructure_img }}/stack.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.datastructure_img }}/stack.JPG" title="Check out the image">
 </a>
 
 

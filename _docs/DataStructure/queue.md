@@ -40,8 +40,8 @@ order: 3
 
 ## 큐(Queue)의 알고리즘 예시
 
-<a href="{{ site.datastructure_img }}/queue.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
-  <img src="{{ site.datastructure_img }}/queue.JPG" title="Check out the image">
+<a href="{{ site.baseurl }}{{ site.datastructure_img }}/queue.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.datastructure_img }}/queue.JPG" title="Check out the image">
 </a>
 
 ## C 언어를 이용한 Queue 구현

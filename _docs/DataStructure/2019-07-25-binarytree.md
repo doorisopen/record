@@ -29,13 +29,13 @@ order: 8
 
 * __이진트리(Binary Tree)__ 형태
 
-<a href="{{ site.datastructure_img }}/binarytreeshape.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
-  <img src="{{ site.datastructure_img }}/binarytreeshape.JPG" title="Check out the image">
+<a href="{{ site.baseurl }}{{ site.datastructure_img }}/binarytreeshape.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.datastructure_img }}/binarytreeshape.JPG" title="Check out the image">
 </a>
 
 ## 이진 트리(Binary Tree)의 알고리즘 예시
-<a href="{{ site.datastructure_img }}/binarytree.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
-  <img src="{{ site.datastructure_img }}/binarytree.JPG" title="Check out the image">
+<a href="{{ site.baseurl }}{{ site.datastructure_img }}/binarytree.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.datastructure_img }}/binarytree.JPG" title="Check out the image">
 </a>
 
 * __전위 순회 (Preorder Traversal)__
