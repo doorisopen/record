@@ -1,6 +1,7 @@
 ---
 title: 트리(Tree)
 category: DataStructure
+date: 2020-06-12 00:30:00
 comments: true
 order: 7
 ---
@@ -37,10 +38,10 @@ order: 7
 
 ```
 //==트리의 노드를 표현하는 객체의 구현==//
-struct TreeNode {
+struct Node {
     string label // 저장할 자료 (문자열일 필요는 없다)
-    TreeNode* parent; // 부모 노드를 가리키는 포인터
-    vector<TreeNode*> children; // 자손 노드들을 가리키는 포인터의 배열
+    Node* parent; // 부모 노드를 가리키는 포인터
+    vector<Node*> child; // 자손 노드들을 가리키는 포인터의 배열
 };
 ```
 
@@ -49,26 +50,116 @@ struct TreeNode {
 
 ```
 //==트리를 순회하며 모든 노드에 포함된 값을 출력==//
-void printLabels(TreeNode* root) {
+void printLabels(Node* root) {
     // 루트에 저장된 값 출력
     cout << root->lable << "\n";
     // 각 자손들을 루트로 하는 서브트리에 포함된 값들을 재귀적으로 출력
-    for(int i = 0; i < root->children.size(); ++i) {
-        printLabels(root->children[i]);
+    for(int i = 0; i < root->child.size(); ++i) {
+        printLabels(root->child[i]);
     }
 }
 ```
 
 ```
 //==root를 루트로 하는 트리의 높이를 구하기==//
-int height(TreeNode* root) {
+int height(Node* root) {
     int h = 0;
-    for(int = 0; i < root->children.size(); ++i) {
-        h = max(h, 1+ heigth(root->children[i]));
+    for(int i = 0; i < root->children.size(); ++i) {
+        h = max(h, 1+ height(root->children[i]));
     }
     return h;
 }
 ```
+
+## 트리 구현(C++)
+
+![tree]({{ site.baseurl }}{{ site.datastructure_img }}/tree.JPG)
+
+{% highlight javascript %}
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node {
+	int data;
+	Node* parent;
+	vector<Node*> child;
+	Node(int data) {
+		this->data = data;
+		this->parent = this;
+	}
+};
+struct Tree {
+	Node* root;
+	Tree() {
+		root = NULL;
+	}
+	//루트 노드 생성
+	void createNode(int data) {
+		if(root == NULL) {
+			root = new Node(data);
+		}
+	}
+	//자식노드 생성
+	void addChildNode(int parent, int data) {
+		if(root == NULL) {
+			root = new Node(parent);
+			Node* childNode = new Node(data);
+			root->child.push_back(childNode);
+			childNode->parent = root;
+		} else {
+			searchNode(root, parent, data);
+		}
+	}
+	//노드 탐색
+	void searchNode(Node* root, int parent, int data) {
+		if(root == NULL) return;
+		if(root->data == parent) {
+			Node* childNode = new Node(data);
+			root->child.push_back(childNode);
+			childNode->parent = root;
+		} else {
+			for (int i = 0; i < root->child.size(); i++) {
+				searchNode(root->child[i], parent, data);
+			}
+		}
+	}
+	//트리 출력
+	void printTree(Node* root) {
+		if(root == NULL) {
+			cout << "노드가 존재하지 않습니다.\n";
+			return;
+		} else {
+			cout << root->data << " ";
+			for (int i = 0; i < root->child.size(); i++) {
+				printTree(root->child[i]);
+			}
+		}
+	}
+	//==root를 루트로 하는 트리의 높이를 구하기==//
+	int height(Node* root) {
+		int h = 0;
+		for(int i = 0; i < root->child.size(); ++i) {
+			h = max(h, 1 + height(root->child[i]));
+		}
+		return h;
+	}
+};
+
+int main(void) {
+	Tree tree;
+	tree.createNode(1);
+	tree.addChildNode(1,2);
+	tree.addChildNode(1,3);
+	tree.addChildNode(1,4);
+	tree.addChildNode(2,8);
+	tree.addChildNode(2,9);
+	tree.addChildNode(9,7);
+	tree.addChildNode(9,5);
+	
+	tree.printTree(tree.root);//1 2 8 9 7 5 3 4
+	cout << "\n" << tree.height(tree.root);//3
+}
+{% endhighlight %}
 
 ## 시간 복잡도
 * 트리에 n개의 노드가 있다고 하면 이들을 모두 순회하기 위해서는 __O(n)__ 의 시간이 들어야 정상이다.
