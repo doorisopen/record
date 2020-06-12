@@ -11,9 +11,6 @@ order: 23
 * __라빈 카프(Rabin-Karp)__ 알고리즘은 문자열의 해시 값을 비교하여 그 일치 여부를 검사하는 알고리즘이다.
 
 
-
-
-
 ## 라빈 카프(Rabin-Karp) 알고리즘의 특징
 * __라빈 카프(Rabin-Karp)__ 알고리즘은 항상 빠르지는 않지만 일반적인 경우 빠르게 작동하는 간단한 구조의 문자열 매칭 알고리즘이라는 점에서 자주 사용된다.
 * __라빈 카프(Rabin-Karp)__ 알고리즘은 해시 기법을 사용한다.
@@ -40,7 +37,8 @@ order: 23
 ## 라빈 카프(Rabin-Karp) 알고리즘 예시
 * __핵심__
 
-Step 1에서 2로 한칸 이동하면서 가장 바로 앞의 'a'만큼의 수치를 빼 준 뒤에 2를 곱하고 새롭게 뒤에 들어온 'a'의 수치를 더해준다. 
+Step 1에서 2로 한칸 이동하면서 가장 바로 앞의 'a'만큼의 수치를 빼 준 뒤에 2를 곱하고 새롭게 뒤에 들어온 'a'의 수치를 더해준다.
+
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/rabinkarp_1.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/rabinkarp_1.JPG" title="Check out the image">
 </a>
