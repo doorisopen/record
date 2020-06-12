@@ -120,5 +120,172 @@ int main(void){
 }
 {% endhighlight %}
 
-### References
+## 트리 문제
+* [BOJ 1991: 트리순회](https://www.acmicpc.net/problem/1991)
+<details><summary>코드(C++)</summary>
+
+{% highlight javascript %}
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node {
+    char data;
+    Node* left;
+    Node* right;
+    //생성자
+    Node(char data) {
+        this->data = data;
+        this->left = NULL;
+        this->right = NULL;
+    }
+};
+
+typedef struct Tree {
+    Node* root;
+    //생성자
+    Tree() {
+        root = NULL;
+    }
+    //노드 생성
+    void nodeInsert(char data, char left, char right) {
+        if(root == NULL) {
+            if(data != '.') root = new Node(data);
+            if(left != '.') root->left = new Node(left);
+            if(right != '.') root->right = new Node(right);
+        } else {
+            nodeSearch(root, data, left, right);
+        }
+    }
+    //노드 찾기
+    void nodeSearch(Node* root, char data, char left, char right) {
+        if(root == NULL) return;
+        else if(root->data == data) {
+            if(left != '.') root->left = new Node(left);
+            if(right != '.') root->right = new Node(right);
+        } else {
+            nodeSearch(root->left, data, left, right);
+            nodeSearch(root->right, data, left, right);
+        }
+    }
+} Tree;
+
+void pre(Node* root) {
+    cout << root->data;
+    if(root->left != NULL) pre(root->left);
+    if(root->right != NULL) pre(root->right);
+}
+void in(Node* root) {
+    if(root->left != NULL) in(root->left);
+    cout << root->data;
+    if(root->right != NULL) in(root->right);
+}
+void post(Node* root) {
+    if(root->left != NULL) post(root->left);
+    if(root->right != NULL) post(root->right);
+    cout << root->data;
+}
+
+int main() {
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);
+    
+    int n;
+    cin >> n;
+    Tree tree;
+    for (int i = 0; i < n; i++) {
+        char data, left, right;
+        cin >> data >> left >> right;
+        tree.nodeInsert(data, left, right);
+    }
+    
+    pre(tree.root);cout<<"\n";
+    in(tree.root);cout<<"\n";
+    post(tree.root);
+    
+    return 0;
+}
+{% endhighlight %}
+
+</details>
+
+
+<details><summary>코드(Java)</summary>
+
+{% highlight javascript %}
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+class Node {
+    char data;
+    Node left, right;
+    public Node(char data) {
+        this.data = data;
+    }
+}
+class Tree {
+    Node root;
+    public void nodeInsert(char data, char left, char right) {
+        if(root == null) {
+            if(data != '.') root = new Node(data);
+            if(left != '.') root.left = new Node(left);
+            if(right != '.') root.right = new Node(right);
+        } else {
+            nodeSearch(root, data, left, right);
+        }
+    }
+    public void nodeSearch(Node root, char data, char left, char right) {
+        if(root == null) return;
+        else if(root.data == data) {
+            if(left != '.') root.left = new Node(left);
+            if(right != '.') root.right = new Node(right);
+        } else {
+            nodeSearch(root.left, data, left, right);
+            nodeSearch(root.right, data, left, right);
+        }
+    }
+    public void pre(Node root) {
+        System.out.print(root.data);
+        if(root.left != null) pre(root.left);
+        if(root.right != null) pre(root.right);
+    }
+    public void in(Node root) {
+        if(root.left != null) in(root.left);
+        System.out.print(root.data);
+        if(root.right != null) in(root.right);
+    }
+    public void post(Node root) {
+        if(root.left != null) post(root.left);
+        if(root.right != null) post(root.right);
+        System.out.print(root.data);
+
+    }
+}
+public class boj1991 {
+    public static void main(String args[]) throws IOException {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        
+        int n = Integer.parseInt(bf.readLine());
+        Tree tree = new Tree();
+        for (int i = 0; i < n; i++) {
+            char str[] = bf.readLine().replace(" ", "").toCharArray();
+            tree.nodeInsert(str[0], str[1], str[2]);
+        }
+
+        tree.pre(tree.root);
+        System.out.println();
+        tree.in(tree.root);
+        System.out.println();
+        tree.post(tree.root);
+        System.out.println();
+        bf.close();
+    }
+}
+{% endhighlight %}
+
+</details>
+<br/>
+
+## References
 > * <a href="https://blog.naver.com/ndb796/221233560789">19. 이진 트리의 구현과 순회(Traversal) 방식<a>
