@@ -1,6 +1,7 @@
 ---
 title: 가비지 컬렉션(GC, Garbage Collection)
 category: Java
+date: 2020-02-05 17:19:30
 comments: true
 order: 5
 ---
