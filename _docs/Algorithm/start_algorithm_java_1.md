@@ -48,7 +48,7 @@ a = sc.nextInt(); // 3 입력
 b = sc.nextInt(); // 5 입력
 System.out.println(a + b); // 8 출력
 
-//== ex2, 1차원 배열 입력받기 ==//
+//== ex2, 1차원 배열(숫자) 입력받기 ==//
 /* 
  n=5
  2 3 4 1 2 3 입력받기
@@ -58,6 +58,19 @@ int arr[] = new int[n];
 
 for(int i = 0; i < n; i++) {
     arr[i] = sc.nextInt(); // 2 3 4 1 2 3 입력
+}
+
+//== ex2-1, 1차원 배열(문자열) 입력받기 ==//
+/* 
+ n=5
+ ABCDE 입력받기
+*/
+char[] c = new char[10]; //char 저장
+int n = sc.nextInt(); // 5 입력
+String str = scanner.next(); // ABCDE 입력, 공백 이전까지 읽는다.
+//nextLine() 한줄을 읽는다.
+for (int i = 0; i < str.length(); i++) {
+    c[i+1] = str.charAt(i);
 }
 
 //== ex3, 2차원 배열 입력받기1 ==//
