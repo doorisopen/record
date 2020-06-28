@@ -148,7 +148,6 @@ int main() {
 
 <hr/>
 
-
 #### 연습 문제4 - BOJ 1074 Z
   
 <details><summary>연습 문제4-코드확인</summary>
@@ -183,6 +182,8 @@ int main(void) {
 {% endhighlight %}
 
 </details>
+
+<hr/>
 
 ## References
 * [[바킹독의 실전 알고리즘] 0x0B강 - 재귀](https://www.youtube.com/watch?v=8vDDJm5EewM)
