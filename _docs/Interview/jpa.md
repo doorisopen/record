@@ -1,5 +1,5 @@
 ---
-title:  "면접 질문 리스트 JPA편"
+title:  "면접 질문 리스트-JPA"
 category: Interview
 date:   2020-06-25 11:30:59
 comments: true

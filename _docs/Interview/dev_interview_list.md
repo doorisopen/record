@@ -1,5 +1,5 @@
 ---
-title:  "개발자 면접 질문 리스트"
+title:  "면접 질문 리스트-개발자 종합"
 category: Interview
 date:   2019-07-10 11:40:59
 comments: true
