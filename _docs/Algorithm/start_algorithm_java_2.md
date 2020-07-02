@@ -15,10 +15,14 @@ Java로 PS(Problem Solving)을 시작할때 필수로 알아야할 기본기를 
     - LinkedList, (Stack)
   + Queue
     - LinkedList
+    - Priority Queue
   + Hash Table
     - HashMap, (HashTable)
   + Set
     - HashSet
+
+
+![algorithm-start_algorithm_java_2_collection_hierarchy]({{ site.baseurl }}/images/Algorithm/algorithm-start_algorithm_java_2_collection_hierarchy.JPG)
 
 ## 리스트(List)
 * 데이터를 1차원으로 늘어놓은 형태의 __자료구조__ 를 말합니다.
@@ -149,6 +153,110 @@ q.offer(5); // 1 5
 q.offer(6); // 1 5 6
 q.remove(5);// 1 6
 System.out.println(q.peek());// 1
+```
+
+## Priority Queue
+* java.util.PriorityQueue
+* 최대 힙(ex: 5,4,3,2,1), 최소 힙(ex: 1,2,3,4,5) 구조를 가지는 Queue 이다.
+
+#### ex1, Priority Queue의 기본 사용법
+
+```
+import java.util.PriorityQueue;
+import java.util.Comparator;
+
+//==ex1, Priority Queue의 기본 사용법==//
+public static void main(String args[]) throws IOException {
+    // 오름차순
+    PriorityQueue<Integer> pq = new PriorityQueue<Integer>();// sort default: 오름차순
+    pq.add(-1);// [-1]
+    pq.add(10);// [-1,10]
+    pq.add(-5);// [-5,-1,10]
+    pq.add(20);// [-5,-1,10,20]
+    System.out.println(pq.poll()); // -5 출력후 제거 [-1,10,20]
+    
+    PriorityQueue<Integer> pq_reverse = new PriorityQueue<Integer>(Comparator.reverseOrder());// sort: 내림차순
+    pq.add(-1);// [-1]
+    pq.add(10);// [10,-1]
+    pq.add(-5);// [10,-1,-5]
+    pq.add(20);// [20,10,-1,-5]
+    System.out.println(pq.poll()); // 20 출력후 제거 [10,-1,-5]
+}
+```
+
+#### ex2, Priority Queue 객체(Object) 활용법
+
+> ※참고※
+>
+> 다익스트라와 같은 경로 찾기 문제를 풀때 우선 순위 큐를 사용하는 경우가 있는데 이때 정보을 하나만 저장하는 것이 아니라 좌표(x,y) 값 이외의 1개 이상의 값을 저장해야한다. 보통 Object를 만들어서 사용하는데 주의할 점이 있다. 값이 하나일때는 최대 힙, 최소 힙 구조를 만들기 위해 비교값이 하나 뿐이라 문제가 없지만 Object의 경우 값이 여러개라 비교 대상이 없어 __java.lang.ClassCastException: Info cannot be cast to java.lang.Comparable__ 와 같은 에러가 발생한다. C++의 경우 첫 번째 인자값을 기준으로 정렬하고 동일 값이 있다면 두 번째... 로 알아서 정렬하지만 Java의 경우 그렇지 않다. 이를 해결하기 위해 아래와 같이 Comparable interface의 compareTo() 메서드를 구현해줘야한다.
+
+```
+class myNode implements Comparable<myNode> {
+  int cost;
+  int x, y;
+  ...
+  @Override
+    public int compareTo(myNode node) {
+        return node.cost >= this.cost ? -1 : 1; // 오름차순
+    }
+}
+```
+#### @Override compareTo()
+* compareTo() 메서드 원리
+  + 현재 객체 < 파라미터로 넘어온 객체: 음수 return
+  + 현재 객체 == 파라미터로 넘어온 객체: 0 return
+  + 현재 객체 > 파라미터로 넘어온 객체: 양수 return
+  + 음수 또는 0이면 객체의 자리가 유지되며, 양수인 경우에는 두 객체의 자리가 바뀌는 것입니다.
+  + __즉, 작거나 0이면 객체의 자리가 유지되기 때문에 오름차순으로 구현이 되는 것입니다.__
+
+```
+class myNode implements Comparable<myNode> {
+  int cost;
+  int x, y;
+  ...
+  @Override
+    public int compareTo(myNode node) {
+        return node.cost >= this.cost ? -1 : 1; // 오름차순
+        // return myNode.cost >= this.cost ? 1 : 1; // 내림차순
+    }
+}
+```
+
+#### PriorityQueue 객체(Object) 활용
+
+```
+import java.util.PriorityQueue;
+import java.io.IOException;
+
+//==ex2, Priority Queue 객체(Object) 활용법==//
+class myNode implements Comparable<myNode>{
+    int cost;
+    int x,y;
+    public myNode(int c, int x, int y) {
+        this.cost = c;
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public int compareTo(myNode myNode) {
+        return myNode.cost >= this.cost ? -1 : 1; // 오름차순
+        // return myNode.cost >= this.cost ? 1 : 1; // 내림차순
+    }
+}
+public class test {
+    
+    public static void main(String args[]) throws IOException {
+        PriorityQueue<myNode> pq = new PriorityQueue<myNode>();
+        pq.add(new myNode(-5,0,0));
+        pq.add(new myNode(-10,1,1));
+        pq.add(new myNode(20,2,2));
+        pq.add(new myNode(15,3,3));
+        
+        myNode node = pq.poll(); // 값 저장후 제거 
+        System.out.println(node.cost); // 오름차순: -10, 내림차순:20
+    }
+}
 ```
 
 ## HashTable
