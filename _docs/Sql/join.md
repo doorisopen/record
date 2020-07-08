@@ -1,6 +1,7 @@
 ---
 title: Join
 category: SQL
+date:   2020-06-04 00:30:59
 comments: true
 order: 2
 ---
@@ -25,7 +26,7 @@ order: 2
 ## Demo DataBase
 다음과 같은 테이블이 있다고 해보자.
 
-```
+```sql
 CREATE TABLE animal_A ( 
 id VARCHAR(30) NOT NULL PRIMARY KEY, 
 name VARCHAR(30) NOT NULL,
@@ -56,7 +57,7 @@ INSERT INTO `animal_B` (`id`, `name`, `type`, `reg_date`) VALUES ('A358711', 'Fa
 
 ## INNER 조인
 
-```
+```sql
 --Syntax
 SELECT column_name(s)
 FROM table1
@@ -64,7 +65,7 @@ INNER JOIN table2
 ON table1.column_name = table2.column_name;
 ```
 
-```
+```sql
 -- Inner Join
 select 
   a.id, 
@@ -80,7 +81,7 @@ on a.id = b.id;
 
 ## LEFT OUTER 조인
 
-```
+```sql
 --Syntax
 SELECT column_name(s)
 FROM table1
@@ -88,7 +89,7 @@ LEFT JOIN table2
 ON table1.column_name = table2.column_name;
 ```
 
-```
+```sql
 -- Left Join
 select 
   a.id, 
@@ -104,7 +105,7 @@ on a.id = b.id;
 
 ## RIGHT OUTER 조인
 
-```
+```sql
 --Syntax
 SELECT column_name(s)
 FROM table1
@@ -112,7 +113,7 @@ RIGHT JOIN table2
 ON table1.column_name = table2.column_name;
 ```
 
-```
+```sql
 -- Right Join
 select 
   a.id, 
@@ -131,7 +132,7 @@ on a.id = b.id;
 * FULL OUTER JOIN은 왼쪽 (table1) 또는 오른쪽 (table2) 테이블 레코드와 일치하는 경우 모든 레코드를 리턴합니다.
 * FULL OUTER JOIN과 FULL JOIN은 동일합니다.
 
-```
+```sql
 --Syntax
 SELECT column_name(s)
 FROM table1
@@ -147,7 +148,7 @@ WHERE condition;
 * (a,1), (a, 2), (a,3), (b,1), (b,2), (b,3), (c, 1), (c,2), (c,3), (d, 1), (d, 2), (d,3)
 * 와 같이 결과가 나타난다. 결과의 계수는 n(A) * n(B)  = 4 * 3 = 12 이다.
 
-```
+```sql
 --Syntax
 SELECT column_name(s)
 FROM table1
@@ -158,7 +159,7 @@ WHERE condition;
 
 ## 셀프 조인
 
-```
+```sql
 --Syntax
 SELECT column_name(s)
 FROM table1 T1, table1 T2
@@ -171,7 +172,7 @@ WHERE condition;
 ## JOIN ON과 WHERE의 차이점
 아래와 같은 테이블이 있다고 하자.
 
-```
+```sql
 CREATE TABLE test1 ( 
 id VARCHAR(30) NOT NULL PRIMARY KEY,
 name VARCHAR(30) NOT NULL
@@ -193,7 +194,7 @@ INSERT INTO `test2` (`id`, `name`) VALUES ('2', 'e');
 ![db-sql-join_on_where_1]({{ site.baseurl }}/images/ComputerScience/Database/Sql/db-sql-join_on_where_1.JPG)
 
 
-```
+```sql
 -- TEST A
 SELECT * 
 FROM test1 as a left join test2 b
@@ -202,7 +203,7 @@ on a.id = b.id and b.name = 'd';
 
 ![db-sql-join_on_where_test_a]({{ site.baseurl }}/images/ComputerScience/Database/Sql/db-sql-join_on_where_test_a.JPG)
 
-```
+```sql
 -- TEST B
 SELECT * 
 FROM test1 as a left join test2 b
@@ -224,7 +225,7 @@ where b.name = 'd';
 * test1 테이블의 데이터 중 test2 테이블에 있는 데이터를 제외하고 가져오고 싶다. 
 * 위의 테이블에서 JOIN하는 column을 기준으로 id=1, 2는 test2 테이블에도 있으니 제외하고, __id=3 | name=c 만을 가져오고 싶은 경우__ 이다.
 
-```
+```sql
 select *
 from test1 a left join test2 b
 on a.id = b.id

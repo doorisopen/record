@@ -25,7 +25,7 @@ order: 6
 
 ## HashSet 예시
 
-```
+```java
 import java.util.HashSet;
 
 ...(중략)...

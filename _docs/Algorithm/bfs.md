@@ -127,7 +127,7 @@ int main(void){
 
 ## BFS 예시 코드
 
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 #define X first

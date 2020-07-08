@@ -698,7 +698,7 @@ cookies는 더 작고 모든 HTTP 요청과함께 서버 정보를 다시 전달
 
 webpack {엔트리 파일 경로} {번들 파일 경로} 형식으로 명령어를 실행해 __모듈을 컴파일__ 한다.
 
-```
+```javascript
 webpack ./entry.js bundle.js  
 ```
 
@@ -710,7 +710,7 @@ JavaScript를 사용하는 HTML 코드에서는 컴파일 결과로 만들어진
 
 참고) 컴파일 명령어에 --watch 옵션을 사용하면 모듈 파일이 변경될 때마다 변경된 모듈을 자동으로 다시 컴파일한다.
 
-```
+```javascript
 webpack --watch ./entry.js bundle.js  
 ```
 

@@ -6,7 +6,7 @@ comments: true
 order: 5
 ---
 
-# 목차
+## 목차
 > 1. __가비지 컬렉션(GC, Garbage Collection) 이란?__
 > 2. __Young 영역의 구성__
 > 3. __Old 영역에 대한 GC__
@@ -21,7 +21,7 @@ order: 5
 
 자바가 메모리 누수현상을 방지하는 또 다른 방법이 `가비지 컬렉션`이다.
 
-# 가비지 컬렉션 (Garbage Collection)
+## 가비지 컬렉션 (Garbage Collection)
 프로그래머는 힙을 사용할 수 있는 만큼 자유롭게 사용하고, 더 이상 사용되지 않는 오브젝트들은 `가비지 컬렉션`을 담당하는 __프로세스가 자동으로 메모리에서 제거하도록 하는 것이 가비지 컬렉션의 기본 개념__ 이다.
 
 자바는 `가비지 컬렉션`에 아주 단순한 규칙을 적용한다.
@@ -30,7 +30,7 @@ order: 5
 
 ## 가비지 컬렉션 예시
 
-```
+```java
 public class Main {
     public static void main(String[] args) {
         String URL = "https://";
@@ -69,7 +69,7 @@ Garbage Collection 이 일어난 후의 메모리 상태는 아래 사진의 __H
 ## 가비지 컬렉션 과정 (Generational Garbage Collection)
 `가비지 컬렉션 과정`에 대해서 알아보기 전에 알아야 할 용어가 있다. 바로 `stop-the-world`이다.
 
-### stop-the-world 란?
+#### stop-the-world 란?
 `GC`을 실행하기 위해 JVM이 애플리케이션 실행을 멈추는 것이다. `stop-the-world`가 발생하면 GC를 실행하는 쓰레드를 제외한 나머지 쓰레드는 모두 작업을 멈춘다. GC 작업을 완료한 이후에야 중단했던 작업을 다시 시작한다. 어떤 GC 알고리즘을 사용하더라도 stop-the-world는 발생한다. 대개의 경우 GC 튜닝이란 이 stop-the-world 시간을 줄이는 것이다.
 
 __Java는 프로그램 코드에서 메모리를 명시적으로 지정하여 해제하지 않는다.__ 가끔 __명시적으로 해제하려고 해당 객체를 null로 지정하거나 System.gc() 메서드를 호출한다.__ 그러나 null로 지정하는 것은 큰 문제가 안 되지만, __System.gc() 메서드를 호출하는 것은 시스템의 성능에 매우 큰 영향을 끼치__ 므로 System.gc() 메서드는 절대로 사용하면 안 된다
@@ -81,19 +81,19 @@ __Java는 프로그램 코드에서 메모리를 명시적으로 지정하여 �
 
 이러한 가설을 __'weak generational hypothesis'__ 라 한다. 이 가설의 장점을 최대한 살리기 위해서 `HotSpot VM`에서는 크게 2개로 물리적 공간을 나누었다. 둘로 나눈 공간이 `Young 영역`과 `Old 영역`이다.
 
-### * Young 영역(Yong Generation 영역)
+#### * Young 영역(Yong Generation 영역)
 새롭게 생성한 객체의 대부분이 여기에 위치한다. 대부분의 객체가 금방 접근 불가능 상태가 되기 때문에 매우 많은 객체가 Young 영역에 생성되었다가 사라진다. 이 영역에서 객체가 사라질때 `Minor GC`가 발생한다고 말한다.
 
-### * Old 영역(Old Generation 영역)
+#### * Old 영역(Old Generation 영역)
 접근 불가능 상태로 되지 않아 Young 영역에서 살아남은 객체가 여기로 복사된다. 대부분 Young 영역보다 크게 할당하며, 크기가 큰 만큼 Young 영역보다 GC는 적게 발생한다. 이 영역에서 객체가 사라질 때 `Major GC(혹은 Full GC)`가 발생한다고 말한다. 
 
 ![java-gc3]({{ site.baseurl }}/images/Language/Java/java-gc3.JPG)
 
 
-### * Permanent Generation 영역(이하 Perm 영역)
+#### * Permanent Generation 영역(이하 Perm 영역)
 위 그림의 `Permanent Generation 영역(이하 Perm 영역)`은 Method Area라고도 한다. __객체나 억류(intern)된 문자열 정보를 저장하는 곳__ 이며, Old 영역에서 살아남은 객체가 영원히 남아 있는 곳은 절대 아니다. 이 영역에서 GC가 발생할 수도 있는데, 여기서 GC가 발생해도 Major GC의 횟수에 포함된다.
 
-### Old 영역 객체가 Young 영역 객체를 참조하는 경우
+#### Old 영역 객체가 Young 영역 객체를 참조하는 경우
 이러한 경우를 처리하기 위해서 Old 영역에는 512바이트의 덩어리(chunk)로 되어 있는 `카드 테이블(card table)`이 존재한다.
 
 `카드 테이블`에는 Old 영역에 있는 객체가 __Young 영역의 객체를 참조할 때마다 정보가 표시된다.__ Young 영역의 GC를 실행할 때에는 Old 영역에 있는 모든 객체의 참조를 확인하지 않고, __이 카드 테이블만 뒤져서 GC 대상인지 식별한다.__
@@ -103,7 +103,7 @@ __Java는 프로그램 코드에서 메모리를 명시적으로 지정하여 �
 
 카드 테이블은 `write barrier`를 사용하여 관리한다. __write barrier는 Minor GC를 빠르게 할 수 있도록 하는 장치이다.__ write barrirer때문에 약간의 오버헤드는 발생하지만 전반적인 GC 시간은 줄어들게 된다.
 
-### 가비지 컬렉터(gabage collector)
+#### 가비지 컬렉터(gabage collector)
 `데몬 스레드`를 이용하는 가장 대표적인 예로 `가비지 컬렉터(gabage collector)`를 들 수 있다.
 
 `가비지 컬렉터(gabage collector)`란 프로그래머가 동적으로 할당한 메모리 중 더 이상 사용하지 않는 영역을 자동으로 찾아내어 해제해 주는 __데몬 스레드__ 이다.
@@ -118,7 +118,7 @@ __Java는 프로그램 코드에서 메모리를 명시적으로 지정하여 �
 하지만 요즘에는 가비지 컬렉터의 성능이 많이 향상되어, 새롭게 만들어지는 대부분의 프로그래밍 언어에서 `가비지 컬렉터`를 제공하고 있다. 
 
 
-# Young 영역의 구성
+## Young 영역의 구성
 Young 영역은 3개의 영역으로 나뉜다.
 
 * Eden 영역
@@ -140,7 +140,7 @@ Survivor 영역이 2개이기 때문에 총 3개의 영역으로 나뉘는 것�
 
 이 절차를 보면 알겠지만 __Survivor 영역 중 하나는 반드시 비어 있는 상태로 남아 있어야 한다.__ 만약 두 Survivor 영역에 모두 데이터가 존재하거나, 두 영역 모두 사용량이 0이라면 여러분의 시스템은 정상적인 상황이 아니라고 생각하면 된다.
 
-### HotSpot VM의 빠른 메모리 할당(참고)
+#### HotSpot VM의 빠른 메모리 할당(참고)
 HotSpot VM에서는 보다 __빠른 메모리 할당을 위해서 두 가지 기술을 사용한다.__ 하나는 `bump-the-pointer`라는 기술이며, 다른 하나는 `TLABs(Thread-Local Allocation Buffers)`라는 기술이다.
 
 `bump-the-pointer`는 __Eden 영역에 할당된 마지막 객체를 추적한다.__ 마지막 객체는 Eden 영역의 맨 위(top)에 있다. 그리고 그 다음에 생성되는 객체가 있으면, 해당 객체의 크기가 Eden 영역에 넣기 적당한지만 확인한다. 만약 해당 객체의 크기가 적당하다고 판정되면 Eden 영역에 넣게 되고, 새로 생성된 객체가 맨 위에 있게 된다. 따라서, 새로운 객체를 생성할 때 마지막에 추가된 객체만 점검하면 되므로 매우 빠르게 메모리 할당이 이루어진다.
@@ -151,7 +151,7 @@ HotSpot VM에서는 보다 __빠른 메모리 할당을 위해서 두 가지 기
 
 > 위에서 이야기한 두 가지 기술(bump-the-pointer, TLABs)을 반드시 기억하고 있을 필요는 없다. 그러나 __Eden 영역에 최초로 객체가 만들어지고, Survivor 영역을 통해서 Old 영역으로 오래 살아남은 객체가 이동한다는 사실은 꼭 기억하기 바란다.__
 
-# Old 영역에 대한 GC
+## Old 영역에 대한 GC
 __Old 영역은 기본적으로 데이터가 가득 차면 GC를 실행한다.__ GC 방식에 따라서 처리 절차가 달라지므로, 어떤 GC 방식이 있는지 살펴보면 이해가 쉬울 것이다. GC 방식은 JDK 7을 기준으로 5가지 방식이 있다.
 
 * Serial GC
@@ -162,18 +162,18 @@ __Old 영역은 기본적으로 데이터가 가득 차면 GC를 실행한다.__
 
 이 중에서 운영 서버에서 절대 사용하면 안 되는 방식이 __Serial GC__ 다. Serial GC는 데스크톱의 CPU 코어가 하나만 있을 때 사용하기 위해서 만든 방식이다. Serial GC를 사용하면 애플리케이션의 성능이 많이 떨어진다.
 
-### Serial GC (-XX:+UseSerialGC)
+#### Serial GC (-XX:+UseSerialGC)
 Young 영역에서의 GC는 앞 절에서 설명한 방식을 사용한다. Old 영역의 GC는 mark-sweep-compact이라는 알고리즘을 사용한다. 이 알고리즘의 첫 단계는 Old 영역에 살아 있는 객체를 식별(Mark)하는 것이다. 그 다음에는 힙(heap)의 앞 부분부터 확인하여 살아 있는 것만 남긴다(Sweep). 마지막 단계에서는 각 객체들이 연속되게 쌓이도록 힙의 가장 앞 부분부터 채워서 객체가 존재하는 부분과 객체가 없는 부분으로 나눈다(Compaction).
 
 Serial GC는 적은 메모리와 CPU 코어 개수가 적을 때 적합한 방식이다.
 
-### Parallel GC (-XX:+UseParallelGC)
+#### Parallel GC (-XX:+UseParallelGC)
 Parallel GC는 Serial GC와 기본적인 알고리즘은 같지다. 그러나 Serial GC는 GC를 처리하는 스레드가 하나인 것에 비해, Parallel GC는 GC를 처리하는 쓰레드가 여러 개이다. 그렇기 때문에 Serial GC보다 빠른게 객체를 처리할 수 있다. Parallel GC는 메모리가 충분하고 코어의 개수가 많을 때 유리하다. Parallel GC는 Throughput GC라고도 부른다.
 
-### Parallel Old GC(-XX:+UseParallelOldGC)
+#### Parallel Old GC(-XX:+UseParallelOldGC)
 Parallel Old GC는 JDK 5 update 6부터 제공한 GC 방식이다. 앞서 설명한 Parallel GC와 비교하여 Old 영역의 GC 알고리즘만 다르다. 이 방식은 Mark-Summary-Compaction 단계를 거친다. Summary 단계는 앞서 GC를 수행한 영역에 대해서 별도로 살아 있는 객체를 식별한다는 점에서 Mark-Sweep-Compaction 알고리즘의 Sweep 단계와 다르며, 약간 더 복잡한 단계를 거친다.
 
-### CMS GC (-XX:+UseConcMarkSweepGC)
+#### CMS GC (-XX:+UseConcMarkSweepGC)
 다음 그림은 Serial GC와 CMS GC의 절차를 비교한 그림이다. 그림에서 보듯이 CMS GC는 지금까지 설명한 GC 방식보다 더 복잡하다.
 
 초기 Initial Mark 단계에서는 클래스 로더에서 가장 가까운 객체 중 살아 있는 객체만 찾는 것으로 끝낸다. 따라서, 멈추는 시간은 매우 짧다. 그리고 Concurrent Mark 단계에서는 방금 살아있다고 확인한 객체에서 참조하고 있는 객체들을 따라가면서 확인한다. 이 단계의 특징은 다른 스레드가 실행 중인 상태에서 동시에 진행된다는 것이다.
@@ -189,7 +189,7 @@ Parallel Old GC는 JDK 5 update 6부터 제공한 GC 방식이다. 앞서 설명
 
 따라서, CMS GC를 사용할 때에는 신중히 검토한 후에 사용해야 한다. 그리고 조각난 메모리가 많아 Compaction 작업을 실행하면 다른 GC 방식의 stop-the-world 시간보다 stop-the-world 시간이 더 길기 때문에 Compaction 작업이 얼마나 자주, 오랫동안 수행되는지 확인해야 한다.
 
-### G1 GC
+#### G1 GC
 Garbage First 라는 의미의 G1 가비지 컬렉터는 Java 7 부터 사용가능하며, 장기적으로 CMS 컬렉터를 대체하기 위해 만들어졌다. `-XX:+UseG1GC` 옵션으로 사용가능하다.
 
 G1 GC는 바둑판의 각 영역에 객체를 할당하고 GC를 실행한다. 그러다가, 해당 영역이 꽉 차면 다른 영역에서 객체를 할당하고 GC를 실행한다. 즉, 지금까지 설명한 Young의 세가지 영역에서 데이터가 Old 영역으로 이동하는 단계가 사라진 GC 방식이라고 이해하면 된다.
@@ -199,13 +199,8 @@ G1 GC 에 대한 자세한 내용은 [Oracle Getting Started with the G1 Garbage
 
 <hr/>
 
-
-<br />
-<br />
-
 > _이 게시글은 [Navae D2](https://d2.naver.com/helloworld/1329)의 게시글을 기반으로 `가비지 컬렉션`에 대한 내용을 학습하고 정리한 내용 입니다. (사진 출처 [Navae D2](https://d2.naver.com/helloworld/1329) 외 Reference 입니다)_
 
-<br />
 <br />
 
 # Reference

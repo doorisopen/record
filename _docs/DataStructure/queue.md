@@ -179,7 +179,7 @@ public class myqueue {
 
 ## C++ 배열을 이용한 큐 구현
 
-```
+```cpp
 // #include <bits/stdc++.h>
 #include <iostream>
 

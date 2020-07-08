@@ -13,7 +13,7 @@ order: 7
 * 즉, 컬렉션으로부터 쉽게 정보를 얻어내는 인터페이스다.
 
 ## Iterator는 인터페이스
-```
+```java
 public interface Iterator {
     boolean hasNext();
     Object next();
@@ -26,7 +26,7 @@ public interface Iterator {
 
 
 ## Iterator 사용 예시
-```
+```java
 public static void main(String[] args) {
 		ArrayList<Integer> array = new ArrayList<Integer>();
 		array.add(1);

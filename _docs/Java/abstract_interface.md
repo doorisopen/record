@@ -1,6 +1,7 @@
 ---
 title: abstract와 interface
 category: Java
+date:   2020-06-22 00:30:59
 comments: true
 order: 2
 ---

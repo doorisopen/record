@@ -1,6 +1,7 @@
 ---
 title: Java 스레드(Thread)
 category: Java
+date:   2020-06-04 00:30:59
 comments: true
 order: 3
 ---
@@ -50,9 +51,9 @@ order: 3
 * Thread 클래스
   + Thread 클래스로 부터 제공되는 __run()메소드 오버라이딩해서 사용__
 
-### Thread 클래스 이용하기
+#### Thread 클래스 이용하기
 
-```
+```java
 //== Thread Class ==//
 class MyThread extends Thread {
   
@@ -88,11 +89,11 @@ public class Thread1 {
 
 ![java-thread_start_run]({{ site.baseurl }}/images/Language/Java/java-thread_start_run.JPG)
 
-### Runable 클래스 이용하기
+#### Runable 클래스 이용하기
 * 현재의 클래스가 이미 다른 클래스로부터 상속 받고 있다면 Runnable 인터페이스를 이용하여 스레드를 생성할 수 있습니다.
 * Runnable 인터페이스는 JDK 라이브러리 인터페이스이고 run()메소드만 정의되어 있다.
 
-```
+```java
 //== Runnable Class ==//
 public class MyRunnable implements Runnable {
 

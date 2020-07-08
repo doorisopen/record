@@ -1,6 +1,7 @@
 ---
 title: JAVA로 알고리즘 시작하기 1편
 category: Algorithm
+date:   2020-06-23 00:30:59
 comments: true
 order: 2
 ---
@@ -21,7 +22,7 @@ Java로 PS(Problem Solving)을 시작할때 필수로 알아야할 기본기를 
 
 ## Java의 출력(Output, System.out)
 
-```
+```java
 int num = 5;
 System.out.println("java"); // 개행 포함
 System.out.print("hello"); // 개행 미포함
@@ -36,7 +37,7 @@ System.out.print("world"+num); // 개행 미포함
 ## Java의 입력(Input, Scanner & BufferReader)
 ## Scanner 사용법
 
-```
+```java
 import java.util.Scanner;
 
 // Scanner 선언
@@ -117,7 +118,7 @@ System.out.println(c); // h 출력
 * Scanner는 매우 편리하지만 속도가 느리기 때문에, 입력을 많이 받아야 하는 경우에는 BufferedReader를 사용하는 것이 훨씬 좋다.
 * __bufferedReader에서는 read와 readLine만 있기 때문에, 정수는 파싱을 해야한다.__
 
-```
+```java
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -175,7 +176,7 @@ public class Main {
 * ex2.타입[] 식별자 = new 타입[크기];
   + int[] num = new int[5];
 
-```
+```java
 int num[] = new int[5];
 float num2[] = new float[5];
 String arr[] = new String[5];
@@ -195,7 +196,7 @@ System.out.println(num[2]); // 22
 * ex2.타입[][] 식별자 = new 타입[크기: 행][크기: 열];
   + int[] num = new int[5];
 
-```
+```java
 int num[][] = new int[5][5];
 float num2[][] = new float[5][5];
 String arr[][] = new String[5][5];
@@ -211,7 +212,7 @@ System.out.println(num[2][2]); // 22
 
 ## 배열 초기화 방법
 
-```
+```java
 // 1차원 배열
 //== ex1 ==// 
 int num1[] = new int[5];
@@ -242,7 +243,7 @@ System.out.println(num3[0].length); // 5
 
 ## Arrays.fill()
 
-```
+```java
 import java.util.Arrays;
 
 //== ex1. 1차원 배열 초기화 ==//
@@ -281,7 +282,7 @@ for (int i = 0; i < arr2.length; i++) {
 ## StringTokenizer
 * 문자열을 토큰으로 잘라야 할 때 사용하면 편하다.
 
-```
+```java
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -329,7 +330,7 @@ public class Main {
 |StringBuilder delete(int start, int end)|start부터 end-1까지의 부분 문자열을 삭제|
 |StringBuilder deleteCharAt(int idx)|idx 위치에 있는 하나의 문자를 삭제|
 
-```
+```java
 import java.util.Scanner;
 ​
 public class Main {

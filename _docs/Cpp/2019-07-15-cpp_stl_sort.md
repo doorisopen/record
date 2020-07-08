@@ -142,7 +142,7 @@ int main(void){
 
 * 내림차순(점수 기준)으로 정렬하고 만약 동일 점수가 있다면 이름 사전 순서로 정렬한다.
 
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -1,6 +1,7 @@
 ---
 title: 연결 리스트(Linked List)
 category: DataStructure
+date:   2020-06-04 00:30:59
 comments: true
 order: 5
 ---
@@ -27,7 +28,7 @@ order: 5
 
 ## 연결 리스트 구현(꼼수)
 
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 #define idx 10
@@ -104,7 +105,7 @@ int main() {
 
 ## 연결 리스트 STL
 
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 

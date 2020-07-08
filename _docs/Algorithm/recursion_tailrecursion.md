@@ -1,6 +1,7 @@
 ---
 title: 재귀와 꼬리재귀
 category: Algorithm
+date:   2020-06-08 00:30:59
 comments: true
 order: 36
 ---
@@ -8,7 +9,7 @@ order: 36
 ## 재귀란?
 * 자기 자신(함수)을 호출하는 것을 재귀라고 한다. 
 
-```
+```cpp
 //재귀
 public static int recursive(int n) {
     if(n == 1) return 1;
@@ -22,7 +23,7 @@ public static int recursive(int n) {
 
 ## 재귀와 꼬리재귀
 
-```
+```cpp
 public class Factorial {
     //재귀
     public static int recursive(int n) {

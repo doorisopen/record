@@ -1,6 +1,7 @@
 ---
 title: 배열(Array)
 category: DataStructure
+date:   2020-06-04 00:30:59
 comments: true
 order: 1
 ---
@@ -16,7 +17,7 @@ order: 1
 * 임의의 위치에 원소를 확인/변경: O(1)
 * 임의의 위치에 원소를 추가/제거: O(N)
 
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -96,7 +97,7 @@ int main() {
 
 ## 사용 팁(초기화)
 
-```
+```cpp
 int a[21];
 int b[21][21];
 
@@ -127,7 +128,7 @@ std::fill( &flags[0][0], &flags[0][0] + sizeof(flags) /* / sizeof(flags[0][0]) *
 
 * vector 순회
 
-```
+```cpp
 vector<int> v1 = {1,2,3,4,5,6};
 
 // 1. range-based for loop(since c++11)
@@ -143,7 +144,7 @@ for(int i = 0; i <= v1.size()-1; i++) { cout << v1[i] << ' ';}
 * 만약 size가 0일때 -1 연산이 되면 4294967295가 된다. 이는 unsigned int overflow에 의한 출력 값이다.
 
 
-```
+```cpp
 // 연습문제: O(n)
 int func2(int arr[], int N) {
     int visit[101] = {};

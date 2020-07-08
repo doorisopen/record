@@ -39,7 +39,7 @@ HashMap을 멀티 스레드 환경에서 사용하려면 동기화된 블록 내
 * HashTable 인터페이스를 사용하는 것보다 __더 빠른 처리 속도를 가집니다.__
 
 
-```
+```java
 import java.util.*;
  
 public class SynchronizedMapTest {
@@ -67,7 +67,7 @@ public class SynchronizedMapTest {
 * (멀티 쓰레드 환경에서) 쓰레드 간의 경쟁이 심한 경우, 훨씬 더 효율적입니다.
 * ConcurrentHashMap의 검색은 검색 method가 실행되는 시점에 __가장 최근에 완료된 갱신 작업의 결과를 반영한다.__
 
-```
+```java
 import java.util.concurrent.ConcurrentHashMap;
  
 public class ConcurrentHashMapTest {

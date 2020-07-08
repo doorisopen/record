@@ -1,6 +1,7 @@
 ---
 title: 직렬화(Serialization)
 category: Java
+date:   2020-06-04 00:30:59
 comments: true
 order: 4
 ---

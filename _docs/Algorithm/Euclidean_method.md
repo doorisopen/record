@@ -1,6 +1,7 @@
 ---
 title: 유클리드 호제법
 category: Algorithm
+date:   2020-06-08 00:30:59
 comments: true
 order: 38
 ---
@@ -20,7 +21,7 @@ order: 38
 * 이때 m이 0일때, b가 최대 공약수(GCD)이다.
 * 만약 m이 0이 아니라면, a에 b값을 다시 넣고(a=b) b에 m을(b=m) 대입 한 후 b가 0이 될때까지 a%b 연산을 반복한다.
 
-```
+```cpp
 //==반복문을 이용한 GCD==//
 int gcd(int a, int b) {
     int tmp;
@@ -54,7 +55,7 @@ int gcd(int a, int b) {
 * 최소 공배수는 최대 공약수를 활용하여 쉽게 구할 수 있다.
 * a, b 두 수가 주어졌을때 a*b을 최대 공약수(gcd(a, b))로 나눠주면 된다. 
 
-```
+```cpp
 //==최대 공약수 GCD==//
 int gcd(int a, int b) {
     int tmp;

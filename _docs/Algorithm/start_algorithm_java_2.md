@@ -1,6 +1,7 @@
 ---
 title: JAVA로 알고리즘 시작하기 2편
 category: Algorithm
+date:   2020-06-23 00:30:59
 comments: true
 order: 3
 ---
@@ -43,7 +44,7 @@ Java로 PS(Problem Solving)을 시작할때 필수로 알아야할 기본기를 
 ## ArrayList
 * java.util.ArrayList;
 
-```
+```java
 import java.util.ArrayList;
 
 ArrayList<Integer> numbers = new ArrayList<>();
@@ -71,7 +72,7 @@ for(int value : numbers){
 ## LinkedList
 * java.util.LinkedList
 
-```
+```java
 LinkedList<Integer> linkedList1 = new LinkedList<Integer>();
 LinkedList<Integer> linkedList2 = new LinkedList<Integer>();
 Object obj = new Object();
@@ -121,7 +122,7 @@ System.out.println(linkedList2);// [1, 2, 3, 100, 1000] 출력
 ## Stack
 * java.util.Stack;
 
-```
+```java
 Stack<Integer> stack = new Stack<>();
 stack.push(3);
 stack.push(2);
@@ -139,7 +140,7 @@ System.out.println(stack.peek());//데이터를 빼지 않고 현재 가장 위�
 ## Queue
 * java.util.Queue;
 
-```
+```java
 Queue<Integer> queue = new LinkedList<Integer>();
 
 q.offer(2);
@@ -161,7 +162,7 @@ System.out.println(q.peek());// 1
 
 #### ex1, Priority Queue의 기본 사용법
 
-```
+```java
 import java.util.PriorityQueue;
 import java.util.Comparator;
 
@@ -190,7 +191,7 @@ public static void main(String args[]) throws IOException {
 >
 > 다익스트라와 같은 경로 찾기 문제를 풀때 우선 순위 큐를 사용하는 경우가 있는데 이때 정보을 하나만 저장하는 것이 아니라 좌표(x,y) 값 이외의 1개 이상의 값을 저장해야한다. 보통 Object를 만들어서 사용하는데 주의할 점이 있다. 값이 하나일때는 최대 힙, 최소 힙 구조를 만들기 위해 비교값이 하나 뿐이라 문제가 없지만 Object의 경우 값이 여러개라 비교 대상이 없어 __java.lang.ClassCastException: Info cannot be cast to java.lang.Comparable__ 와 같은 에러가 발생한다. C++의 경우 첫 번째 인자값을 기준으로 정렬하고 동일 값이 있다면 두 번째... 로 알아서 정렬하지만 Java의 경우 그렇지 않다. 이를 해결하기 위해 아래와 같이 Comparable interface의 compareTo() 메서드를 구현해줘야한다.
 
-```
+```java
 class myNode implements Comparable<myNode> {
   int cost;
   int x, y;
@@ -201,6 +202,7 @@ class myNode implements Comparable<myNode> {
     }
 }
 ```
+
 #### @Override compareTo()
 * compareTo() 메서드 원리
   + 현재 객체 < 파라미터로 넘어온 객체: 음수 return
@@ -209,7 +211,7 @@ class myNode implements Comparable<myNode> {
   + 음수 또는 0이면 객체의 자리가 유지되며, 양수인 경우에는 두 객체의 자리가 바뀌는 것입니다.
   + __즉, 작거나 0이면 객체의 자리가 유지되기 때문에 오름차순으로 구현이 되는 것입니다.__
 
-```
+```java
 class myNode implements Comparable<myNode> {
   int cost;
   int x, y;
@@ -224,7 +226,7 @@ class myNode implements Comparable<myNode> {
 
 #### PriorityQueue 객체(Object) 활용
 
-```
+```java
 import java.util.PriorityQueue;
 import java.io.IOException;
 
@@ -265,7 +267,7 @@ public class test {
 ## HashMap
 * java.lang.Object
 
-```
+```java
 HashMap<String, Integer> hashtable = new HashMap<String, Integer>();
 hashtable.put("A", 90);
 hashtable.put("B", 80);
@@ -279,7 +281,7 @@ hashtable.remove("B");
 ## Set
 ## HashSet
 
-```
+```java
 HashSet<String> set = new HashSet<String>();
 set.add("apple");
 set.add("orange");

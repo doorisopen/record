@@ -1,6 +1,7 @@
 ---
 title: C++로 알고리즘 시작하기
 category: Algorithm
+date:   2020-06-08 00:30:59
 comments: true
 order: 1
 ---
@@ -78,7 +79,7 @@ order: 1
 | 그 이상 | O(lgN), O(1) |
 
 
-```
+```cpp
 // 1. O(log(n))
 while(n)
 	n/=2;
@@ -183,7 +184,7 @@ void function(int x, vector<int> pick, vector<bool> picked){
 
 ## 연습 코드
 
-```
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -264,7 +265,7 @@ int main(void) {
 # C++, 알아두면 좋은 팁 모음
 # STL과 함수 인자
 
-```
+```cpp
 // 시간 복잡도 O(n)
 bool cmp1 (vector<int> v1, vector<int> v2, int idx) {
     return v1[idx] > v2[idx];
@@ -282,7 +283,7 @@ bool cmp2 (vector<int>& v1, vector<int>& v2, int idx) {
 # 표준 입출력
 * 공백을 포함한 문자열 입력받기
 
-```
+```cpp
 // 1. scanf의 옵션: \n(줄바꿈)이 나올때까지 입력받기
 char a1[10];
 scanf("%[]^\n", a1);
@@ -298,7 +299,7 @@ cout << s;
 
 * cin, cout 사용할때 꼭 써야하는것
 
-```
+```cpp
 // 이걸 안해두면 입/출력 양이 많을 때 시간초과가 날 수 있다.
 ios::sync_with_stdio(0), cin.tie(0)
 ```
@@ -307,7 +308,7 @@ ios::sync_with_stdio(0), cin.tie(0)
 
 printf와 cout을 번걸아하면 사용하는 상황을 생각해보자 
 
-```
+```cpp
 cout << "11111\n";
 printf("22222\n")
 cout << "33333\n";

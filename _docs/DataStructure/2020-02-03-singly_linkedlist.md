@@ -20,7 +20,7 @@ order: 6
 배열과 연결 리스트는 아주 유사한 형태를 가지고 있지만 차이가 있다. 그것은 __배열__ 의 경우 한번 선언하면 __늘이거나 줄일 수 없다__ 는 것 이다.
 
 ## 단 방향 연결 리스트 Code(C++)
-```
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -129,7 +129,7 @@ N = 0 일때 R이 List Size - n 만큼 반복하기 때문에 __시간은 O(n^2)
 * Time: O(n^2)
 
 ## 구현 Code(C++)
-```
+```cpp
 // ...내용 생략
 class Link {
 	public:

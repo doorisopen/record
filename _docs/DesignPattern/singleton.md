@@ -1,6 +1,7 @@
 ---
 title: 싱글톤(Singleton)
 category: DesignPattern
+date:   2020-06-04 00:30:59
 comments: true
 order: 1
 ---
@@ -14,7 +15,7 @@ Singleton pattern(싱글턴 패턴)이란 애플리케이션에서 인스턴스�
 ## 구현
 하나의 인스턴스만을 유지하기 위해 인스턴스 생성에 특별한 제약을 걸어둬야 한다. new 를 실행할 수 없도록 생성자에 private 접근 제어자를 지정하고, 유일한 단일 객체를 반환할 수 있도록 정적 메소드를 지원해야 한다. 또한 유일한 단일 객체를 참조할 정적 참조변수가 필요하다.
 
-```
+```java
 public class Singleton {
     private static Singleton singletonObject;
 
@@ -31,7 +32,7 @@ public class Singleton {
 
 이 코드는 정말 위험하다. 멀티스레딩 환경에서 싱글턴 패턴을 적용하다보면 문제가 발생할 수 있다. 동시에 접근하다가 하나만 생성되어야 하는 인스턴스가 두 개 생성될 수 있는 것이다. 그렇게 때문에 getSingletonObject() 메소드를 동기화시켜야 멀티스레드 환경에서의 문제가 해결된다.
 
-```
+```java
 public class Singleton {
     private static Singleton singletonObject;
 
@@ -48,7 +49,7 @@ public class Singleton {
 
 synchronized 키워드를 사용하게 되면 성능상에 문제점이 존재한다. 좀 더 효율적으로 제어할 수는 없을까?
 
-```
+```java
 public class Singleton {
     private static volatile Singleton singletonObject;
 
@@ -69,7 +70,7 @@ public class Singleton {
 
 DCL(Double Checking Locking)을 써서 getInstance()에서 동기화 되는 영역을 줄일 수 있다. 초기에 객체를 생성하지 않으면서도 동기화하는 부분을 작게 만들었다. 그러나 이 코드는 멀티코어 환경에서 동작할 때, 하나의 CPU 를 제외하고는 다른 CPU 가 lock 이 걸리게 된다. 그렇기 때문에 다른 방법이 필요하다.
 
-```
+```java
 public class Singleton {
     private static volatile Singleton singletonObject = new Singleton();
 

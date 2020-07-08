@@ -1,6 +1,7 @@
 ---
 title: 덱(deque)
 category: DataStructure
+date:   2020-06-04 00:30:59
 comments: true
 order: 4
 ---
@@ -16,7 +17,7 @@ order: 4
 
 ## 배열을 이용한 덱 구현
 
-```
+```cpp
 // #include <bits/stdc++.h>
 #include <iostream>
 
@@ -48,7 +49,7 @@ int main() {
 
 ## STL을 이용한 덱 구현
 
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 

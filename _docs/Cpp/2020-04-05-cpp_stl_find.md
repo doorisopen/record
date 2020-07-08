@@ -14,7 +14,7 @@ order: 2
 
 ## 예시 코드(C++)
 
-```
+```cpp
 #include <iostream>
 #include <vector>
 #include <algorithm>

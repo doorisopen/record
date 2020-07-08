@@ -15,6 +15,7 @@ Connection: close
 User-agent: Mozilla/5.0
 Accept-language: fr
 ```
+
 * __특징__
 1. 메시지가 일반 ASCII 텍스트로 쓰여 있어 사람들이 읽을 수 있다
 2. 메시지가 다섯 줄로 되어 있고 각 줄은 CR(carriage return)과 LF(line feed)로 구별된다

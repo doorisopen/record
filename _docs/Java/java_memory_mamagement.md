@@ -1,6 +1,7 @@
 ---
 title: 자바의 메모리 영역과 관리
 category: Java
+date:   2020-06-04 00:30:59
 comments: true
 order: 1
 ---
@@ -30,7 +31,7 @@ order: 1
 
 ## Stack 영역의 활용(코드 예시)
 
-```
+```java
 public class Main {
     public static void main(String[] args) {
         int argument = 4;
@@ -47,7 +48,7 @@ public class Main {
 
 참고로 public static void main(String[] args)에서 args 배열은 무시한다. 아래에서 설명하게 될 Heap 의 동작과정을 알면 String[] args 는 어떻게 동작하는지도 알 수 있다.
 
-```
+```java
 int argument = 4;
 ```
 
@@ -55,7 +56,7 @@ int argument = 4;
 
 ![java-memory_management_stack_1]({{ site.baseurl }}/images/Language/Java/java-memory_management_stack_1.JPG)
 
-```
+```java
 argument = someOperation(argument);
 ```
 
@@ -63,7 +64,7 @@ someOperation() 함수가 호출된다. 호출될때 인자로 argument 변수�
 
 ![java-memory_management_stack_2]({{ site.baseurl }}/images/Language/Java/java-memory_management_stack_2.JPG)
 
-```
+```java
 int tmp = param * 3;
 int result = tmp / 2;
 ```
@@ -88,7 +89,7 @@ argument 변수는 4 로 초기화 되었지만, 함수의 실행결과인 6 이
 
 ## Heap 영역의 활용(코드 예시)
 
-```
+```java
 public class Main {
     public static void main(String[] args) {
         int port = 4000;
@@ -107,7 +108,7 @@ String 은 Object 를 상속받아 구현되었으므로 (Object 타입은 최�
 
 # Stack, Heap 영역의 활용(응용 예시)
 
-```
+```java
 import java.util.ArrayList;
 import java.util.List;
 
@@ -130,7 +131,7 @@ public class Main {
 
 > 참고로 print() 하는 함수에서 List 에 값을 추가하는 것은 좋지 못한 것이다.
 
-```
+```java
 List<String> listArgument = new ArrayList<>();
 ```
 
@@ -138,7 +139,7 @@ List<String> listArgument = new ArrayList<>();
 
 ![java-memory_management_heap_3]({{ site.baseurl }}/images/Language/Java/java-memory_management_heap_3.JPG)
 
-```
+```java
 listArgument.add("doorisopen");
 ```
 
@@ -146,7 +147,7 @@ listArgument.add("doorisopen");
 
 ![java-memory_management_heap_4]({{ site.baseurl }}/images/Language/Java/java-memory_management_heap_4.JPG)
 
-```
+```java
 listArgument.add("github");
 ```
 
@@ -154,7 +155,7 @@ List 에서 레퍼런스 하는 문자열이 하나 더 추가된다. 그림으�
 
 ![java-memory_management_heap_5]({{ site.baseurl }}/images/Language/Java/java-memory_management_heap_5.JPG)
 
-```
+```java
 print(listArgument);
 ```
 
@@ -168,7 +169,7 @@ listParam 이라는 참조변수가 새롭게 stack 에 할당되어 기존 List
 
 다음으로, print() 함수 내부에서는 List 에 있는 데이터에 접근하여 값을 value 라는 변수에 저장한다. 이 때 print() 함수의 scope 에서 stack 에 value 가 추가되고, 이 value 는 listParam 을 통해 List 의 0번째 요소에 접근하여 그 참조값을 가지게 된다. 그리고나서 또 데이터를 추가하고, 출력함으로 print() 함수의 역할은 마무리 된다.
 
-```
+```java
 String value = listParam.get(0);
 listParam.add("io");
 System.out.println(value);
@@ -180,7 +181,7 @@ System.out.println(value);
 
 이제 함수가 닫는 중괄호 } 에 도달하여 종료되면 print() 함수의 지역변수는 모두 stack 에서 pop 되어 사라진다. 이때, List 는 Object 타입이므로 지역변수가 모두 stack 에서 pop 되더라도 heap 영역에 그대로 존재한다. 즉, 함수호출시 레퍼런스 값을 복사하여 가지고 있던 listParam 과 함수내부의 지역변수인 value 만 스택에서 사라지고 나머지는 모두 그대로인 상태로 함수호출이 종료된다.
 
-```
+```java
 print(listArgument);
 ```
 

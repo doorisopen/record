@@ -23,9 +23,9 @@ $space: 20px;
 $mobile-break: 700px;
 $full-width-break: $nav-width + ($space * 4) + $content-max-width;
 
-$font-fam: "-apple-system", "BlinkMacSystemFont","Apple SD Gothic Neo",
-"Inter", "Spoqa Han Sans", "Segoe UI", Sans-Serif,
-"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+/* font-family Setting */
+$font-fam: "-apple-system", "BlinkMacSystemFont","Apple SD Gothic Neo","Inter", "Spoqa Han Sans", "Segoe UI", Sans-Serif,"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$nav-font-fam: "Open Sans", sans-serif;
 
 @import "mixins";
 @import "normalize";

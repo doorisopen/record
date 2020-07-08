@@ -1,6 +1,7 @@
 ---
 title: 운영체제란?(OS, Operating System)
 category: OperatingSystem
+date:   2020-06-04 00:30:59
 comments: true
 order: 1
 ---

@@ -20,7 +20,7 @@ order: 3
 
 ## set 선언
 
-```
+```cpp
 #include <set>
 //set<type> 변수 명;
 //ex) set<int> s;
@@ -29,7 +29,7 @@ order: 3
 
 ## set의 생성자, 연산자
 
-```
+```cpp
 set<int> s; //기본 선언 방법
 // set<int> s(정렬기준);
 set<int> s2(s1); //s1을 s2에 복사
@@ -40,7 +40,7 @@ set<int> s2(s1); //s1을 s2에 복사
 
 ## set의 멤버 함수
 
-```
+```cpp
 set<int> s;
 ```
 
@@ -55,7 +55,7 @@ set<int> s;
 * __s.rend();__
   + begin(), end()와 반대로 작동하는 멤버함수
 
-```
+```cpp
 for(iter = s.rbegin(); iter != s.rend(); iter++) {
     cout << *iter << "\n";
 }
@@ -108,7 +108,7 @@ for(iter = s.rbegin(); iter != s.rend(); iter++) {
 
 * [10815: 숫자 카드](https://www.acmicpc.net/problem/10815)
 
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long

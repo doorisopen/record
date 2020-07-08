@@ -1,11 +1,12 @@
 ---
 title: iBatis와 myBatis를 왜 사용하는가??
 category: Web
+date:   2020-06-04 00:30:59
 comments: true
 order: 6
 ---
 
-# iBatis와 myBatis를 왜 사용하는가??
+
 
 ## 가장 큰 이유는 빠른 개발(생산성)이 가능하다. 
 * DBCP만을 썼을때 Connection, ResultSet, Statement, Transaction 관리도 해야 하고 
@@ -18,7 +19,7 @@ order: 6
 
 ## RDBMS가 Oracle일 경우 Blob, Clob 치환에 신경쓰지 않아도 됩니다. 
 
-### 참고
+## 참고
 * __LOB__
   + LOB은 TEXT, 그래픽, 이미지, 비디오, 사운드 등 구조화되지 않은 대형 데이터를 저장하는데 사용한다.
   + 일반적으로 테이블에 저장되는 구조화된 데이터들은 크기가 작지만, 멀티미디어 데이터는 크기가 크다.
@@ -43,6 +44,6 @@ order: 6
 ## 꼭 resultType, resultClass로 VO를 사용 않해도 된다. Map으로만 이용 가능 
 
 
-# References
+## References
 * [okky.kr/article/285215](https://okky.kr/article/285215)
 * [디딤돌](https://stepping.tistory.com/30)

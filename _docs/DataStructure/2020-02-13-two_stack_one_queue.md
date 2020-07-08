@@ -10,7 +10,7 @@ order: 9
 Stack 2개를 활용하여 Queue처럼 거동하는 함수를 만들기
 
 
-```
+```cpp
 #include <iostream>
 #include <stack>
 

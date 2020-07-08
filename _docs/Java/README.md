@@ -19,6 +19,8 @@
   + 값 참조와 주소 참조를 구분해서 사용하는 이유?
 * [ ] 멀티쓰레드일때의 컨텍스트 스위칭과 멀티프로세스일때의 컨텍스트 스위칭의 메모리구조 상 컨텍스트 스위칭이 뭐가 더 효율적인가?
 * [ ] presicion recall f1score accuracy 
+* [x] 자바 정규식
+* [x] StringBuffer StringBuilder 차이 https://jeong-pro.tistory.com/85
 
 # 📍 C++
 * [ ] c++ 버전별 차이 [참고 - 영문](https://github.com/AnthonyCalandra/modern-cpp-features)

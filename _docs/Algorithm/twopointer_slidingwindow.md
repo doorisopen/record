@@ -1,6 +1,7 @@
 ---
 title: 투 포인터(Two Pointers)와 슬라이딩 윈도우
 category: Algorithm
+date:   2020-06-08 00:30:59
 comments: true
 order: 37
 ---
@@ -42,7 +43,7 @@ A[10] = {1, 2, 3, 4, 2, 5, 3, 1, 1, 2} 이와 같은 수열이 있다.
 
 ## 코드
 
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -112,7 +112,7 @@ int main(void){
 
 ## DFS 구현2
 
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 #define X first

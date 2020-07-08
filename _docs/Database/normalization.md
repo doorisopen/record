@@ -1,6 +1,7 @@
 ---
 title: 정규화(Normalization)
 category: DataBase
+date:   2020-07-05 00:30:59
 comments: true
 order: 1
 ---

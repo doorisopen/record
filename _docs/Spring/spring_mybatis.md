@@ -1,6 +1,7 @@
 ---
 title: Spring과 MyBatis
 category: Spring
+date:   2020-06-04 00:30:59
 comments: true
 order: 2
 ---
@@ -26,22 +27,22 @@ order: 2
 * __mysql-connector-java :__ mysql 데이터베이스 JDBC 라이브러리
 * __commons-dbcp :__ 커넥션 풀 지원 라이브러리 
 
-### MyBatis 라이브러리
+#### MyBatis 라이브러리
 * __SqlSessionFactoryBuilder :__ MyBatis 설정 파일을 바탕으로 SqlSessionFactory를 생성
 * __SqlSessionFactory :__ sqlSession 생성을 위한 컴포넌트
 * __SqlSession :__ SQL 발행과 트랜잭션 관리
   + SqlSession 인터페이스는 MyBatis의 핵심 API 이다.
 
-### myBatis-Spring 라이브러리
+#### myBatis-Spring 라이브러리
 * __org.mybatis.spring.SqlSessionTemplate :__ sqlSession 인터페이스를 구현
 
-### sqlSession을 사용하는 방법
+#### sqlSession을 사용하는 방법
 * __sqlSession 객체를 DAO 객체에 의존관계 주입으로 사용__
 * DAO 역할을 Mapper 객체를 통해 기능 제공
   + myBatis는 DAO의 구현을 자동으로 생성해주는 Mapper라는 기능을 제공
   + 개발자가 Mapper 인터페이스를 준비해서 Mapper 객체를 생성하도록 빈 정의
 
-```
+```java
 @Repository
 public class MemberDAOImpl implements MemberDAO {
     @Autowired
@@ -57,10 +58,10 @@ public class MemberDAOImpl implements MemberDAO {
 
 ## Spring과 MyBatis의 의존 관계 흐름과 내부 동작 원리
 
-### Spring과 MyBatis의 의존 관계 흐름
+#### Spring과 MyBatis의 의존 관계 흐름
 ![web-spring-mybatis_flow]({{ site.baseurl }}/images/Web/Spring/web-spring-mybatis_flow.JPG)
 
-### 응용 프로그램 시작시 수행 흐름
+#### 응용 프로그램 시작시 수행 흐름
 ![web-spring-mybatis_flow1]({{ site.baseurl }}/images/Web/Spring/web-spring-mybatis_flow1.JPG)
 
 1. SqlSessionFactoryBean은 SqlSessionFactoryBuilder를 위해 SqlSessionFactory를 빌드하도록 요청합니다.
@@ -70,7 +71,7 @@ public class MemberDAOImpl implements MemberDAO {
 따라서 생성되는 매퍼 객체는 스프링 DI 컨테이너에 의해 저장되며 서비스 클래스 등에 DI가 적용됩니다. 매퍼 개체는 안전한 SqlSession
 (SqlSessionTemplate)을 사용하여 스레드 안전 구현을 제공합니다.
 
-### 클라이언트 요청시 수행 흐름
+#### 클라이언트 요청시 수행 흐름
 ![web-spring-mybatis_flow2]({{ site.baseurl }}/images/Web/Spring/web-spring-mybatis_flow2.JPG)
 
 1. 클라이언트가 응용 프로그램에 대한 프로세스를 요청합니다.
@@ -82,9 +83,10 @@ public class MemberDAOImpl implements MemberDAO {
 6. SqlSessionFactory는 MyBatis 표준 SqlSession을 반환합니다. 반환된 MyBatis 표준 SqlSession이 트랜잭션에 할당되기 때문에 동일한 트랜잭션 내에 있는 경우 새 SqlSession을 생성하지 않고 동일한 SqlSession을 사용합니다. on 메서드를 호출하고 SQL 실행을 요청합니다.
 7. MyBatis 표준 SqlSession은 매핑 파일에서 실행할 SQL을 가져와 실행합니다.
 
-# Question
-## MyBatis란 무엇인가요?
+## Question
+#### MyBatis란 무엇인가요?
+
+#### MyBatis의 동작 흐름을 설명해 주세요
 
 
-## MyBatis의 동작 흐름을 설명해 주세요
-
+## Reference

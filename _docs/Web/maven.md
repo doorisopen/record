@@ -1,11 +1,12 @@
 ---
 title: Maven
 category: Web
+date:   2020-06-04 00:30:59
 comments: true
 order: 4
 ---
 
-# Maven 이란?
+## Maven 이란?
 * __프로젝트를 관리하는 도구__
 * __빌드 자동화__ 기능과 __프로젝트 관리__ 기능을 제공
   + __프로젝트(라이브러리) 관리__
@@ -19,7 +20,7 @@ order: 4
 ## 프로젝트(라이브러리) 관리
 * 프로젝트 관리 설정들을 메이븐이 미리 정의한 설정들로 대체한다.
 
-### 기능1: 정형화된 프로젝트 디렉토리 구조 관리
+#### 기능1: 정형화된 프로젝트 디렉토리 구조 관리
 * Convention over Configuration(CoC) 패러다임을 따름 : 설정보다는 규범
 * __웹 디렉토리 구성__
   + java/src와 java/resource 디렉토리는 Maven 기본 디렉토리를 유지하고 __웹 자원을 관리하는 별도의 src/main/webapp 디렉토리를 사용__ 한다.
@@ -28,11 +29,11 @@ order: 4
 ![web-maven_1]({{ site.baseurl }}/images/Web/web-maven_1.JPG)
 
 
-### 기능2: 의존성 관리기능(pom.xml): 편리한 라이브러리 관리 기능
+#### 기능2: 의존성 관리기능(pom.xml): 편리한 라이브러리 관리 기능
 * 프로젝트 빌드에 필요한 라이브러리, 플러그인을 개발자 PC에 자동으로 다운로드
 * __POM(Project Object Model).xml__
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -81,11 +82,11 @@ order: 4
   + 로컬 저장소
     - (USER_HOME\\.m2\repository)
 
-### 기능3: 빌드 프로세스를 관리(pom.xml)
+#### 기능3: 빌드 프로세스를 관리(pom.xml)
 * 플러그인 설정을 통해 빌드 자동화
 
 
-### Maven 의존성 검색 절차
+#### Maven 의존성 검색 절차
 * 1단계 : 지역 저장소를 검색한다. 찾는 라이브러리가 없을 경우 2단계로 넘어간다.
 * 2단계 : 중앙 저장소를 검색한다. 찾은 라이브러리는 지역 저장소에 저장한다. 만약 찾는 라이브러리가 없을 경우 3단계로 넘어간다. 만약 원격 저장소가 존재하지 않을 경우 에러를 발생시키고 종료한다.
 * 3단계 : 원격 저장소를 검색한다. 찾은 라이브러리는 지역 저장소에 저장한다. 만약 찾는 라이브러리가 없을 경우 에러를 발생시키고 종료한다.
@@ -100,7 +101,7 @@ order: 4
 
 ![web-maven_3]({{ site.baseurl }}/images/Web/web-maven_3.JPG)
 
-### Maven 빌드 라이프사이클(lifecycle)
+#### Maven 빌드 라이프사이클(lifecycle)
 * Maven은 __기본, clean, site__ 3개의 라이프사이클이 있다.
 * __기본 라이프사이클__ 은 여러 단계의 페이즈(Phase) 로 나뉘어져 있으며, 각 페이즈는 의존관계를 가진다. compile, test, package deploy 순서로 진행된다.
 * __clean 라이프사이클__ 은 clean 페이즈를 이용하여 이전 빌드에서 생성된 모든 파일
@@ -108,7 +109,7 @@ order: 4
 * __site 라이프사이클__ 은 site, site-deploy 페이즈를 이용하여 생성된 문서들을 대상 사이
 트에 배포한다. 
 
-### Maven Phase & Goal
+#### Maven Phase & Goal
 * 빌드 라이프사이클은 하나 이상의 골을 수행하는 __페이지(Phase)__ 들로 구성.
 * 각 페이즈 별로 플러그인이 작업을 수행한다. 이 작업을 __골(Goal)__ 이라고 한다.
   + 예) maven-compiler-plugin, maven-clean-plugin, maven-surefire-plugin
@@ -116,5 +117,5 @@ order: 4
 
 ![web-maven_4]({{ site.baseurl }}/images/Web/web-maven_4.JPG)
 
-# References
+## References
 * 학부 강의 자료

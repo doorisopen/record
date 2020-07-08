@@ -1,11 +1,12 @@
 ---
 title: 웹 서버와 WAS
 category: Web
+date:   2020-06-04 00:30:59
 comments: true
 order: 1
 ---
 
-# 웹 서버
+## 웹 서버
 * __웹 서버의 개념__
   + 웹 서버는 소프트웨어와 하드웨어로 구분된다.
   + __1) 하드웨어__
@@ -27,7 +28,7 @@ order: 1
 
 Ex) Apache Server, Nginx, IIS(Windows 전용 Web 서버) 등
 
-# WAS(Web Application Server)
+## WAS(Web Application Server)
 * __WAS(Web Application Server)의 개념__
   + DB 조회나 다양한 로직 처리를 요구하는 동적인 컨텐츠를 제공하기 위해 만들어진 Application Server
   + HTTP를 통해 컴퓨터나 장치에 애플리케이션을 수행해주는 미들웨어(소프트웨어 엔진)이다.
@@ -50,7 +51,7 @@ Ex) Apache Server, Nginx, IIS(Windows 전용 Web 서버) 등
 
 Ex) Tomcat, JBoss, Jeus, Web Sphere 등
 
-# 웹 서버와 WAS를 구분하는 이유
+## 웹 서버와 WAS를 구분하는 이유
 * __웹 서버 가 필요한 이유?__
   + 클라이언트(웹 브라우저)에 이미지 파일(정적 컨텐츠)을 보내는 과정을 생각해보자.
     - 이미지 파일과 같은 정적인 파일들은 웹 문서(HTML 문서)가 클라이언트로 보내질 때 함께 가는 것이 아니다.
