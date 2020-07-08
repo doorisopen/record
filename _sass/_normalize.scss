@@ -7,7 +7,7 @@
  */
 
 html {
-  font-family:'Nanum Gothic Coding', monospace; /* 1 */
+  font-family: $font-fam; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
