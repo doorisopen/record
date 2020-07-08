@@ -6,7 +6,7 @@ comments: true
 order: 3
 ---
 
-# 스레드(Thread)
+## 스레드(Thread) 란?
 * 하나의 프로세스 내부에서 독립적으로 실행되는 하나의 작업 단위를 말한다.
 * 세부적으로는 운영체제에 의해 관리되는 하나의 작업 혹은 태스크를 의미한다.
 * 스레드와 태스크(혹은 작업)은 바꾸어 사용해도 무관합니다.
@@ -178,15 +178,15 @@ public class Thread2 {
 * TERMINATED : 스레드가 종료한 상태
 
 
-# Question
-## Java Thread에서 Thread클래스와 Runnable의 차이점은 무엇인가??
+## Question
+#### Java Thread에서 Thread클래스와 Runnable의 차이점은 무엇인가??
 Thread는 클래스이고 Runnable는 JDK 라이브러리 인터페이스 입니다. 즉, Thread 클래스를 상속받거나 Runnable 인터페이스를 구현하여 Thread를 생성할 수 있습니다.
 
 
 Runnable 인터페이스는 run()메소드만 정의 되어있습니다.
 
-## 언제 Runnable 인터페이스를 이용하는가??
+#### 언제 Runnable 인터페이스를 이용하는가??
 스레드를 생성해야하는 상황에서 현재의 클래스가 이미 다른 클래스로부터 상속 받고 있다면 Runnable 인터페이스를 이용하여 스레드를 생성할 수 있습니다.
 
-# References
+## References
 * [https://raccoonjy.tistory.com/15](https://raccoonjy.tistory.com/15)

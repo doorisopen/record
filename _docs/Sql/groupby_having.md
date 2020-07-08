@@ -6,7 +6,7 @@ comments: true
 order: 1
 ---
 
-# GROUP BY와 HAVING
+## GROUP BY와 HAVING
 HAVING과 GROUP BY은 다음과 같은 syntax를 따릅니다.
 
 ```sql
@@ -72,5 +72,5 @@ HAVING count(*) > 2;
 
 ![db-sql-groupby_having_3]({{ site.baseurl }}/images/ComputerScience/Database/Sql/db-sql-groupby_having_3.JPG)
 
-## 참고
+## References
 [SQL 테스트 해보기](https://sqltest.net/#988473)

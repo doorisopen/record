@@ -227,7 +227,7 @@ int main(void){
 * 모든 과정을 끝낸 후 스택에 괄호가 남아있으면 올바르지 않은 괄호 쌍, 남아있지 않으면 올바른 괄호 쌍
 
 
-# References
+## References
 * [바킹독의 실전 알고리즘-0x05, 스택](https://www.youtube.com/watch?v=0DsyCXIN7Wg)
 * [바킹독의 실전 알고리즘-0x08, (수식의 괄호 쌍)](https://www.youtube.com/watch?v=cdjjk-ryPKc)
 * [https://blog.naver.com/ndb796/221230937978](https://blog.naver.com/ndb796/221230937978)

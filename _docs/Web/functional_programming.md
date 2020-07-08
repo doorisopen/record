@@ -117,7 +117,7 @@ sayHello()();
 
 * 이중 괄호 ()()를 사용해 반환한 함수도 호출하고 있습니다.
 
-# References
+## References
 * [어떤-프로그래밍-언어들이-함수형인가](https://medium.com/@jooyunghan/%EC%96%B4%EB%96%A4-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%96%B8%EC%96%B4%EB%93%A4%EC%9D%B4-%ED%95%A8%EC%88%98%ED%98%95%EC%9D%B8%EA%B0%80-fec1e941c47f)
 * [[10분 테코톡]도넛의 함수형 프로그래밍](https://www.youtube.com/watch?v=ii5hnSCE6No)
 * [developer.mozilla.org](https://developer.mozilla.org/ko/docs/Glossary/First-class_Function)

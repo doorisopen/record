@@ -158,5 +158,5 @@ int func2(int arr[], int N) {
 }
 ```
 
-# References
+## References
 * [바킹독의 실전 알고리즘-0x03, 배열](https://www.youtube.com/watch?v=mBeyFsHqzHg)

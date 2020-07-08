@@ -31,5 +31,5 @@ Accept-language: fr
 * __Accept-language: fr__ 헤더는 사용자가 객체의 프랑스어 버전(서버에 존재한다면)을 원하고 있음을 의미. 이것이 존재하지 않으면 서버는 기본 버전을 보낸다 이 헤더는 HTTP에서 사용 가능한 많은 콘텐츠 협상 헤더 중 하나다
 
 
-# References
+## References
 > * <a href="#">컴퓨터 네트워킹 하향식 제7판<a>

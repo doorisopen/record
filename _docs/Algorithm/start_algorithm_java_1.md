@@ -351,7 +351,7 @@ public class Main {
 }
 ```
 
-# References
+## References
 * 뇌를 자극하는 Java 프로그래밍
 * [https://developer.android.com/reference/java/util/Arrays.html](https://developer.android.com/reference/java/util/Arrays.html)
 * [개발자의 기록습관](https://ict-nroo.tistory.com/61)

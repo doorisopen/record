@@ -6,7 +6,7 @@ comments: true
 order: 1
 ---
 
-# 자바의 메모리 영역
+## 자바의 메모리 영역
 
 |  <center>영역</center> |  <center>동의어</center> |  <center>저장요소</center> |
 |:--------:|:--------:|:--------:|
@@ -18,7 +18,7 @@ order: 1
 * __스택(Stack)__ : 지역변수, 함수(메서드) 등이 할당되는 LIFO(Last In First Out) 방식의 메모리
 * __힙(Heap)__ : new 연산자를 통한 동작할당된 객체들이 저장되며, 가비지 컬렉션에 의해 메모리가 관리되어 진다.
 
-# Stack
+## Stack
 * Heap 영역에 생성된 Object 타입의 데이터의 참조값이 할당된다.
 * __원시타입(primitive types)__ 의 데이터가 값과 함께 할당된다.
   + byte, short, int, long, double, float, boolean, char
@@ -29,7 +29,7 @@ order: 1
 * 각 Thread 는 자신만의 stack 을 가진다.
   + 스레드 하나가 새롭게 생성되는 순간 해당 스레드를 위한 stack 도 함께 생성되며, 각 스레드에서 다른 스레드의 stack 영역에는 접근할 수 없다.
 
-## Stack 영역의 활용(코드 예시)
+#### Stack 영역의 활용(코드 예시)
 
 ```java
 public class Main {
@@ -79,7 +79,7 @@ argument 변수는 4 로 초기화 되었지만, 함수의 실행결과인 6 이
 
 그리고 main() 함수도 종료되는 순간 stack 에 있는 모든 데이터들은 pop 되면서 프로그램이 종료된다.
 
-# Heap
+## Heap
 * Heap 영역에는 주로 긴 생명주기를 가지는 데이터들이 저장된다. 
   + 대부분의 오브젝트는 크기가 크고, 서로 다른 코드블럭에서 공유되는 * 경우가 많다
 * 애플리케이션의 모든 메모리 중 stack 에 있는 데이터를 제외한 부분이라고 보면 된다.
@@ -87,7 +87,7 @@ argument 변수는 4 로 초기화 되었지만, 함수의 실행결과인 6 이
 * 몇개의 스레드가 존재하든 상관없이 단 하나의 heap 영역만 존재한다.
 * Heap 영역에 있는 오브젝트들을 가리키는 레퍼런스 변수가 stack 에 올라가게 된다.
 
-## Heap 영역의 활용(코드 예시)
+#### Heap 영역의 활용(코드 예시)
 
 ```java
 public class Main {
@@ -106,7 +106,7 @@ String 은 Object 를 상속받아 구현되었으므로 (Object 타입은 최�
 
 ![java-memory_management_heap_2]({{ site.baseurl }}/images/Language/Java/java-memory_management_heap_2.JPG)
 
-# Stack, Heap 영역의 활용(응용 예시)
+## Stack, Heap 영역의 활용(응용 예시)
 
 ```java
 import java.util.ArrayList;
@@ -191,5 +191,5 @@ print(listArgument);
 
 Object 타입의 데이터, 즉 heap 영역에 있는 데이터는 함수 내부에서 파라미터로 copied value 를 받아서 변경하더라도 함수호출이 종료된 시점에 변경내역이 반영되는 것을 볼 수 있다.
 
-# References
+## References
 * [yaboong.github.io/java-memory-management](https://yaboong.github.io/java/2018/05/26/java-memory-management/)

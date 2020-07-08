@@ -81,5 +81,5 @@ int main(void){
 
 * 덱은 vector과 달리 원소들이 메모리 상에 __연속하게 배치되어 있지 않는다.__
 
-# References
+## References
 * [바킹독의 실전 알고리즘-0x07, 덱](https://www.youtube.com/watch?v=0mEzJ4S1d8o)

@@ -144,5 +144,5 @@ Floyd's cycle-finding algorithm, 공간복잡도 O(1), 시간복잡도 O(N)
 
 
 
-# References
+## References
 * [바킹독의 실전 알고리즘-0x04, 연결 리스트](https://www.youtube.com/watch?v=C6MX5u7r72E)

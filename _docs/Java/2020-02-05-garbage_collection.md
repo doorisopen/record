@@ -203,7 +203,7 @@ G1 GC 에 대한 자세한 내용은 [Oracle Getting Started with the G1 Garbage
 
 <br />
 
-# Reference
+## Reference
 > * [d2.naver.com/helloworld/1329](https://d2.naver.com/helloworld/1329)
 > * [tcpschool.com/java/java_thread_multi](http://tcpschool.com/java/java_thread_multi)
 > * [yaboong.github.io/java-garbage-collection/](https://yaboong.github.io/java/2018/06/09/java-garbage-collection/)

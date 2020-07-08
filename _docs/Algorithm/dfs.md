@@ -152,11 +152,11 @@ int main(void){
 }
 ```
 
-# DFS와 BFS 방문순서 차이
+## DFS와 BFS 방문순서 차이
 
 ![algorithm-dfs_bfs_move]({{ site.baseurl }}/images/Algorithm/algorithm-dfs_bfs_move.JPG)
 
-# Reference
+## Reference
 * [[바킹독의 실전 알고리즘] 0x0A강 - DFS](https://www.youtube.com/watch?v=93jy2yUYfVE)
 * [17강 - 깊이 우선 탐색](https://www.youtube.com/watch?v=l0Rsu7dziws&list=PLRx0vPvlEmdDHxCvAQS1_6XV4deOwfVrz&index=17)
 * [[알고리즘] 깊이 우선 탐색(DFS)이란](https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html)

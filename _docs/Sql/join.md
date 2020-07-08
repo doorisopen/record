@@ -6,7 +6,7 @@ comments: true
 order: 2
 ---
 
-# Join
+## Join
 * INNER 조인
 * LEFT OUTER 조인
 * RIGHT OUTER 조인
@@ -237,6 +237,6 @@ where b.id is null;
 ## 조인 활용 예시
 * [JOIN 문제 풀어보기](https://programmers.co.kr/learn/courses/30/parts/17046)
 
-## 참고
+## References
 * [[W3S] SQL Join 참고 및 테스트](https://www.w3schools.com/sql/sql_join.asp)
 * [참고 - JOIN 테스트](https://sqltest.net/#989125)

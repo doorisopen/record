@@ -297,7 +297,7 @@ while(it.hasNext()) {
 }
 ```
 
-# References
+## References
 * 뇌를 자극하는 Java 프로그래밍
 * [https://developer.android.com/reference/java/util/LinkedList](https://developer.android.com/reference/java/util/LinkedList)
 * [http://tcpschool.com/java/java_collectionFramework_stackQueue](http://tcpschool.com/java/java_collectionFramework_stackQueue)

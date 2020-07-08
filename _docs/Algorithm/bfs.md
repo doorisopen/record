@@ -166,26 +166,26 @@ int main(void){
   }
 }
 ```
-# BFS 문제 유형(+응용 유형)
+## BFS 문제 유형(+응용 유형)
 * Flood Fill
 * 거리 측정
 * 시작점이 여러 개일 때
 * 시작점이 두 종류일 때
 * 1차원에서의 BFS
 
-# 주의할점
+## 주의할점
 * 시작점에 방문했다는 표시를 남기지 않는다.
 * 큐에 넣을 때 방문했다는 표시를 하는 대신 큐에서 빼낼 때 방문했다는 표시를 남겼다.
 * 이웃한 원소가 범위를 벗어났는지에 대한 체크를 잘못했다.
 
-# BFS 연습문제
+## BFS 연습문제
 * [BOJ 1926: 그림](https://www.acmicpc.net/problem/1926)
 * [BOJ 2178: 미로 탐색](https://www.acmicpc.net/problem/2178)
 * [BOJ 7576: 토마토](https://www.acmicpc.net/problem/7576)
 * [BOJ 4179: 불](https://www.acmicpc.net/problem/4179)
 * [BOJ 1697: 숨바꼭질](https://www.acmicpc.net/problem/1697)
 
-# Reference
+## Reference
 * [[바킹독의 실전 알고리즘] 0x09강 - BFS](https://www.youtube.com/watch?v=ftOmGdm95XI)
 * [commons.wikimedia.org](https://commons.wikimedia.org/wiki/File:Animated_BFS.gif)
 * [[알고리즘] 너비 우선 탐색(BFS)이란](https://gmlwjd9405.github.io/2018/08/15/algorithm-bfs.html)

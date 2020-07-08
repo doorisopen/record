@@ -50,7 +50,7 @@ order: 1
 4. 클라이언트로부터 웹 어플리케이션이 요청이 오면 DispatcherServlet이 생성되고 servlet-context.xml을 로드한다.
 이는 FrontController의 역할을 수행한다. 클라이언트로부터 요청 온 메시지를 분석하여 알맞은 pageController에게 전달하고 응답받아 요청에 따른 응답을 어떻게 할지 결정만 한다.
 
-# Question
-## 웹 어플리케이션 컨텍스트의 2가지 생성 과정을 설명해주세요
+## Question
+#### 웹 어플리케이션 컨텍스트의 2가지 생성 과정을 설명해주세요
 
-# References
+## References

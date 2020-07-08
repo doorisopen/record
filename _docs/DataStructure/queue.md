@@ -242,7 +242,7 @@ int main(void){
 }
 {% endhighlight %}
 
-# References
+## References
 * [바킹독의 실전 알고리즘-0x06, 큐](https://www.youtube.com/watch?v=D_fwSy5tRAY)
 * [https://blog.naver.com/ndb796/221230944729](https://blog.naver.com/ndb796/221230944729)
 * [https://jeong-pro.tistory.com/97](https://jeong-pro.tistory.com/97)
