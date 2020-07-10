@@ -156,13 +156,13 @@ int main(void){
 
 
 ## 관련된 Post
-> * <a href="{{ site.baseurl }}/Algorithm/2019-07-09-selectionsort">선택 정렬(Selection Sort)<a>
-> * <a href="{{ site.baseurl }}/Algorithm/2019-07-10-bubblesort">버블 정렬(Buble Sort)<a>
-> * <a href="{{ site.baseurl }}/Algorithm/2019-07-10-insertionsort">삽입 정렬(Insertion Sort)<a>
-> * <a href="{{ site.baseurl }}/Algorithm/2019-07-10-mergesort">합병 정렬(Merge Sort)<a>
-> * <a href="{{ site.baseurl }}/Algorithm/2019-07-10-quicksort">퀵 정렬(Quick Sort)<a>
-> * <a href="{{ site.baseurl }}/Algorithm/2019-07-17-countingsort">계수 정렬(Counting Sort)<a>
-> * <a href="{{ site.baseurl }}/Algorithm/2019-07-17-heapsort">힙 정렬(Heap Sort)<a>
+> * <a href="{{ site.baseurl }}/Algorithm/2019-07-09-algorithm-selectionsort">선택 정렬(Selection Sort)<a>
+> * <a href="{{ site.baseurl }}/Algorithm/2019-07-10-algorithm-bubblesort">버블 정렬(Buble Sort)<a>
+> * <a href="{{ site.baseurl }}/Algorithm/2019-07-10-algorithm-insertionsort">삽입 정렬(Insertion Sort)<a>
+> * <a href="{{ site.baseurl }}/Algorithm/2019-07-10-algorithm-mergesort">합병 정렬(Merge Sort)<a>
+> * <a href="{{ site.baseurl }}/Algorithm/2019-07-10-algorithm-quicksort">퀵 정렬(Quick Sort)<a>
+> * <a href="{{ site.baseurl }}/Algorithm/2019-07-17-algorithm-countingsort">계수 정렬(Counting Sort)<a>
+> * <a href="{{ site.baseurl }}/Algorithm/2019-07-17-algorithm-heapsort">힙 정렬(Heap Sort)<a>
 
 
 ## References
