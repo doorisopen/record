@@ -226,7 +226,7 @@ int main() {
 
 ## 중복 조합(Duplicate Combinations)
 
-```
+```cpp
 1 1 1 
 1 1 2 
 1 1 3 
