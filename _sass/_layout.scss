@@ -9,17 +9,19 @@ body {
 	background-color: $body-background-color;
 
 	&.nav-open {
-		overflow: auto;
+		overflow: hidden;
 
 		nav,
 		header > form {
 			display: block;
 		}
 
-		// header {
-		// 	bottom: 0;
-		// }
+		header {
+			height: 100%;
+			position: fixed;
+		}
 	}
+	
 
 	&::before {
 		content: "";
@@ -87,7 +89,7 @@ header {
 	overflow-x: hidden;
 	z-index: 1;
 	background-color: $nav-background-color;
-
+	
 	ul {
 		padding: 0;
 		margin: 0;
@@ -142,6 +144,8 @@ $nav-image: $baseurl + "/images/menu.svg";
 	}
 
 	@media (min-width: $mobile-break) {
+		height: 100%;
+		position: fixed;
 		background-color: transparent;
 		width: $nav-width;
 		right: auto;
@@ -155,6 +159,10 @@ $nav-image: $baseurl + "/images/menu.svg";
 			box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.1);
 		}
 	}
+}
+
+header::-webkit-scrollbar { //scroll bar
+	display: none; 
 }
 
 .content {
@@ -195,6 +203,9 @@ $nav-image: $baseurl + "/images/menu.svg";
 		font-size: 2.5rem;
 		margin-left: -4px;
 	}
+	.meta-data {
+		font-size: 1.5rem;
+	}
 
 	@media (min-width: $mobile-break) {
 		h2 {
@@ -204,11 +215,17 @@ $nav-image: $baseurl + "/images/menu.svg";
 		h3 {
 			font-size: 4.5rem;
 		}
+		.meta-data {
+			font-size: 1.8rem;
+		}
 	}
 
 	@media (min-width: $full-width-break) {
 		margin-top: 55px;
 	}
+}
+.meta-data {
+	color: #031b4e99;
 }
 
 .content-footer {

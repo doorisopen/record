@@ -3,7 +3,7 @@
 <html lang="ko">
     {% include head.html %}
     <body>
-        <header>
+        <header style="-ms-overflow-style: none;">
             <h1>
                 <a href="{{ site.baseurl }}/" style="color: #fff;">
                     <img
@@ -94,13 +94,16 @@
                     {% endif %}
                 </h2>
                 <h3>{{ page.title }}</h3>
+                <div class="meta-data">
+                    {% if page.date %}
+                        {{ page.date | date_to_long_string }}
+                    {% endif %}
+                </div>
             </div>
             <article class="content">
                 <h5>{{ content }}</h5>
                 <div class="content-footer">
-                    {% if page.date %}
-                    update: {{ page.date | date_to_long_string }}
-                    {% endif %}
+                    
                 </div>
                 {% if page.comments %}
                     {% include livere.html %}
