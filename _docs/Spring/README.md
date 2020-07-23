@@ -9,11 +9,7 @@
 * [ ] spring 애너테이션 생성자 생성 과정 ? 방식 ?
 * [ ] spring 트랜잭션 설정 방식 (propagation, isolation 등)
 * [ ] inject, authwired 차이
-Codility 코드 풀이
-Spring에서 DI란?
-알고 있는 디자인 패턴 하나만 소개
-최근에 읽은 책은?
-어떤 개발자가 되고 싶은지?
+
 
 * ### SpringBoot
 
