@@ -14,7 +14,7 @@ order: 1
 * XML 파일로부터 설정 정보를 활용하는 가장 많이 사용되는 클래스
 * org.springframework.beans.factory.xml.XmlBeanFactory
 
-![web-spring-wac_beanfactory]({{ site.baseurl }}/images/Web/Spring/web-spring-wac_beanfactory.JPG)
+![web-spring-wac-beanfactory]({{ site.baseurl }}{{ site.spring_img }}/web-spring-wac-beanfactory.JPG)
 
 ## Application Context
 * 일반적인 스프링 컨테이너를 의미
@@ -23,7 +23,7 @@ order: 1
 * XML 파일로부터 설정 정보를 활용하는 가장 많이 사용되는 클래스
 * org.springframework.context.support.ClassPathXmlApplicationContext
 
-![web-spring-wac_applicationcontext]({{ site.baseurl }}/images/Web/Spring/web-spring-wac_applicationcontext.JPG)
+![web-spring-wac-applicationcontext]({{ site.baseurl }}{{ site.spring_img }}/web-spring-wac-applicationcontext.JPG)
 
 ## WAC(Web Application Context)란?
 * __웹 애플리케이션을 위한 ApplicationContext__
@@ -41,7 +41,7 @@ order: 1
 
 ## 웹 어플리케이션에서 컨테이너 인스턴스화
 * web.xml에서 __ConetxtLoadListener, DispatcherServlet 를 사용하여 ApplicationContext 생성__
-![web-spring-wac_applicationcontext_webxml]({{ site.baseurl }}/images/Web/Spring/web-spring-wac_applicationcontext_webxml.JPG)
+![web-spring-wac-applicationcontext-webxml]({{ site.baseurl }}{{ site.spring_img }}/web-spring-wac-applicationcontext-webxml.JPG)
 
 ## 웹 어플리케이션 컨텍스트의 2가지 생성 과정
 1. 웹 어플리케이션이 요청되면 WAS에 의해 web.xml이 로드 된다.
