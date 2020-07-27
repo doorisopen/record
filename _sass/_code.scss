@@ -1,6 +1,5 @@
 pre, code, tt {
-	// font-family: "SF Mono", "Consolas", "Liberation Mono", "Menlo", monospace;
-	font-family: 'D2 coding', "Consolas", monospace;
+	font-family: $coding-font-fam;
 	font-size: 0.85em;
 	white-space: pre-wrap;
 	border-radius: 2px;

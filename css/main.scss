@@ -25,7 +25,9 @@ $full-width-break: $nav-width + ($space * 4) + $content-max-width;
 
 /* font-family Setting */
 $font-fam: "-apple-system", "BlinkMacSystemFont","Apple SD Gothic Neo","Inter", "Spoqa Han Sans", "Segoe UI", Sans-Serif,"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$nav-font-fam: "Open Sans", sans-serif;
+$nav-font-fam: "-apple-system", "BlinkMacSystemFont","Apple SD Gothic Neo","Inter", "Spoqa Han Sans", "Segoe UI", Sans-Serif,"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$coding-font-fam: 'D2 coding', "Consolas", monospace;
+$coding-font-fam-2: "SF Mono", "Consolas", "Liberation Mono", "Menlo", monospace;
 
 @import "mixins";
 @import "normalize";
