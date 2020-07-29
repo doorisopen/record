@@ -13,7 +13,10 @@ __경우의 수__ 를 세는 방법 가운데 바탕이 되는 것은 __순열�
 * 중복 순열
 * 조합
 * 중복 조합
-* 응용1 : 부분 문자열 조합
+* 응용1: 부분 문자열 조합
+* 활용1(c++): next_permutation()
+  + 순열
+  + 조합
 
 
 ## 순열(Permutation)
@@ -331,7 +334,72 @@ int main() {
 }
 ```
 
+## 활용1 (c++): next_permutation
+* next_permutation : algorithm
+
+#### 순열
+
+```cpp
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);
+    
+    int a[3] = {1,2,3};
+    do { 
+        for (int i = 0; i < 3; i++) {
+            cout << a[i];
+        }
+        cout << "\n";           
+    } while(next_permutation(a, a+3));
+    /*
+    123
+    132
+    213
+    231
+    312
+    321
+    */
+    return 0;
+}
+```
+
+#### 조합
+
+```cpp
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);
+    
+    int a[4] = {0,0,1,1};
+    do { 
+        for (int i = 0; i < 4; i++) {
+            if(a[i] == 0)
+                cout << i+1;
+        }
+        cout << "\n";           
+    } while(next_permutation(a, a+4));
+    /*
+    12
+    13
+    14
+    23
+    24
+    34
+    */
+    return 0;
+}
+```
+
 ## References
 * [techiedelight](https://www.techiedelight.com/find-combinations-non-overlapping-substrings-string/)
 * [yabmoons](https://yabmoons.tistory.com/99)
 * [suhak](https://suhak.tistory.com/2)
+* [cplusplus](https://www.cplusplus.com/reference/algorithm/next_permutation/)
