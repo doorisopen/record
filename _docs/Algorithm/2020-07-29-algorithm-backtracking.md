@@ -30,7 +30,7 @@ order: 28
 
 <details><summary>N과M(1)-코드확인</summary>
 
-```cpp
+{% highlight c++ %}
 // 15649 - N과 M(1)
 #include <stdio.h>
 #include <vector>
@@ -67,7 +67,8 @@ int main(void) {
 	dfs(0);
 	return 0;
 } 
-```
+{% endhighlight %}
+
 
 * `(1)과 (2)`
   + 위와 같이 __상태 값을 이전으로 되돌려서__ 모든 경우의 수를 탐색합니다.
@@ -81,7 +82,7 @@ int main(void) {
 
 <details><summary>N-Queen-코드확인</summary>
 
-```cpp
+{% highlight c++ %}
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
@@ -139,9 +140,11 @@ int main() {
     cout << result;
     return 0;
 }
-```
+{% endhighlight %}
 
 </details>
+
+<hr/>
 
 ## References
 * [바킹독의 실전 알고리즘](https://www.youtube.com/watch?v=Enz2csssTCs)
