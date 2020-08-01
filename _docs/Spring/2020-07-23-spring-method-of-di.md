@@ -6,7 +6,7 @@ comments: true
 order: 5
 ---
 
-Spring Framework에서 중요한 특징 중 하나인 __의존관계 주입(DI, Dependency Injection)__ 방법에 대해서 알아보겟습니다.
+Spring Framework에서 중요한 특징 중 하나인 __의존관계 주입(DI, Dependency Injection)__ 방법에 대해서 알아보겠습니다.
 
 ## 목차
 * 의존성 주입(DI, Dependency Injection)란?
