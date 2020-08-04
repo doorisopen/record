@@ -12,7 +12,7 @@
 * [x] interface와 abstract 차이
 * [ ] 자바 동기화(Synchronized) 처리방법 
 * [ ] Thread.top이 왜 비권장이 되었는지?
-* [ ] hashMap이 왜 thread-safe가 아닌지
+* [x] hashMap이 왜 thread-safe가 아닌지
 * [ ] 힙이랑 스택 차이는 뭔가
 * [ ] Call By Value 와 Call By Reference의 차이? 
   + 왜 그렇게 나눠서 사용하는지? 

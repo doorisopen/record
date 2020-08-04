@@ -9,14 +9,14 @@
 * [x] 덱
 
 비선형 구조
-* [ ] 그래프
+* [x] 그래프
 * [x] 트리
-  + [ ] 이진트리
+  + [x] 이진트리
 * [ ] 힙
 
 ==============
 
-* [ ] 트라이 
+* [x] 트라이 
 https://biewoom.github.io/non-linear-ds/advanced-ds/2020/04/14/Trie.html
 
 https://www.crocus.co.kr/1053
