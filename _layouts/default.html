@@ -95,8 +95,11 @@
                 </h2>
                 <h3>{{ page.title }}</h3>
                 <div class="meta-data">
-                    {% if page.date %}
+                    update:
+                    {% if page.lastmod == null %}
                         {{ page.date | date_to_long_string }}
+                    {% else %}
+                        {{ page.lastmod | date_to_long_string }}
                     {% endif %}
                 </div>
             </div>
