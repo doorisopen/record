@@ -2,9 +2,18 @@
 title:  "이진 트리(Binary Tree)"
 category: DataStructure
 date:   2019-07-25 18:32:30
+lastmod: 2020-08-18 11:46:30
 comments: true
 order: 8
 ---
+
+## 목차
+* 이진 트리 란?
+* 이진 트리의 특징
+* 이진 트리 예시
+* 이진 트리 구현
+* 이진 트리 응용(트리 복원)
+* 트리 문제(BOJ)
 
 ## 이진 트리(Binary Tree) 란?
 * __이진 트리는__ 가장 많이 사용되는 __비선형 자료구조__ 이다.
@@ -120,7 +129,103 @@ int main(void){
 }
 {% endhighlight %}
 
-## 트리 문제
+
+## 트리 응용
+* 전위 순회(pre order) 결과가 주어졌을때 트리 복원하기
+* -1은 노드 끝을 의미합니다.
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <stack>
+using namespace std;
+typedef pair<int,int> pi;
+
+vector<pi> tree[10000];
+vector<int> restore;
+int visit[10000];
+stack<int> s;
+
+void makeTree(int idx, int node, vector<int> &v) {
+    visit[idx] = 1;
+    //end node
+    if(v[idx] == -1) {
+        //left
+        if(tree[node][0].first == -2) {
+            tree[node][0].first = -1;
+        } 
+        else { // right
+            tree[node][0].second = -1;
+        }
+        return;
+    }
+    //not to exist node
+    if(tree[v[idx]].empty()) {
+        s.push(v[idx]);
+        tree[v[idx]].push_back({-2,-2});
+    }
+    //exist node
+    if(tree[node][0].first == -2) {
+        tree[node][0].first = v[idx];
+    } else if(tree[node][0].second == -2) {
+        tree[node][0].second = v[idx];
+    }
+    makeTree(idx+1,v[idx],v);
+}
+
+void traversal(int node) {
+    if(node == -1) {
+        restore.push_back(-1);
+        return;
+    }
+    else if(node > 0) {
+        restore.push_back(node);
+        traversal(tree[node][0].first);
+        traversal(tree[node][0].second);
+    }
+}
+
+bool solve(vector<int> &v) {
+    int root = v[0];
+    if(root == -1) {
+        return true;
+    }
+    visit[0] = 1;
+    tree[root].push_back({-2,-2});
+    s.push(root);
+    int cur = root;
+    for (int i = 1; i < v.size(); i++) {
+        if(!visit[i]) {
+            makeTree(i, cur, v);
+            if(!s.empty()) {
+                cur = s.top(); s.pop();
+            }
+        }
+    }
+
+    traversal(root);
+    for (int i = 1; i < v.size(); i++) {
+        if(restore.size()!=v.size()) return false;
+        if(restore[i]!=v[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main(void) {
+    vector<int> test1 = {-1};
+    vector<int> test2 = {3,5,6,8,-1,-1,-1,1,7,-1,-1,-1,4,-1,2,-1,-1};
+    vector<int> test3 = {1,-1,2,-1,-1,3,-1,-1};
+    cout << solve(test1) << "\n";
+    cout << solve(test2) << "\n";
+    cout << solve(test3) << "\n";
+
+    return 0;
+}
+```
+
+## 트리 문제(BOJ)
 * [BOJ 1991: 트리순회](https://www.acmicpc.net/problem/1991)
 <details><summary>코드(C++)</summary>
 
@@ -287,5 +392,114 @@ public class boj1991 {
 </details>
 <br/>
 
+* [BOJ 6597: 트리복구](https://www.acmicpc.net/problem/6597)
+<details><summary>코드(C++)</summary>
+
+{% highlight javascript %}
+#include <bits/stdc++.h>
+using namespace std;
+
+void postOrder(string pre, string in) {
+    if(!pre.length()) return;
+
+    int n = pre.size();
+    char root = pre[0];
+    int left = find(in.begin(),in.end(),root) - in.begin();
+    int right = n - left - 1;
+    postOrder(pre.substr(1,left), in.substr(0,left));
+    postOrder(pre.substr(left+1,n), in.substr(left+1,n));
+    cout << root;
+}
+
+int main() {
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);
+
+    while (!cin.eof()) {
+        string in, pre;
+        cin >> pre >> in;
+
+        postOrder(pre, in);
+        cout << "\n";
+    }
+    return 0;
+}
+{% endhighlight %}
+
+</details>
+
+<details><summary>코드(Java)</summary>
+
+{% highlight javascript %}
+import java.util.*;
+class Tree {
+    class Node {
+        char data;
+        Node left, right;
+        Node(char data) {
+            this.data = data;
+        }
+    }
+    Node root;
+    static int pIndex = 0;
+    public void buildTreeByInPre(char in[], char pre[]) {
+        pIndex = 0;
+        root = buildTreeByInPre(in, pre, 0, in.length - 1);
+    }
+
+    private Node buildTreeByInPre(char[] in, char[] pre, int start, int end) {
+        if(start > end) return null;
+        Node node = new Node(pre[pIndex++]);
+        if(start == end) return node;
+        int mid = search(in, start, end, node.data);
+        node.left = buildTreeByInPre(in, pre, start, mid-1);
+        node.right = buildTreeByInPre(in, pre, mid+1, end);
+        return node;
+    }
+    private int search(char[] in, int start, int end, char data) {
+        int i = 0;
+        for (i = start; i <= end; i++) {
+            if(in[i] == data) return i;
+        }
+        return i;
+    }
+    public void printInorder(Node node) {
+        if(node == null) return;
+        printInorder(node.left);
+        printInorder(node.right);
+        System.out.print(node.data);
+    }
+    
+}
+public class Main {
+
+    public static void main(String args[]) {  
+        Scanner sc = new Scanner(System.in);
+        while(sc.hasNextLine()) {
+            String str = sc.nextLine();
+            String inpre[] = str.split(" ");
+            Tree tree = new Tree();
+            char pre[] = new char[inpre[0].length()];
+            char in[] = new char[inpre[1].length()];
+            for (int i = 0; i < inpre[0].length(); i++) {
+                pre[i] = inpre[0].charAt(i);
+            }
+            for (int i = 0; i < inpre[1].length(); i++) {
+                in[i] = inpre[1].charAt(i);
+            }
+            tree.buildTreeByInPre(in, pre);
+            tree.printInorder(tree.root);
+            System.out.print("\n");
+        }
+        sc.close();
+    }
+}
+{% endhighlight %}
+
+</details>
+
+<br/>
+
 ## References
-> * <a href="https://blog.naver.com/ndb796/221233560789">19. 이진 트리의 구현과 순회(Traversal) 방식<a>
+* [19. 이진 트리의 구현과 순회](https://blog.naver.com/ndb796/221233560789)
+* [엔지니어대한민국](https://www.youtube.com/watch?v=kGdnFfi2uz8)
