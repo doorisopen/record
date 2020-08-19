@@ -8,7 +8,7 @@ google_analytics_key: "UA-165000136-2"
 show_full_navigation: true
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
-logo: /siteicon.png
+logo: /images/siteicon.png
 description: dev-library
 author: doorisopen
 name: doorisopen
@@ -31,7 +31,7 @@ algorithm_img: /images/Algorithm
 datastructure_img: /images/Datastructure
 web_img: /images/Web
 spring_img: /images/Web/Spring
-
+tech_img: /images/Tech
 
 plugins:
   - jekyll-sitemap
