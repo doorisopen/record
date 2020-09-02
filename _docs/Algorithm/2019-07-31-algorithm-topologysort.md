@@ -20,6 +20,7 @@ order: 20
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/topologysort_graph.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/topologysort_graph.JPG" title="Check out the image">
 </a>
+
 위의 예시를 그대로 노드에 숫자로 표기한 그래프이다.
 
 
