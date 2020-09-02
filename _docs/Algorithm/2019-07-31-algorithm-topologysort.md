@@ -17,6 +17,7 @@ order: 20
 * __사이클이 발생하는 경우__ 에는 위상정렬을 수행할 수 없으므로 주의 해야한다.
 
 * 위상정렬 초기 그래프
+
 <a href="{{ site.baseurl }}{{ site.algorithm_img }}/topologysort_graph.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
   <img src="{{ site.baseurl }}{{ site.algorithm_img }}/topologysort_graph.JPG" title="Check out the image">
 </a>
