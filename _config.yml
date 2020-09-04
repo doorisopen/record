@@ -29,6 +29,7 @@ permalink: pretty
 # image url settings
 algorithm_img: /images/Algorithm
 datastructure_img: /images/Datastructure
+network_img: /images/Network
 web_img: /images/Web
 spring_img: /images/Web/Spring
 tech_img: /images/Tech
