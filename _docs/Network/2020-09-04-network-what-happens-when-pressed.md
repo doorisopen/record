@@ -1,7 +1,7 @@
 ---
 title:  "google.com을 누르면 생기는 일"
 category: Network
-date:   2020-09-03 00:30:59
+date:   2020-09-04 00:30:59
 comments: true
 order: 4
 ---
