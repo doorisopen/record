@@ -140,28 +140,33 @@ Node* searchMinNode(Node* root) {
 * 삭제할 노드의 __자식이 하나인 경우__
 * 삭제한 노드의 __자식이 둘인 경우__
 
-이때 __자식이 둘인 경우__ 에 삭제할 노드 기준으로 왼쪽 서브 트리에서 __최대값을 찾고 삭제할 노드의 부모노드와 연결__ 해야하는 점입니다. 이진 탐색 트리의 특성에서 보았듯이 이진 탐색 트리의 __오른쪽 서브 트리는 루트 노드 보다 큰 값이 오는 특징을 활용__ 한 것 입니다. 
+이때 __자식이 둘인 경우__ 두 가지 방법이 있습니다.
+
+* 삭제할 노드 기준으로 왼쪽 서브 트리에서 __최댓값을 찾고 삭제할 노드의 부모노드와 연결__ 
+* 삭제할 노드 기준으로 오른쪽 서브 트리에서 __최솟값을 찾고 삭제할 노드의 부모노드와 연결__
+
+위와 같이 부모노드와 삭제될 노드의 자식 노드와 연결 해주어야 합니다. 이진 탐색 트리의 특성에서 보았듯이 이진 탐색 트리의 __오른쪽 서브 트리는 루트 노드 보다 큰 값이 오는 특징을 활용__ 한 것 입니다. 추가로 필자는 위 두가지 중 첫 번째 방법을 사용하여 구현하였습니다.
 
 ```cpp
 //노드 삭제
 void deleteNode(int data) {
     if(root != nullptr) {
-        deleteBST(root, data);
+        root = deleteBST(root, data);
     } else {
         return;
     }
 }
 Node* deleteBST(Node* root, int data) {
     if(root->data > data) {
-        deleteBST(root->left, data);
+        root->left = deleteBST(root->left, data);
     } else if(root->data < data) {
-        deleteBST(root->right, data);
+        root->right = deleteBST(root->right, data);
     } else {
         Node* tmp = root;
         //자식이 없을때
-        if(root->left == nullptr && root->left == nullptr) {
-            free(root);
+        if(root->left == nullptr && root->right == nullptr) {
             root = nullptr;
+            delete tmp;
         } //자식이 하나일때
         else if(root->left == nullptr) {
             root = root->right;
@@ -245,22 +250,22 @@ struct BinarySearchTree {
     //노드 삭제
     void deleteNode(int data) {
         if(root != nullptr) {
-            deleteBST(root, data);
+            root = deleteBST(root, data);
         } else {
             return;
         }
     }
     Node* deleteBST(Node* root, int data) {
         if(root->data > data) {
-            deleteBST(root->left, data);
+            root->left = deleteBST(root->left, data);
         } else if(root->data < data) {
-            deleteBST(root->right, data);
+            root->right = deleteBST(root->right, data);
         } else {
             Node* tmp = root;
             //자식이 없을때
-            if(root->left == nullptr && root->left == nullptr) {
-                free(root);
+            if(root->left == nullptr && root->right == nullptr) {
                 root = nullptr;
+                delete tmp;
             } //자식이 하나일때
             else if(root->left == nullptr) {
                 root = root->right;
@@ -289,15 +294,33 @@ struct BinarySearchTree {
 void solve() {
     BinarySearchTree* bst = new BinarySearchTree();
     bst->insertNode(4);
-    bst->insertNode(7);
-    bst->insertNode(1);
     bst->insertNode(2);
-    bst->insertNode(0);
+    bst->insertNode(1);
     bst->insertNode(3);
+    bst->insertNode(6);
+    bst->insertNode(5);
+    bst->insertNode(7);
+    /*
+          4
+        /  \
+       2    6
+      / \  / \
+     1  3 5   7 */
     bst->printTree(bst->root);
     cout << "\n";
-    bst->deleteNode(1);
+    bst->deleteNode(5);
+    bst->deleteNode(6);
+    bst->deleteNode(2);
     bst->printTree(bst->root);
+    cout << "\n";
+    /*
+          4
+        /  \
+       3    7
+      /    
+     1  */
+     cout << bst->searchNode(3) << "\n"; // true
+     cout << bst->searchNode(5) << "\n"; // false
 }
 
 int main() {
