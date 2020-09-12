@@ -26,7 +26,7 @@ __벨만포드 알고리즘__ 은 __"음의 가중치가 존재"__ 할때 사용
 
 ## 벨만포드 알고리즘 구현
 
-```cpp
+```c++
 #include <bits/stdc++.h>
 using namespace std;
 const int INF = 0x7f7f7f7f;
@@ -61,7 +61,7 @@ void bellmanFord(vector<vector<int>> &board) {
     cout << "No Cycle!\n";
 }
 
-void solve(int n, vector<vector<int>> board) {
+void solve(int n, vector<vector<int>> &board) {
     N = n;
     fill(visit,visit+n,INF);
     bellmanFord(board);
@@ -71,7 +71,7 @@ int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);
     //n=노드 개수, {from, to, cost}
-    solve(5,{{1,2,1},{2,3,2},{2,4,1},{4,5,-1},{5,2,-2}});//Cycle!
+    solve(5, { {1,2,1},{2,3,2},{2,4,1},{4,5,-1},{5,2,-2} });//Cycle!
     /*
     1 -(1)→ 2 -(2)→ 3
           ↗ \
@@ -79,7 +79,7 @@ int main() {
        /      ↘
       5 ←(-1)- 4
     */
-    solve(3,{{1,2,1},{2,3,2}});//No Cycle!
+    solve(3, { {1,2,1},{2,3,2} });//No Cycle!
     /*
         1 -(1)→ 2 -(2)→ 3
     */
