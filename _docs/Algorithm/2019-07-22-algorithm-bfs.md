@@ -2,6 +2,7 @@
 title: 너비 우선 탐색(BFS, Breadth First Search)
 category: Algorithm
 date: 2019-07-22 16:32:30
+lastmod: 2020-09-16 00:32:30
 comments: true
 order: 11
 ---
@@ -56,25 +57,36 @@ order: 11
 </a>
 
 
-## C++ STL Library를 사용한 BFS 구현
+## BFS 구현
 
+아래와 같은 형태의 그래프가 주어질때 BFS를 구현 해보겠습니다.
 
-{% highlight javascript %}
+```
+1─2─5
+|/ \│
+3   4
+|\
+6─7
+```
 
+#### C++ BFS 구현 예시1
+__인접 리스트__ 가 입력 값으로 주어진 상황에서 C++ STL Library로 구현한 BFS 코드입니다.
+
+```cpp
 #include <iostream>
 #include <queue>
 #include <vector>
 
 using namespace std;
 
-int	num = 7;
-// 방문 처리 하기 위한 배열 
+// 1~7번 노드의 방문 처리 하기 위한 배열 
 int c[7];
 vector<int> a[8];
 void bfs(int start){
 	queue<int> q;
 	q.push(start);
 	c[start] = true;
+	//search
 	while(!q.empty()){
 		int x = q.front();
 		q.pop();
@@ -87,45 +99,24 @@ void bfs(int start){
 				c[y] = true; 
 			}
 		}
-		
 	}
-	
 }
 int main(void){
-	a[1].push_back(2);
-	a[2].push_back(1);
-	
-	a[1].push_back(3);
-	a[3].push_back(1);
-	
-	a[2].push_back(3);
-	a[3].push_back(2);
-	
-	a[2].push_back(5);
-	a[5].push_back(2);
-	
-	a[2].push_back(4);
-	a[4].push_back(2);
-	
-	a[3].push_back(6);
-	a[6].push_back(3);
-	
-	a[3].push_back(7);
-	a[7].push_back(3);
-	
-	a[4].push_back(5);
-	a[5].push_back(4);
-	
-	a[6].push_back(7);
-	a[7].push_back(6);
+	int input[8][2] = {{1,2},{1,3},{2,3},{2,5},{2,4},{3,6},{4,5},{6,7}};
+	//data input
+	for (int i = 0; i < 8; i++) {	
+		a[input[i][0]].push_back(input[i][1]);
+		a[input[i][1]].push_back(input[i][0]);
+	}
 	
 	bfs(1);
 	
 	return 0;
 }
-{% endhighlight %}
+```
 
-## BFS 예시 코드
+#### C++ BFS 구현 예시2
+__인접 행렬__ 이 입력 값으로 주어진 상황에서 C++로 구현한 BFS 코드입니다.
 
 ```cpp
 #include <bits/stdc++.h>
@@ -166,6 +157,55 @@ int main(void){
   }
 }
 ```
+
+#### Java BFS 구현 예시1
+__인접 리스트__ 가 입력 값으로 주어진 상황에서 Java Collection으로 구현한 BFS 코드입니다.
+
+```java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Main {
+	static int[][] input = {{1,2},{1,3},{2,3},{2,5},{2,4},{3,6},{4,5},{6,7}};
+	static LinkedList<Integer>[] board = new LinkedList[8];
+	static boolean[] visit = new boolean[8];
+
+	public static void bfs(int start) {
+		Queue<Integer> q = new LinkedList<>();
+		q.add(start);
+		visit[start] = true;
+
+		while(!q.isEmpty()) {
+			int cur = q.poll();
+			System.out.print(cur + " ");
+			for (int i = 0; i < board[cur].size(); i++) {
+				int next = board[cur].get(i);
+				if(!visit[next]) {
+					q.add(next);
+					visit[next] = true;
+				}
+			}
+		}
+	}
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//init
+		for (int i = 1; i <= 7; i++) {
+			board[i] = new LinkedList<>();
+		}
+		//input
+		for (int i = 0; i < input.length; i++) {
+			board[input[i][0]].add(input[i][1]);
+			board[input[i][1]].add(input[i][0]);
+		}
+		bfs(1);
+		br.close();
+	}
+}
+```
+
 ## BFS 문제 유형(+응용 유형)
 * Flood Fill
 * 거리 측정
