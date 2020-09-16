@@ -102,7 +102,9 @@ void bfs(int start){
 	}
 }
 int main(void){
-	int input[8][2] = {{1,2},{1,3},{2,3},{2,5},{2,4},{3,6},{4,5},{6,7}};
+	int input[8][2] = {
+		{1,2},{1,3},{2,3},{2,5},{2,4},{3,6},{4,5},{6,7}
+		};
 	//data input
 	for (int i = 0; i < 8; i++) {	
 		a[input[i][0]].push_back(input[i][1]);
@@ -168,7 +170,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class Main {
-	static int[][] input = {{1,2},{1,3},{2,3},{2,5},{2,4},{3,6},{4,5},{6,7}};
+	static int[][] input = { 
+		{1,2},{1,3},{2,3},{2,5},{2,4},{3,6},{4,5},{6,7}
+		};
 	static LinkedList<Integer>[] board = new LinkedList[8];
 	static boolean[] visit = new boolean[8];
 
