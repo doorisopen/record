@@ -1,7 +1,8 @@
 ---
 title: 자바의 메모리 영역과 관리
 category: Java
-date:   2020-06-04 00:30:59
+date: 2020-06-04 00:30:59
+lastmod: 2020-09-17 00:30:59
 comments: true
 order: 1
 ---
@@ -17,6 +18,58 @@ order: 1
 * __메서드 영역__ : static 변수, 전역변수, 코드에서 사용되는 Class 정보 등이 올라간다. 코드에서 사용되는 class들을 로더로 읽어 클래스별로 런타임 필드데이터, 메서드 데이터 등을 분류해 저장한다.
 * __스택(Stack)__ : 지역변수, 함수(메서드) 등이 할당되는 LIFO(Last In First Out) 방식의 메모리
 * __힙(Heap)__ : new 연산자를 통한 동작할당된 객체들이 저장되며, 가비지 컬렉션에 의해 메모리가 관리되어 진다.
+
+```java
+/* class 영역 */
+public class Member {//객체
+    /* 필드 */
+    String name;//멤버 변수
+    static int money = 20;//static 변수(=전역변수)->Method영역
+
+    /* 메서드 */
+    public void updateMoney() {
+        int interest = 5; // 지역 변수->stack영역
+        money += interest;
+    }
+    /* 메서드 */
+    public void changeName(String name) {//changeName(매개변수)->stack영역
+        this.name = name;
+    }
+    
+    public static void main(String[] args) {//static 메서드->Method영역
+
+        Member member1 = new Member();//클래스 객체(=인스턴스)->Heap영역
+        /*
+          레퍼런스 변수.멤버 변수
+          레퍼런스 변수.메서드()
+        */
+        member1.name = "홍길동";
+        member1.changeName("라이언");
+        member1.updateMoney();
+        /*
+            money는 전역 변수이기 때문에 어디서든 호출이 가능합니다.
+        */
+        System.out.println(member1.name+" "+money);//라이언 25
+
+        String str1 = "라이언";//상수풀 저장
+        String str2 = "라이언";//상수풀 저장
+        String str3 = new String("라이언");//객체->힙영역
+        System.out.println(str1==str2);//true
+        System.out.println(str1==str3);//false, 저장 영역이 서로 다르기 때문.
+    }
+}
+```
+
+## Method Area(Static Area)
+* 주로 클래스들이 할당됩니다.
+* Garbage Collector의 관여를 받지 않습니다.
+* JVM이 구동될 때 생성, __모든 스레드가 공유하는 영역__ 입니다.
+* JVM이 구동 중 사용될 클래스 파일을 읽고 클래스 별로 아래의 내용을 저장합니다.
+  + runtime constant pool(런타임 상수 풀)
+  + file data(필드 데이터)
+  + method data(메서드 데이터)
+  + constructoor(생성자) 
+* static 키워드가 붙은 변수, 메서드들은 이 영역에 해당합니다.
 
 ## Stack
 * Heap 영역에 생성된 Object 타입의 데이터의 참조값이 할당된다.
@@ -81,11 +134,45 @@ argument 변수는 4 로 초기화 되었지만, 함수의 실행결과인 6 이
 
 ## Heap
 * Heap 영역에는 주로 긴 생명주기를 가지는 데이터들이 저장된다. 
-  + 대부분의 오브젝트는 크기가 크고, 서로 다른 코드블럭에서 공유되는 * 경우가 많다
+  + 대부분의 오브젝트는 크기가 크고, 서로 다른 코드블럭에서 공유되는 경우가 많다
 * 애플리케이션의 모든 메모리 중 stack 에 있는 데이터를 제외한 부분이라고 보면 된다.
-* 모든 Object 타입(Integer, String, ArrayList, ...)은 heap 영역에 생성된다.
-* 몇개의 스레드가 존재하든 상관없이 단 하나의 heap 영역만 존재한다.
-* Heap 영역에 있는 오브젝트들을 가리키는 레퍼런스 변수가 stack 에 올라가게 된다.
+* __모든 Object 타입__ (Integer, String, ArrayList, ...)은 heap 영역에 생성된다.
+* 몇개의 스레드가 존재하든 상관없이 __단 하나의 heap 영역만 존재__ 한다.
+* Heap 영역에 있는 오브젝트들을 가리키는 __레퍼런스 변수가 stack 에 올라가게 된다.__
+
+  
+#### 레퍼런스(Reference) 변수란?
+
+메모리상에 생성된 클래스를 __클래스 객체__ 혹은 __인스턴스(instance)__ 라고 합니다. 코드로 보면 아래와 같습니다.
+
+```java
+Member member = new Member();
+```
+
+__레퍼런스 변수__ 는 이렇게 메모리상에 생성된 __클래스 객체 혹은 인스턴스를 가리키는데 사용되는 변수__ 입니다. 위의 코드에서는 __member가 레퍼런스 변수에 해당__ 합니다.
+
+모든 인스턴스는 레퍼런스 변수만을 통해서 사용이 가능합니다. __레퍼런스 변수는__ 일반적인 프리미티브 변수처럼 데이터를 넣어두는 변수가 아니고 __인스턴스(클래스 객체)를 가리키는 값__ 입니다. 
+
+__레퍼런스 변수는__ 인스턴스의 멤버 변수와 메서드를 아래의 코드와 같이 접근할 수 있습니다.
+
+```java
+public class Member {
+    String name;
+    int age;
+    public void setName(String name) {
+      this.name = name;
+    }
+    public void setAge(int age) {
+      this.age = age;
+    }
+    public static void main(String[] args) {
+      Member member = new Member();
+      member.setName("홍길동");//레퍼런스 변수.메서드
+      member.setAge(20);
+      System.out.println(member.name+" "+member.age);//홍길동 20
+    }
+}
+```
 
 #### Heap 영역의 활용(코드 예시)
 
@@ -192,4 +279,6 @@ print(listArgument);
 Object 타입의 데이터, 즉 heap 영역에 있는 데이터는 함수 내부에서 파라미터로 copied value 를 받아서 변경하더라도 함수호출이 종료된 시점에 변경내역이 반영되는 것을 볼 수 있다.
 
 ## References
-* [yaboong.github.io/java-memory-management](https://yaboong.github.io/java/2018/05/26/java-memory-management/)
+* [yaboong.github.io](https://yaboong.github.io/java/2018/05/26/java-memory-management/)
+* [goddaehee.tistory.com/149](https://goddaehee.tistory.com/149)
+* [coding-factory.tistory.com/524](https://coding-factory.tistory.com/524)
