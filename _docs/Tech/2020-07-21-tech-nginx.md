@@ -1,6 +1,6 @@
 ---
 title: Nginx
-category: Web
+category: Tech
 date: 2020-07-21 00:30:59
 lastmod: 2020-09-30 00:30:59
 comments: true
