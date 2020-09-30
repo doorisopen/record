@@ -1,9 +1,10 @@
 ---
 title: MSA(MicroService Architecture)
 category: Tech
-date:   2020-09-28 00:30:59
+date: 2020-09-28 00:30:59
+lastmod: 2020-09-30 00:30:59
 comments: true
-order: 1
+order: 2
 ---
 
 

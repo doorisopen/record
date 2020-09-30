@@ -1,9 +1,10 @@
 ---
 title: Nginx
 category: Web
-date:   2020-07-21 00:30:59
+date: 2020-07-21 00:30:59
+lastmod: 2020-09-30 00:30:59
 comments: true
-order: 7
+order: 1
 ---
 
 
