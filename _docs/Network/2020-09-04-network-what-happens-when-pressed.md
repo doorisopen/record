@@ -32,7 +32,7 @@ order: 4
   + TCP연결에 성공하면 HTTP Request가 TCP Socket을 통해 보내지고, 응답으로 웹페이지의 정보를 받습니다.
 
 #### DHCP(Dynamic Host Configuration Protocol)
-__DHCP(Dynamic Host Configuration Protocol - )__ 란 호스트의 IP주소와 각종 TCP/IP 프로토콜의 기본 설정을 클라이언트에게 자동적으로 제공해주는 프로토콜을 말합니다. 
+__DHCP(Dynamic Host Configuration Protocol)__ 란 호스트의 IP주소와 각종 TCP/IP 프로토콜의 기본 설정을 클라이언트에게 자동적으로 제공해주는 프로토콜을 말합니다. 
 
 * DHCP에 대한 표준은 RFC문서에 정의되어 있습니다.
 * DHCP는 네트워크에 사용되는 IP주소를 DHCP서버가 중앙집중식으로 관리하는 클라이언트/서버 모델을 사용합니다.
