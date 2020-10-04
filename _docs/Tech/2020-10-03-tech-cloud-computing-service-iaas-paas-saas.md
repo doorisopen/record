@@ -1,7 +1,7 @@
 ---
 title: 클라우드 컴퓨팅 서비스(IaaS,PaaS,SaaS)
 category: Tech
-date: 2020-10-01 00:30:59
+date: 2020-10-03 00:30:59
 comments: true
 order: 4
 ---
