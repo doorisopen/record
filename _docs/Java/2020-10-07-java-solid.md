@@ -1,5 +1,5 @@
 ---
-title: "SOILD"
+title: "SOLID"
 category: Java
 date: 2020-10-07 00:30:59
 comments: true
