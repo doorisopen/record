@@ -3,7 +3,7 @@
 
 title: 개서관
 url: "https://doorisopen.github.io/developers-library"
-baseurl: "/developers-library"
+baseurl:
 google_analytics_key: "UA-165000136-2"
 show_full_navigation: true
 
@@ -13,7 +13,7 @@ description: 개서관
 author: doorisopen
 email: doorwasopen@gmail.com
 twitter: # twitter username without the @ symbol
-type: website
+type: 
 
 # Conversion
 markdown: kramdown
