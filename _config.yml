@@ -13,7 +13,7 @@ description: 개서관
 author: doorisopen
 email: doorwasopen@gmail.com
 twitter: # twitter username without the @ symbol
-type: 
+type: website
 
 # Conversion
 markdown: kramdown
