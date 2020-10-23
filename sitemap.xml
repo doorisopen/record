@@ -6,7 +6,7 @@ layout: null
   {% assign grouped = site.docs | sort: 'date' | reverse %}
   {% for post in grouped %}
     <url>
-      <loc>{{ site.url }}{{ post.url }}</loc>
+      <loc>{{ post.url | prepend: site.baseurl | prepend: site.url }}</loc>
       {% if post.lastmod == null %}
         <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
       {% else %}
