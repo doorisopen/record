@@ -2,9 +2,13 @@
 	<meta charset="UTF-8">
     <!--<title>{% if page.title %}{{page.title}} - {{site.title}}{% else %}{{site.title}}{% endif %}</title>  -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:image" content="{{ site.baseurl }}/images/work.jpg">
 	{% seo %}
+	<!-- Begin feed meta-->
 	{% feed_meta %}
+	<!-- End feed meta-->
+	<!-- Twitter Meta Tags -->
+	<meta property="og:image" content="{{ site.baseurl }}/images/work.jpg">
+	<meta name="twitter:image" content="{{ site.baseurl }}/images/work.jpg">
 
 	
 	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">-->
