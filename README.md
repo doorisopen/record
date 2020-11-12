@@ -12,40 +12,22 @@
 
 👨🏻‍💻신입 개발자를 위한 전공 지식 & 유용한 정보 수집 저장소📚
 
-* __Commit convention rule :__ [상태] 날짜 주제-내용
-  + __상태 :__ Add/Update/Delete
+* __File Name Rule :__ 날짜-주제-제목
+  + __ex) 2020-02-15-web-server-and-was__
+* __Commit Convention Rule :__ [상태] 날짜 주제 내용
+  + __상태 :__ Add/Update/Style/Docs
   + __날짜 :__ 2020-02-15
   + __주제 :__ Web/Algorithm...
-  + __ex) [Add] 2020-02-15 Web-server-vs-was__
+  + __ex) [Add] 2020-02-15 Web server and was__
 
-  
+> * __Add:__ 새로운 파일 추가 <br/>
+> * __Update:__ 파일 내용 추가/변경/삭제 등 <br/>
+> * __Style:__ themes, css 등 UI 추가/변경/삭제 등 <br/>
+> * __Docs:__ 설정 파일 및 README 내용 추가/변경/삭제
+
+
 📢잘못된 내용은 [Issues](https://github.com/doorisopen/developers-library/issues)와 [PR](https://github.com/doorisopen/developers-library/pulls)로 알려주세요
 
-<!-- 디렉토리 구조 예시
-```sh
-├─Github
-│  │  README.md
-│  ├─docs
-│  │      01-git-설치.md
-│  │      02-github-회원가입.md
-│  └─images
-│          demun-001.jpg
-│          demun-002.jpg
-├─Javascript
-│  │  README.md
-│  ├─docs
-│  └─images
-└─Sublimetext
-   │  README.md
-   │  Sublime Text 3.zip
-   ├─docs
-   │      01-프로그램-설치.md
-   │      02-플러그인-설치.md
-   └─images
-           demun-024.jpg
-           demun-025.jpg
-```
--->
 ## 목차
 * [Algorithm](https://github.com/doorisopen/developers-library#-algorithm)
 * [CS](https://github.com/doorisopen/developers-library#-cscomputer-science)
@@ -67,42 +49,27 @@
 <hr />
 
 <!-- 
-https://themes.gohugo.io/
-https://techstock.biz/Jekyll-Blog/Gemfile-Gemfile.lock/
+## local test
+bundle exec jekyll serve
 
-github.com/hasune/hasune.github.io
+## Template
+#### toggle
+* 연습 문제1 - 문제 이름
+<details><summary>연습 문제1-코드</summary>
+{% highlight javascript %}
+{% endhighlight %}
+</details>
 
-## 📍 Algorithm
-* [문제풀이에 활용할 수 있는 주요 Data Structure, Algorithm Reference code](https://swexpertacademy.com/main/code/referenceCode/referenceCodeList.do?)
+#### img
+![img description]({{ site.baseurl }}/images/Category/imgFileName.JPG)
 
-## 📍 CS(Computer Science)
-* ### 컴퓨터 구조(Computer Architecture)
+<a href="{{ site.baseurl }}{{ site.주제_img }}/파일명.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.주제_img }}/파일명.JPG" title="Check out the image">
+</a>
 
-* ### 자료 구조(Data Structure)
-
-* ### 데이터베이스(Database)
-
-* ### 네트워크(Network)
-
-* ### 운영체제(Operation System)
-
-* ### 소프트웨어 공학(Software Engineering)
-
-## 📍 Language
-* ### C++
-  
-* ### Java
-
-## 📍 Web
-* ### Spring
-  
-* ### SpringBoot
-
-## 📍 Design Pattern
-
-## 📍 Interview
-
-## 📍 Dev blog
-
-## 📍 ETC
+## References
+* https://blog.chosunghyun.com/
+* https://themes.gohugo.io/
+* https://techstock.biz/
+  + github.com/hasune/hasune.github.io
 -->
