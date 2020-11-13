@@ -20,8 +20,8 @@ ARP가 목적지의 IP 주소만 알고 MAC 주소를 모를때 이를 알아내
 
 아래의 그림은 각 호스트와 라우터는 하나의 IP 주소와 하나의 MAC 주소를 가집니다. 그리고 스위치가 모든 프레임을 브로드캐스트한다고 가정하겠습니다.(즉, 스위치가 한 인터페이스로 프레임을 수신하면 다른 모든 인터페이스로 프레임을 전달합니다.)
 
-<a href="{{ site.baseurl }}{{ site.network_img }}/network-arp1.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
-  <img src="{{ site.baseurl }}{{ site.network_img }}/network-arp1.JPG" title="Check out the image">
+<a href="{{ site.baseurl }}{{ site.network_img }}/network-arp-flow.JPG" data-lightbox="falcon9-large" data-title="Check out the image">
+  <img src="{{ site.baseurl }}{{ site.network_img }}/network-arp-flow.JPG" title="Check out the image">
 </a>
 
 위 그림에서 IP 주소 222.222.222.220을 가진 A 호스트가 222.222.222.222를 가진 __C 호스트로 IP 데이터그램을 전송하려고 한다고 가정__ 하겠습니다.
