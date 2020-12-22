@@ -2,6 +2,7 @@
 title: "다익스트라 알고리즘(Dijkstra Algorithm)"
 category: Algorithm
 date: 2019-07-29 17:32:30
+lastmod : 2020-12-22 00:00:30
 comments: true
 order: 17
 ---
@@ -255,6 +256,81 @@ int main(void) {
 } 
 {% endhighlight %}
 
+
+## 다익스트라 구현(java)
+
+```java
+import java.util.HashMap;
+import java.util.*;
+
+class Destination implements Comparable<Destination> {
+	String destination;
+	int distance;
+	int time;
+
+	Destination(String destination, int distance, int time) {
+		this.destination = destination;
+		this.distance = distance;
+		this.time = time;
+	}
+
+	@Override
+	public int compareTo(Destination o) {
+		return this.distance <= o.distance ? 1 : -1;
+	}
+}
+public class Dijkstra {
+	static String[] initVertex = {"교대역","강남역","남부터미널역","양재역","매봉역","역삼역","양재시민의숲역"};
+	static Map<String, List<Destination> > map = new HashMap<>();
+	static Map<String, Integer> check = new HashMap<>();
+	
+	public static void dijkstra(String start, String end) {
+		PriorityQueue<Destination> pq = new PriorityQueue<>();
+		pq.add(new Destination(start, 0, 0));
+		while (!pq.isEmpty()) {
+			Destination cur = pq.poll();
+			String curPosition = cur.destination;
+			int curDist = -cur.distance;
+			int curTime = cur.time;
+
+			if (curPosition == end) {
+				System.out.println("거리: "+curDist+"km\n시간: "+curTime+"초");
+				return;
+			}
+			if (!map.containsKey(curPosition)) continue;
+			if (check.get(curPosition) < curDist) continue;
+			for (int i = 0; i < map.get(curPosition).size(); i++) {
+				Destination next = map.get(curPosition).get(i);
+				String nextPosition = next.destination;
+				int nextDist = curDist + next.distance;
+				int nextTime = curTime + next.time;
+				if (check.get(nextPosition) > nextDist) {
+					check.put(nextPosition, nextDist);
+					pq.add(new Destination(nextPosition, -nextDist, nextTime));
+				}
+			}
+		}
+	}
+
+	public static void init() {
+		map.computeIfAbsent("교대역", V->new ArrayList<>()).add(new Destination("강남역", 2, 3));
+		map.computeIfAbsent("강남역", V->new ArrayList<>()).add(new Destination("역삼역", 2, 3));
+		map.computeIfAbsent("교대역", V->new ArrayList<>()).add(new Destination("남부터미널역", 3, 2));
+		map.computeIfAbsent("남부터미널역", V->new ArrayList<>()).add(new Destination("양재역", 6, 5));
+		map.computeIfAbsent("양재역", V->new ArrayList<>()).add(new Destination("매봉역", 1, 1));
+		map.computeIfAbsent("강남역", V->new ArrayList<>()).add(new Destination("양재역", 2, 8));
+		map.computeIfAbsent("양재역", V->new ArrayList<>()).add(new Destination("양재시민의숲역", 10, 3));
+		for (String vertex : initVertex) {
+			check.put(vertex, 9999);
+		}
+	}
+
+    public static void main(String[] args) {
+		init();
+		dijkstra("교대역", "양재역");
+	}
+}
+```
 
 ## References
 > * <a href="https://hsp1116.tistory.com/42">https://hsp1116.tistory.com/42<a>
