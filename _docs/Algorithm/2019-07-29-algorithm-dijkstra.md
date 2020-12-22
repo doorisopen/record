@@ -279,8 +279,10 @@ class Destination implements Comparable<Destination> {
 		return this.distance <= o.distance ? 1 : -1;
 	}
 }
+
 public class Dijkstra {
-	static String[] initVertex = {"교대역","강남역","남부터미널역","양재역","매봉역","역삼역","양재시민의숲역"};
+	static String[] initVertex = {"교대역","강남역","남부터미널역",
+				"양재역","매봉역","역삼역","양재시민의숲역"};
 	static Map<String, List<Destination> > map = new HashMap<>();
 	static Map<String, Integer> check = new HashMap<>();
 	
@@ -325,7 +327,7 @@ public class Dijkstra {
 		}
 	}
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 		init();
 		dijkstra("교대역", "양재역");
 	}
