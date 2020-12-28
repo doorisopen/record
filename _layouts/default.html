@@ -54,13 +54,39 @@
                             <!-- https://www.w3schools.com/icons/fontawesome5_icons_spinners.asp -->
                             <a href="#{{ group.name }}" data-toggle="collapse"><i class="fas fa-plus fa-spin" aria-hidden="true"></i>&nbsp;{{ group.name }}</a>
 							<div id="{{ group.name }}" class="collapse">
+                                <!-- main nav -->
 								<ul>
 									{% for item in items %}
 										<li class="nav-item{% if item.url == page.url %} current{% endif %}">
                                             <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
                                         </li>
 									{% endfor %}
-								</ul>	
+                                </ul>
+                                <!-- /.main nav -->
+                                <!-- sub nav -->
+                                <ul>
+                                    {% assign sub_grouped = items | group_by : "sub_category" %}
+                                    {% for sub_group in sub_grouped %}
+                                    {% if sub_group.name != "" %}
+                                    <li 
+                                        class="nav-item top-level {% if sub_group.name == page.sub_category %}current{% endif %}">
+                                        {% assign sub_items = sub_group.items | sort : 'order' %}
+
+                                        <a href="#{{ sub_group.name }}" data-toggle="collapse">&nbsp;{{ sub_group.name }}</a>
+                                        <div id="{{ sub_group.name }}" class="collapse">
+                                            <ul>
+                                                {% for sub_item in sub_items %}
+                                                <li class="nav-item{% if sub_item.url == page.url %} current{% endif %}">
+                                                    <a href="{{ site.baseurl }}{{ sub_item.url }}">{{ sub_item.title }}</a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
+                                <!-- /.sub nav -->
 							</div>
                         </li>
                     {% endfor %}
@@ -73,17 +99,24 @@
                         '/changelog/' | first %}
                         <a href="{{ site.baseurl }}/changelog/">{{ changelog.title }}</a>
                     </li>
-                    <!-- Whos widget
-                    <li style="padding-left: 5px;">
-                        <script id="_wau1kw">var _wau = _wau || []; _wau.push(["dynamic", "cfrh5sac74", "1kw", "032f62c8e1ff", "small"]);</script><script async src="//waust.at/d.js"></script>
-                    </li> -->
                 </ul>
-
-                <!-- <div class="nav-footer">
+            <!-- new post 
+                <ul style="color: #fff; margin: 10px; padding: 10px; background-color: #032f62;">
+                    New
+                    {% assign grouped = site.docs | sort: 'date' | reverse %}
+                    {% for post in grouped limit:5 %}
+                    <li style="color: #fff; margin: 0px; list-style: none; font-size: 13px;">
+                        <a style="color: #c8e1ff;" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title | xml_escape }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            -->
+            <!-- <div class="nav-footer">
                     Copyrights
                     {{site.time | date: '%Y'}}. All Rights Reserved by
                     {{site.title}}
-                </div> -->
+                </div> 
+            -->
             </nav>
         </header>
 
