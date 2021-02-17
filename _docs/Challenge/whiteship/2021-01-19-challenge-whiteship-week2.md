@@ -4,6 +4,7 @@ category: Challenge
 sub_category: whiteship
 date: 2021-02-10 00:30:59
 lastmod: 2021-02-10 00:30:59
+use_math: true
 comments: true
 order: 3
 ---
@@ -24,16 +25,17 @@ order: 3
 
 
 ## 프리미티브 타입 종류와 값의 범위 그리고 기본 값
+
 |타입 종류|데이터 타입|메모리 크기|기본 값|값의 표현 범위|
 |:---:|:---:|:---:|:---:|:---:|
-|논리형|boolean|1 byte|false|$\small{true,false}$|
-|정수형|byte|1 byte|0|$\small{-128 \sim 127}$|
-||short|2 byte|0|$\small{-32,768 \sim 32,767}$|
-||int|4 byte|0|$\small{-2,147,483,648 \sim 2,147,483,647}$|
-||long|8 byte|0|$\small{-9,223,372,036,854,775,808 \sim 9,223,372,036,854,775,807}$|
-||char|2 byte(유니코드)|'\u0000'|$\small{0\sim65,535}$|
-|실수형|float|4 byte|0.0F|$\small{3.4\times10^{-38}}\sim{3.4\times10^{38}}$|
-||double|8 byte|0.0|$\small{1.7\times10^{-308}}\sim{1.7\times10^{308}}$|
+|논리형|boolean|1 byte|false| $\small{true,false}$ |
+|정수형|byte|1 byte|0| $\small{-128 \sim 127}$ |
+||short|2 byte|0| $\small{-32,768 \sim 32,767}$ |
+||int|4 byte|0| $\small{-2,147,483,648 \sim 2,147,483,647}$ |
+||long|8 byte|0| $\small{-9,223,372,036,854,775,808 \sim 9,223,372,036,854,775,807}$ |
+||char|2 byte(유니코드)|'\u0000'| $\small{0\sim65,535}$ |
+|실수형|float|4 byte|0.0F| $\small{3.4\times10^{-38}}\sim{3.4\times10^{38}}$ |
+||double|8 byte|0.0| $\small{1.7\times10^{-308}}\sim{1.7\times10^{308}}$ |
 
 ## 프리미티브 타입과 레퍼런스 타입
 자바의 데이터 타입은 크게 **프리미티브(Primitive) 타입과 레퍼런스(Reference) 타입**으로 구분합니다.
