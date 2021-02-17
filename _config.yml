@@ -19,6 +19,11 @@ type: website
 markdown: kramdown
 highlighter: rouge
 
+# Math equation
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
 # Build
 encoding: utf-8
 permalink: pretty
