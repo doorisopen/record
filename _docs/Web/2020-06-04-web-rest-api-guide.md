@@ -2,7 +2,7 @@
 title: REST API 설계 가이드
 category: Web
 date:   2020-06-04 00:30:59
-lastmod: 2021-01-14 00:30:59
+lastmod: 2021-02-18 00:30:59
 comments: true
 order: 5
 ---
@@ -11,7 +11,13 @@ order: 5
 
 
 ## 목차
+* REST
+  + REST를 구성하는 스타일 
+  + uniform interface 제약조건
 * REST 아키텍쳐를 제대로 사용하는 것?
+* REST API: REST 제약조건을 지키기 어려운 이유
+  + self-descriptive와 HATEOS
+  + self-descriptive와 HATEOS를 만족하는 방법
 * URI을 보고 직관적으로 이해할 수 있어야한다.
   + 최대 2 depth 정도로 간단하게 만든다.
   + 리소스명은 동사보다는 명사를 사용한다.
@@ -41,15 +47,79 @@ order: 5
   + 전역 검색과 지역 검색
 * API 버전 관리
 
+## REST
+REST는 **웹을 위한 아키텍쳐**를 말합니다.
+
+#### REST를 구성하는 스타일
+REST는 다음 항목들을 만족해야 REST라고 할 수 있습니다.
+
+* client-server
+* stateless
+* cache
+* **uniform interface**(일관된 인터페이스)
+* layered system
+* code-on-demand(optional)
+  + 서버에서 클라이언트로 코드를 보내서 실행할 수 있어야한다는 의미
+
+#### uniform interface 제약조건
+* identification of resources
+* manipulation of resources through representations
+* **self-descriptive messages**
+* **hypermedia as the engine of application state (HATEOAS)**
 
 ## REST 아키텍쳐를 제대로 사용하는 것?
 HTTP + JSON 조합을 사용했다고 해서 REST라고 하는것은 잘못된 이해중의 하나입니다. 그렇다면 REST 아키텍쳐를 제대로 사용한다는 것은 무엇일까??
 
 * 리소스를 제대로 정의하고 이에대한 CRUD를 HTTP Method인 GET,POST,PUT,DELETE에 맞춰 사용한다.
 * 에러코드에 대해서 HTTP Response code(200,404,...)를 사용한다.
-* REST에 대한 속성(HATEOS 등)을 제대로 이해하고 디자인 한다.
+* REST의 제약조건들 (self-descriptive, HATEOS 등)을 제대로 이해하고 디자인 한다.
+  + 하이퍼텍스트를 포함한 self-descriptive한 메시지의 uniform interface를 통해 리소스에 접근한다.
 
 필자가 알기론 REST를 완벽하게 지키는것은 아주 힘들다고 알고 있지만, 위와 같이 사용했다면 REST라고 말할 수 있을 것 같습니다.
+
+## REST API: REST 제약조건을 지키기 어려운 이유
+HTML과 JSON의 응답 메시지를 비교해서 REST API가 왜 REST 제약조건을 지키기 어려운지 알아보겠습니다.
+
+#### self-descriptive와 HATEOS
+
+```json
+GET /members HTTP/1.1
+Host: example.com
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+[
+  {"id": 1, "name": "홍길동"},
+  {"id": 2, "name": "김철수"},
+]
+```
+
+위의 **JSON 응답 메시지**의 Content-Type을 보고 media type이 **application/json** 임을 확인할 수 있습니다. 따라서, IANA에 json 타입의 문서를 파싱하는 방법이 명시된 명세에 따라 성공적으로 파싱이 가능합니다.
+
+그러나, **"id", "name"이 무엇을 의미하는지 알 방법이 없어서 self-descriptive를 만족하지 못한 것** 입니다.
+
+```html
+GET /members HTTP/1.1
+Host: example.com
+
+HTTP/1.1 200 OK
+Content-Type: text/html
+
+<html>
+<body>
+<a href="https://example.com/members/1">회원1</a>
+<a href="https://example.com/members/2">회원2</a>
+</body>
+</html>
+```
+
+위의 **HTML 응답 메시지**를 보면 HTML의 **a태그**를 통해 **다음 상태로 전이가 가능**한 반면에 위의 **JSON 응답 메시지**를 보면 **다음 상태로 전이할 링크가 없기 때문에 HATEOS또한 만족하지 못했습니다.**
+
+#### self-descriptive와 HATEOS를 만족하는 방법
+해당 영상의 **39:00 이후 내용**을 참고해주세요
+
+{% include youtube.html id="RP_f5dMoHFc" t="2346" %}
+
 
 ## URI을 보고 직관적으로 이해할 수 있어야한다.
 #### 최대 2 depth 정도로 간단하게 만든다.
@@ -485,3 +555,4 @@ http://restapi.test.com/{service name}/api/v1.0/items
 * [HTTP methods: OPTIONS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS)
 * [HTTP methods: HEAD](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods/HEAD)
 * [HTTP methods: PATCH를](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PATCH)
+* [Naver D2:그런 REST API로 괜찮은가](https://www.youtube.com/watch?v=RP_f5dMoHFc&ab_channel=naverd2)
