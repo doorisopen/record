@@ -1,9 +1,10 @@
 ---
 title: 싱글톤(Singleton)
 category: DesignPattern
-date:   2020-06-04 00:30:59
+date: 2020-06-04 00:30:59
+lastmod: 2021-07-31 00:30:59
 comments: true
-order: 1
+order: 2
 ---
 
 # 싱글톤(Singleton Pattern)
@@ -85,3 +86,5 @@ public class Singleton {
 클래스가 로딩되는 시점에 미리 객체를 생성해두고 그 객체를 반환한다.
 
 cf) volatile : 컴파일러가 특정 변수에 대해 옵티마이져가 캐싱을 적용하지 못하도록 하는 키워드이다.
+
+## References
