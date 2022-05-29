@@ -1,4 +1,4 @@
-# TIL
+# Record
 <!-- <div align=center> -->
 <!-- HitCount: http://hits.dwyl.io/ -->
 <!-- [![author](https://img.shields.io/badge/author-doorisopen-007ec6.svg?style=flat-square)](https://github.com/doorisopen/developers-library) -->
@@ -19,11 +19,6 @@
 > * __Update:__ 파일 내용 추가/변경/삭제 등 <br/>
 > * __Style:__ themes, css 등 UI 추가/변경/삭제 등 <br/>
 > * __Docs:__ 설정 파일 및 README 내용 추가/변경/삭제
-
-
-📢잘못된 내용은 [Issues](https://github.com/doorisopen/developers-library/issues)와 [PR](https://github.com/doorisopen/developers-library/pulls)로 알려주세요
-
-<hr />
 
 <!-- 
 ## local test
