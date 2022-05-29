@@ -1,15 +1,15 @@
 # ----
 # Site
 
-title: 개서관
+title: record
 url: "https://doorisopen.github.io"
-baseurl: "/developers-library"
+baseurl: "/record"
 google_analytics_key: "UA-165000136-2"
 show_full_navigation: true
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /images/siteicon.png
-description: 개서관
+description: record
 author: doorisopen
 email: doorwasopen@gmail.com
 twitter: # twitter username without the @ symbol
