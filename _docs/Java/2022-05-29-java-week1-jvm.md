@@ -1,11 +1,10 @@
 ---
 title: JVM은 무엇이며 자바 코드는 어떻게 실행하는 것인가
-category: Challenge
-sub_category: whiteship
-date: 2020-12-28 00:30:59
-lastmod: 2021-01-19 00:30:59
+category: Java
+date: 2022-05-29 00:30:59
+lastmod: 2022-05-29 00:30:59
 comments: true
-order: 2
+order: 15
 ---
 
 ## 목표

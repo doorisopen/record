@@ -7,5 +7,9 @@
   + -> DBCP 필요한 이유?
   + -> Connection pool?
   + JNDI
-  
-* nodejs 특징
+* [ ] REST API란
+* [ ] 캐시와 세션의 차이점
+* [ ] OAuth
+* [ ] JDBC
+* [ ] JWT ->https://mangkyu.tistory.com/56
+* [ ] nodejs 특징

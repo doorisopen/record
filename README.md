@@ -1,17 +1,12 @@
-# 취준생에서 가치 있는 개발자가 되기까지 💪
-
-<div align=center>
+# TIL
+<!-- <div align=center> -->
 <!-- HitCount: http://hits.dwyl.io/ -->
-
-[![author](https://img.shields.io/badge/author-doorisopen-007ec6.svg?style=flat-square)](https://github.com/doorisopen/developers-library)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdoorisopen%2Fdevelopers-library)](https://hits.seeyoufarm.com)
-
+<!-- [![author](https://img.shields.io/badge/author-doorisopen-007ec6.svg?style=flat-square)](https://github.com/doorisopen/developers-library) -->
+<!-- [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdoorisopen%2Fdevelopers-library)](https://hits.seeyoufarm.com) -->
 <!-- [![HitCount](http://hits.dwyl.com/doorisopen/https://githubcom/doorisopen/developers-library.svg)](http://hits.dwyl.com/doorisopen/https://githubcom/doorisopen/developers-library) -->
+<!-- </div> -->
 
-</div>
-
-👨🏻‍💻신입 개발자를 위한 전공 지식 & 유용한 정보 수집 저장소📚
-
+## Convention
 * __File Name Rule :__ 날짜-주제-제목
   + __ex) 2020-02-15-web-server-and-was__
 * __Commit Convention Rule :__ [상태] 날짜 주제 내용
@@ -28,24 +23,6 @@
 
 📢잘못된 내용은 [Issues](https://github.com/doorisopen/developers-library/issues)와 [PR](https://github.com/doorisopen/developers-library/pulls)로 알려주세요
 
-## 목차
-* [Algorithm](https://github.com/doorisopen/developers-library#-algorithm)
-* [CS](https://github.com/doorisopen/developers-library#-cscomputer-science)
-  + 컴퓨터 구조(Computer Architecture)
-  + 자료 구조(Data Structure)
-  + 데이터베이스(Database)
-  + 네트워크(Network)
-  + 운영체제(Operation System)
-  + 소프트웨어 공학(Software Engineering)
-* [Language](https://github.com/doorisopen/developers-library#-Language)
-  + C++
-  + Java
-* [Web](https://github.com/doorisopen/developers-library#-Web)
-  + Spring
-* [Design Pattern](https://github.com/doorisopen/developers-library#-Design-Pattern)
-* [Interview](https://github.com/doorisopen/developers-library#-Interview)
-* [Dev blog](https://github.com/doorisopen/developers-library#-dev-blog)
-* [ETC](https://github.com/doorisopen/developers-library#-ETC)
 <hr />
 
 <!-- 
