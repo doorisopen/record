@@ -36,6 +36,7 @@ web_img: /images/Web
 spring_img: /images/Web/Spring
 tech_img: /images/Tech
 designpattern_img: /images/DesignPattern
+book_img: /images/Book
 
 plugins:
   - jekyll-sitemap
